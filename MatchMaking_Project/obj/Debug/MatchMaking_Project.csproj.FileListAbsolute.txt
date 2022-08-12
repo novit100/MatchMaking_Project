@@ -1,0 +1,15 @@
+C:\Users\user\source\repos\MatchMaking_Project\MatchMaking_Project\MatchMaking_Project\bin\Debug\MatchMaking_Project.exe.config
+C:\Users\user\source\repos\MatchMaking_Project\MatchMaking_Project\MatchMaking_Project\bin\Debug\MatchMaking_Project.exe
+C:\Users\user\source\repos\MatchMaking_Project\MatchMaking_Project\MatchMaking_Project\bin\Debug\MatchMaking_Project.pdb
+C:\Users\user\source\repos\MatchMaking_Project\MatchMaking_Project\MatchMaking_Project\obj\Debug\MatchMaking_Project.csprojAssemblyReference.cache
+C:\Users\user\source\repos\MatchMaking_Project\MatchMaking_Project\MatchMaking_Project\obj\Debug\MainWindow.g.cs
+C:\Users\user\source\repos\MatchMaking_Project\MatchMaking_Project\MatchMaking_Project\obj\Debug\App.g.cs
+C:\Users\user\source\repos\MatchMaking_Project\MatchMaking_Project\MatchMaking_Project\obj\Debug\MatchMaking_Project_MarkupCompile.cache
+C:\Users\user\source\repos\MatchMaking_Project\MatchMaking_Project\MatchMaking_Project\obj\Debug\MatchMaking_Project_MarkupCompile.lref
+C:\Users\user\source\repos\MatchMaking_Project\MatchMaking_Project\MatchMaking_Project\obj\Debug\MainWindow.baml
+C:\Users\user\source\repos\MatchMaking_Project\MatchMaking_Project\MatchMaking_Project\obj\Debug\MatchMaking_Project.g.resources
+C:\Users\user\source\repos\MatchMaking_Project\MatchMaking_Project\MatchMaking_Project\obj\Debug\MatchMaking_Project.Properties.Resources.resources
+C:\Users\user\source\repos\MatchMaking_Project\MatchMaking_Project\MatchMaking_Project\obj\Debug\MatchMaking_Project.csproj.GenerateResource.cache
+C:\Users\user\source\repos\MatchMaking_Project\MatchMaking_Project\MatchMaking_Project\obj\Debug\MatchMaking_Project.csproj.CoreCompileInputs.cache
+C:\Users\user\source\repos\MatchMaking_Project\MatchMaking_Project\MatchMaking_Project\obj\Debug\MatchMaking_Project.exe
+C:\Users\user\source\repos\MatchMaking_Project\MatchMaking_Project\MatchMaking_Project\obj\Debug\MatchMaking_Project.pdb
