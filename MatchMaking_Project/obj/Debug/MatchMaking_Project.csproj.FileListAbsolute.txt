@@ -13,3 +13,15 @@ C:\Users\user\source\repos\MatchMaking_Project\MatchMaking_Project\MatchMaking_P
 C:\Users\user\source\repos\MatchMaking_Project\MatchMaking_Project\MatchMaking_Project\obj\Debug\MatchMaking_Project.csproj.CoreCompileInputs.cache
 C:\Users\user\source\repos\MatchMaking_Project\MatchMaking_Project\MatchMaking_Project\obj\Debug\MatchMaking_Project.exe
 C:\Users\user\source\repos\MatchMaking_Project\MatchMaking_Project\MatchMaking_Project\obj\Debug\MatchMaking_Project.pdb
+C:\Users\user\source\repos\MatchMaking_Project\MatchMaking_Project\MatchMaking_Project\bin\Debug\BL.dll
+C:\Users\user\source\repos\MatchMaking_Project\MatchMaking_Project\MatchMaking_Project\bin\Debug\DP.dll
+C:\Users\user\source\repos\MatchMaking_Project\MatchMaking_Project\MatchMaking_Project\bin\Debug\DAL.dll
+C:\Users\user\source\repos\MatchMaking_Project\MatchMaking_Project\MatchMaking_Project\bin\Debug\EntityFramework.dll
+C:\Users\user\source\repos\MatchMaking_Project\MatchMaking_Project\MatchMaking_Project\bin\Debug\BL.pdb
+C:\Users\user\source\repos\MatchMaking_Project\MatchMaking_Project\MatchMaking_Project\bin\Debug\DP.pdb
+C:\Users\user\source\repos\MatchMaking_Project\MatchMaking_Project\MatchMaking_Project\bin\Debug\DAL.pdb
+C:\Users\user\source\repos\MatchMaking_Project\MatchMaking_Project\MatchMaking_Project\bin\Debug\DAL.dll.config
+C:\Users\user\source\repos\MatchMaking_Project\MatchMaking_Project\MatchMaking_Project\bin\Debug\EntityFramework.xml
+C:\Users\user\source\repos\MatchMaking_Project\MatchMaking_Project\MatchMaking_Project\obj\Debug\MatchMaking_Project.csproj.CopyComplete
+C:\Users\user\source\repos\MatchMaking_Project\MatchMaking_Project\MatchMaking_Project\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\user\source\repos\MatchMaking_Project\MatchMaking_Project\MatchMaking_Project\bin\Debug\EntityFramework.SqlServer.xml

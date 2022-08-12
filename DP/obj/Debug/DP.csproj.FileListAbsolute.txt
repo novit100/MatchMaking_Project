@@ -1,6 +1,5 @@
 C:\Users\user\source\repos\MatchMaking_Project\MatchMaking_Project\DP\bin\Debug\DP.dll
 C:\Users\user\source\repos\MatchMaking_Project\MatchMaking_Project\DP\bin\Debug\DP.pdb
-C:\Users\user\source\repos\MatchMaking_Project\MatchMaking_Project\DP\obj\Debug\DP.csprojAssemblyReference.cache
 C:\Users\user\source\repos\MatchMaking_Project\MatchMaking_Project\DP\obj\Debug\DP.csproj.CoreCompileInputs.cache
 C:\Users\user\source\repos\MatchMaking_Project\MatchMaking_Project\DP\obj\Debug\DP.dll
 C:\Users\user\source\repos\MatchMaking_Project\MatchMaking_Project\DP\obj\Debug\DP.pdb

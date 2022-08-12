@@ -4,3 +4,11 @@ C:\Users\user\source\repos\MatchMaking_Project\MatchMaking_Project\DAL\obj\Debug
 C:\Users\user\source\repos\MatchMaking_Project\MatchMaking_Project\DAL\obj\Debug\DAL.csproj.CoreCompileInputs.cache
 C:\Users\user\source\repos\MatchMaking_Project\MatchMaking_Project\DAL\obj\Debug\DAL.dll
 C:\Users\user\source\repos\MatchMaking_Project\MatchMaking_Project\DAL\obj\Debug\DAL.pdb
+C:\Users\user\source\repos\MatchMaking_Project\MatchMaking_Project\DAL\bin\Debug\DAL.dll.config
+C:\Users\user\source\repos\MatchMaking_Project\MatchMaking_Project\DAL\bin\Debug\DP.dll
+C:\Users\user\source\repos\MatchMaking_Project\MatchMaking_Project\DAL\bin\Debug\EntityFramework.dll
+C:\Users\user\source\repos\MatchMaking_Project\MatchMaking_Project\DAL\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\user\source\repos\MatchMaking_Project\MatchMaking_Project\DAL\bin\Debug\DP.pdb
+C:\Users\user\source\repos\MatchMaking_Project\MatchMaking_Project\DAL\bin\Debug\EntityFramework.xml
+C:\Users\user\source\repos\MatchMaking_Project\MatchMaking_Project\DAL\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\user\source\repos\MatchMaking_Project\MatchMaking_Project\DAL\obj\Debug\DAL.csproj.CopyComplete

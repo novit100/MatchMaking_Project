@@ -6,7 +6,173 @@
         xmlns:local="clr-namespace:MatchMaking_Project"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
-    <Grid>
-        
+    <Grid
+        MaxWidth="1000"
+        Margin="50 25"
+        Grid.IsSharedSizeScope="True">
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto" />
+            <RowDefinition Height="auto" />
+            <RowDefinition Height="auto" />
+            <RowDefinition Height="auto" />
+            <RowDefinition Height="auto" />
+            <RowDefinition Height="auto" />
+            <RowDefinition Height="auto" />
+            <RowDefinition Height="auto" />
+        </Grid.RowDefinitions>
+
+        <!--  Header  -->
+        <TextBlock
+            Grid.Row="0"
+            FontSize="32"
+            Text="Create Parent" />
+
+        <!-- Seeker Id  -->
+        <Grid Grid.Row="1" Margin="0 25 0 0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="auto" SharedSizeGroup="Label" />
+                <ColumnDefinition Width="*" MaxWidth="100" />
+            </Grid.ColumnDefinitions>
+
+            <TextBlock Grid.Column="0" Text="Seeker Id " />
+            <TextBox x:Name="SeekerId"
+                Grid.Column="1"
+                Margin="20 0 0 0"
+                Text="{Binding Id, UpdateSourceTrigger=PropertyChanged}" />
+        </Grid>
+
+        <!--  Name  -->
+        <Grid Grid.Row="2" Margin="0 15 0 0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="auto" SharedSizeGroup="Label" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+
+            <TextBlock Grid.Column="0" Text="Name" />
+            <TextBox x:Name="FirstName"
+                Grid.Column="1"
+                Margin="20 0 0 0"
+                Text="{Binding Name, UpdateSourceTrigger=PropertyChanged}" />
+        </Grid>
+        <!--  Middle Name  -->
+        <Grid Grid.Row="3" Margin="0 15 0 0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="auto" SharedSizeGroup="Label" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+
+            <TextBlock Grid.Column="0" Text="Middle Name" />
+            <TextBox x:Name="MiddleName"
+                Grid.Column="1"
+                Margin="20 0 0 0"
+                Text="{Binding Name, UpdateSourceTrigger=PropertyChanged}" />
+        </Grid>
+        <!-- Last Name  -->
+        <Grid Grid.Row="4" Margin="0 15 0 0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="auto" SharedSizeGroup="Label" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+
+            <TextBlock Grid.Column="0" Text="Last Name" />
+            <TextBox x:Name="LastName"
+                Grid.Column="1"
+                Margin="20 0 0 0"
+                Text="{Binding Name, UpdateSourceTrigger=PropertyChanged}" />
+        </Grid>
+
+        <!--  Gender  -->
+        <Grid Grid.Row="5" Margin="0 15 0 0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="auto" SharedSizeGroup="Label" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+
+            <TextBlock Grid.Column="0" Text="Gender" />
+            <TextBox x:Name="Gender"
+                Grid.Column="1"
+                Margin="20 0 0 0"
+                Text="{Binding Description, UpdateSourceTrigger=PropertyChanged}" />
+        </Grid>
+
+        <!--  Origin  -->
+        <Grid Grid.Row="6" Margin="0,15.2,-0.4,0.4">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="auto" SharedSizeGroup="Label" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+
+            <TextBlock Grid.Column="0" Text="Origin" />
+            <TextBox x:Name="Origin"
+                Grid.Column="1"
+                Margin="20 0 0 0"
+                Text="{Binding Price, UpdateSourceTrigger=PropertyChanged, StringFormat={}{0:C}}" />
+        </Grid>
+
+        <!--  Create Button  -->
+        <Button
+            x:Name="CreateButton"
+            Grid.Row="7"
+            Margin="0 25 0 0"
+            Padding="10 5"
+            HorizontalAlignment="Left"
+            Command="{Binding CreateProductCommand}"
+            Content="Create"
+            IsEnabled="{Binding CanCreate}" Click="CreateParent">
+            <Button.Style>
+                <Style TargetType="Button">
+                    <Setter Property="Background" Value="#32a852" />
+                    <Setter Property="Foreground" Value="white" />
+                    <Setter Property="Cursor" Value="Hand" />
+                    <Setter Property="Template">
+                        <Setter.Value>
+                            <ControlTemplate TargetType="Button">
+                                <Border
+                                    Padding="{TemplateBinding Padding}"
+                                    Background="{TemplateBinding Background}"
+                                    CornerRadius="5"
+                                    TextBlock.Foreground="{TemplateBinding Foreground}">
+                                    <Grid>
+                                        <ContentPresenter Content="{TemplateBinding Content}" />
+                                    </Grid>
+                                </Border>
+                            </ControlTemplate>
+                        </Setter.Value>
+                    </Setter>
+                    <Style.Triggers>
+                        <Trigger Property="IsEnabled" Value="False">
+                            <Setter Property="Opacity" Value="0.6" />
+                            <Setter Property="Cursor" Value="No" />
+                        </Trigger>
+                        <EventTrigger RoutedEvent="MouseEnter">
+                            <EventTrigger.Actions>
+                                <BeginStoryboard>
+                                    <Storyboard>
+                                        <ColorAnimation
+                                            Storyboard.TargetProperty="(Background).(SolidColorBrush.Color)"
+                                            To="#27753c"
+                                            Duration="0:0:0.1" />
+                                    </Storyboard>
+                                </BeginStoryboard>
+                            </EventTrigger.Actions>
+                        </EventTrigger>
+                        <EventTrigger RoutedEvent="MouseLeave">
+                            <EventTrigger.Actions>
+                                <BeginStoryboard>
+                                    <Storyboard>
+                                        <ColorAnimation
+                                            Storyboard.TargetProperty="(Background).(SolidColorBrush.Color)"
+                                            To="#32a852"
+                                            Duration="0:0:0.1" />
+                                    </Storyboard>
+                                </BeginStoryboard>
+                            </EventTrigger.Actions>
+                        </EventTrigger>
+                    </Style.Triggers>
+                </Style>
+            </Button.Style>
+        </Button>
+
     </Grid>
 </Window>

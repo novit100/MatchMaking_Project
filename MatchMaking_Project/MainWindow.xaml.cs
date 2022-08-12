@@ -1,6 +1,9 @@
-﻿using System;
+﻿using BL;
+using DP;
+using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
@@ -20,9 +23,24 @@ namespace MatchMaking_Project
     /// </summary>
     public partial class MainWindow : Window
     {
+        IBL bl = BLFactory.GetBL();
+
+
         public MainWindow()
         {
             InitializeComponent();
+
+          
+        }
+
+        private void CreateParent(object sender, RoutedEventArgs e)
+        {
+            Gender gen = (DP.Gender)Enum.Parse(typeof(DP.Gender), Gender.Text);
+            Origin orig = (DP.Origin)Enum.Parse(typeof(DP.Origin), Origin.Text);
+            Parent parent = bl.AddparentToDAL(FirstName.Text, LastName.Text, MiddleName.Text, gen, orig, int.Parse(SeekerId.Text));
+            MessageBox.Show("The parent was added successfully!" + "\n" + parent.ToString(), "Operation Succeeded", MessageBoxButton.OK);
+
         }
     }
 }
+
