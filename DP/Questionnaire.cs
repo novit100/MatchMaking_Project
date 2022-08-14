@@ -14,15 +14,18 @@ namespace DP
               //so we need to reference the program to the specific key we want it to use
 
         public int SeekerId { get; set; }
-        public string FinancialHelp { get; set; }
-        public bool transferPhoto { get; set; }
+        public FinancialHelp? FinancialHelp { get; set; }
+        public bool? transferPhoto { get; set; }
         public string Email { get; set; }
         public string PhoneNumberForOfferings { get; set; }
 
-        public bool AreParentsDivorced { get; set; }
+        public bool? AreParentsMarriedWithEachOther { get; set; }
         public string HealthCondition { get; set; }
         public List<Interest> Interests { get; set; }
-        public bool DoesWork { get; set; }//not sure if to add the profession here or in the questionnair
+        public string Remarks { get; set; }
+        public IQ IQ { get; set; }//חכמה שכלית
+        public intellect intellect { get; set; }//אינטיליגנציה כללית
+        public Torah_Study_InFuture Torah_Study_InFuture { get; set; }
 
 
     }

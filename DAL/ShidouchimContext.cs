@@ -24,7 +24,7 @@ namespace DAL
         public DbSet<Parent> Parents { get; set; }
         // public DbSet<Person> Persons { get; set; }
         public DbSet<Questionnaire> Questionnaires { get; set; }
-        public DbSet<Seeker> Seekers { get; set; }
+        public DbSet<SeekerBoy> Seekers { get; set; }
         public DbSet<Sibiling> Sibilings { get; set; }
 
 

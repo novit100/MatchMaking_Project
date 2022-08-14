@@ -9,7 +9,7 @@ namespace DP
     public class Acquaintance : Person
     {
         public int SeekerId { get; set; }
-        public AcquaintanceType AcquaintanceType { get; set; }
+        public AcquaintanceType? AcquaintanceType { get; set; }
         public string PhoneNumber { get; set; }
     }
 }

@@ -49,7 +49,7 @@ namespace DAL
 
         public int AddParent(string firstName, string lastName, string middleName, Gender gender, Origin origin, int seekerId)
         {
-            Parent parent = new Parent() { FirstName = firstName, MiddleName = middleName, LastName = lastName, SeekerId = seekerId, Gender = gender, Origin = origin };
+            Parent parent = new Parent() { FirstName = firstName, MiddleName = middleName, LastName = lastName, SeekerId = seekerId, Gender = gender, FathersOrigin = origin };
             ShidCtx.Parents.Add(parent);
             ShidCtx.SaveChanges();
             Console.WriteLine(parent.Id);
