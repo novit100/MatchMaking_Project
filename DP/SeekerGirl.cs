@@ -14,7 +14,7 @@ namespace DP
         public int? Residency { get; set; }//*******************************how are we implementing KETOVET
         public PersonalStatus PersonalStatus { get; set; }
         public BodyStructure? BodyStructure { get; set; }
-        public bool? DoesSmoke { get; set; }
+        public DoesSmoke? DoesSmoke { get; set; }
         public DateTime? DOB { get; set; }
         public int Age { get; set; }
         public string ElementrySchool { get; set; }

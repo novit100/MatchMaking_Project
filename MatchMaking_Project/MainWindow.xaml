@@ -9,8 +9,9 @@
     <Window.Resources>
         
     </Window.Resources>
-    
-    
+
+    <ScrollViewer Name="scroll" >
+
     <Grid
         MaxWidth="1000"
         Margin="50 25"
@@ -26,7 +27,7 @@
             <RowDefinition Height="auto" />
             <RowDefinition Height="auto" />
         </Grid.RowDefinitions>
-
+       
         <!--  Header  -->
         <TextBlock
             Grid.Row="0"
@@ -180,4 +181,5 @@
         </Button>
 
     </Grid>
+    </ScrollViewer>
 </Window>

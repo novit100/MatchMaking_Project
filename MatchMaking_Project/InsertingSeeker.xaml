@@ -1,0 +1,147 @@
+﻿<Window x:Class="MatchMaking_Project.InsertingSeeker"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:MatchMaking_Project"
+        mc:Ignorable="d"
+        Title="Add new seeker" Height="450" Width="auto"
+        FlowDirection="RightToLeft">
+    <Window.Background>
+        <SolidColorBrush Color="AliceBlue"></SolidColorBrush>
+    </Window.Background>
+
+    <ScrollViewer Name="scroll" >
+        <Grid Height="1468">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="auto" />
+                <RowDefinition Height="auto" />
+                <RowDefinition Height="auto" />
+                <RowDefinition Height="auto" />
+                <RowDefinition Height="auto" />
+                <RowDefinition Height="auto" />
+                <RowDefinition Height="auto" />
+                <RowDefinition Height="auto" />
+                <RowDefinition Height="auto" />
+                <RowDefinition Height="auto" />
+                <RowDefinition Height="auto" />
+                <RowDefinition Height="auto" />
+                <RowDefinition Height="37*"/>
+                <RowDefinition Height="134*"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions >
+                <ColumnDefinition Width="auto"/>
+                <ColumnDefinition Width="auto"/>
+                <ColumnDefinition Width="auto"/>
+                <ColumnDefinition Width="auto"/>
+                <ColumnDefinition Width="auto"/>
+                <ColumnDefinition Width="auto"/>
+            </Grid.ColumnDefinitions>
+            <!--שורה ראשונה-->
+            <!-- First Name  -->
+            <Grid Grid.Row="0" Grid.Column="0">
+                <StackPanel   >
+                    <TextBlock Text="שם פרטי:" ></TextBlock>
+                    <TextBox x:Name="FirstNameTextBox"  />
+                </StackPanel >
+            </Grid>
+            <!-- Middle Name  -->
+
+            <StackPanel Grid.Row="0" Grid.Column="1" Orientation="Horizontal" >
+                <TextBlock Text="שם אמצעי:"></TextBlock>
+                <TextBox x:Name="MiddleNameTextBox"  Width="auto"/>
+            </StackPanel>
+
+            <!-- Last Name  -->
+
+            <StackPanel Grid.Row="0" Grid.Column="2" Orientation="Horizontal">
+                <TextBlock Text="שם משפחה:" Grid.Row="0" Grid.Column="4"></TextBlock>
+                <TextBox x:Name="LastNameTextBox" Grid.Row="0" Grid.Column="5"/>
+            </StackPanel>
+
+
+            <!-- בינתים עברה לשורה ראשונה השורה השנייה-->
+            <!-- DOB  -->
+            <StackPanel Grid.Row="0" Grid.Column="2" Margin="137.4,3,0.4,0" Grid.ColumnSpan="2" Height="29">
+                <TextBlock Text="תאריך לידה:"   />
+                <Calendar DisplayMode="Month" Margin="0,0,0.4,0" Visibility="Collapsed" />
+                <Calendar DisplayMode="Year" Visibility="Collapsed"/>
+                <Calendar DisplayMode="Decade" Visibility="Collapsed" />
+
+                <DatePicker x:Name="datePicker" Height="25" Width="115"
+                    HorizontalAlignment="Left"  
+                    VerticalAlignment="Top" IsDropDownOpen="True"    
+                    FirstDayOfWeek="Sunday"
+                    IsTodayHighlighted="True" 
+                   SelectedDate=""/>
+
+            </StackPanel>
+            <!-- Age -->
+
+
+            <!--שורה שלישית-->
+            <!-- Dad's Origin -->
+            <StackPanel Grid.Row="3" Grid.Column="0">
+                <TextBlock Text="עדה של אבא:"/>
+                <ComboBox x:Name="DadOrigin_TextBox"/>
+            </StackPanel>
+
+
+            <!-- Mom's Origin -->
+            <StackPanel Grid.Row="3" Grid.Column="1">
+                <TextBlock Text="עדה של אמא:"/>
+                <ComboBox x:Name="MomOrigin_TextBox"/>
+            </StackPanel>
+            <!-- ElementrySchool -->
+            <StackPanel Grid.Row="5">
+                <TextBlock Text="בית ספר ייסודי" Grid.Row="5" Grid.Column="3" />
+                <TextBox x:Name="ElementrySchoo_TextBox" Text="בית ספר ייסודי" Foreground="DimGray" />
+            </StackPanel>
+
+            <!-- YeshivaKetana/high school -->
+            <StackPanel Grid.Row="5" Grid.Column="1">
+                <TextBlock Text="ישיבה קטנה\תיכון" Grid.Row="5" Grid.Column="3" />
+                <TextBox x:Name="HighSchoo_TextBox" Text="ישיבה קטנה/תיכון" Foreground="DimGray" />
+            </StackPanel>
+            <!--YeshivaGedola/seminary  -->
+            <StackPanel Grid.Row="5" Grid.Column="2">
+                <TextBlock Text="ישיבה גדולה\סמינר" Grid.Row="5" Grid.Column="4" />
+                <ComboBox x:Name="YeshivaG_Seminary_Combobox"/>
+            </StackPanel>
+            <!--FOR BOYS:::: Torah_Study_Status  -->
+            <!--FOR GIRLS Girl_Working_status -->
+
+            <!--Height  -->
+            <!--Number For Offers-->
+            <!--Girl or Boy  -->
+            <!-- GradeInStudies -->
+            <!-- Residency -->
+            <!-- PersonalStatus  -->
+            <!-- BodyStructure  -->
+            <!-- Does Smoke -->
+
+            <!-- Picture -->
+            <TextBlock Text="העלאת תמונה" Grid.Row="7" Grid.Column="3" Grid.ColumnSpan="3" Margin="38,10,-1.2,6" >
+            </TextBlock>
+
+            <!-- transferPhoto? -->
+
+
+            <!--HealthCondition -->
+            <!--Interests  -->
+            <!-- IQ -->
+            <!-- intellect -->
+            <!-- Torah_Study_InFuture -->
+            <!--Remarks  -->
+            <!--  -->
+            <!--AreParentsMarriedWithEachOther  -->
+            <!-- FinancialHelp -->
+            <!-- Father -->
+            <!-- Mother -->
+            <!-- Sibilings -->
+            <!-- Inquiries -->
+            <TextBlock Grid.Column="4" Margin="10,162.8,-55.8,-83" Grid.Row="13" Grid.ColumnSpan="2"><Run Text="העלאת תמונה"/><LineBreak/><Run Text="55"/><LineBreak/><Run/><LineBreak/><Run/><LineBreak/><Run/><LineBreak/><Run Text="55555"/><LineBreak/><Run/><LineBreak/><Run/><LineBreak/><Run/><LineBreak/><Run Text="5555"/></TextBlock>
+
+        </Grid>
+    </ScrollViewer>
+</Window>

@@ -14,13 +14,14 @@ namespace DP
         public int? Residency { get; set; }//*******************************how are we implementing KETOVET
         public PersonalStatus PersonalStatus { get; set; }
         public BodyStructure? BodyStructure { get; set; }
-        public bool? DoesSmoke { get; set; }
+        public DoesSmoke? DoesSmoke { get; set; }
         public DateTime? DOB { get; set; }
+        public int Age { get; set; }
         public string ElementrySchool { get; set; }
         public string YeshivaKetana { get; set; }
         public YeshivaGedola YeshivaGedola { get; set; }
         public Torah_Study_Status Torah_Study_Status { get; set; }
-        public Questionnaire Questionnaire { get; set; }//can i nme them the same
+        public Questionnaire Questionnaire { get; set; }//can i name them the same
         public Origin Origin { get; set; }
 
         //pointers to the family members:

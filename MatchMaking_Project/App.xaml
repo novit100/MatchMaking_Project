@@ -4,6 +4,42 @@
              xmlns:local="clr-namespace:MatchMaking_Project"
              StartupUri="MainWindow.xaml">
     <Application.Resources>
-         
+        <Style x:Key="commonStyle"
+           TargetType="Control">
+            <Setter Property="FontStyle" Value="Normal"/>
+            <Setter Property="FontFamily" Value="Tahoma"/>
+            <Setter Property="Foreground" Value="Navy"/>
+        </Style>
+
+        <Style TargetType="ComboBox" BasedOn="{StaticResource commonStyle}">
+            <Setter Property="VerticalAlignment" Value="Center">
+            </Setter>
+            <Setter Property="FontWeight" Value="Bold">
+            </Setter>
+            <Setter Property="Height" Value="15">
+            </Setter>
+        </Style>
+
+        <Style TargetType="TextBox" >
+            <Setter Property="VerticalAlignment" Value="Center">
+            </Setter>
+            <Setter Property="FontWeight" Value="Bold">
+            </Setter>
+            <Setter Property="Margin" Value="2,5"/>
+            <Setter Property="MinWidth" Value="60"/>
+        </Style>
+
+        <Style TargetType="TextBlock" >
+            <Setter Property="VerticalAlignment" Value="Center">
+            </Setter>
+            <Setter Property="FontWeight" Value="Bold">
+            </Setter>
+            <Setter Property="Margin" Value="2,8"/>
+        </Style>
+        <Style TargetType="StackPanel">
+            <Setter Property="VerticalAlignment" Value="Center"></Setter>
+            <Setter Property="Orientation" Value="Horizontal"/>
+        </Style>
+
     </Application.Resources>
 </Application>
