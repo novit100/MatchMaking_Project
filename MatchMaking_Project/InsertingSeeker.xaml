@@ -121,8 +121,12 @@
             <!-- Does Smoke -->
 
             <!-- Picture -->
-            <TextBlock Text="העלאת תמונה" Grid.Row="7" Grid.Column="3" Grid.ColumnSpan="3" Margin="38,10,-1.2,6" >
-            </TextBlock>
+            <StackPanel Grid.Row="7" Grid.Column="3">
+                <TextBlock Text="העלאת תמונה" Grid.Row="5" Grid.Column="4" />
+                <Button x:Name="PictureUploadButton" Content="צירוף קובץ" Foreground="DimGray" Click="PictureUploadButton_Click" />
+                <Image x:Name="SeekerImage" Width="30" Height="30"/>
+            </StackPanel>
+            
 
             <!-- transferPhoto? -->
 
