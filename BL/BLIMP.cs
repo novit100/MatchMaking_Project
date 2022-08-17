@@ -2,6 +2,7 @@
 using DP;
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Reflection;
 using System.Text;
@@ -48,7 +49,7 @@ namespace BL
             }
             catch (UserException ex)
             {
-                throw new Exception("The user with this password wasn't found\n", ex);
+                throw new ObjectNotFoundException("The user with this password wasn't found\n", ex);
             }
             return user;
         }
