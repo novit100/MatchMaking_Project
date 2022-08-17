@@ -30,7 +30,13 @@ namespace MatchMaking_Project
             InitializeComponent();
             bl = bl_;
         }
-       
+
+        private void AddNewButton_Click(object sender, RoutedEventArgs e)
+        {
+            InsertingSeeker myInsertingSeekerWindow = new InsertingSeeker(bl);
+            myInsertingSeekerWindow.Show();
+            this.Close();
+        }
     }
 }
 

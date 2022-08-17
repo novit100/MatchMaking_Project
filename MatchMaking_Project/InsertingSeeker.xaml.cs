@@ -1,4 +1,6 @@
-﻿using Microsoft.Win32;
+﻿using BL;
+using DP;
+using Microsoft.Win32;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -20,9 +22,17 @@ namespace MatchMaking_Project
     /// </summary>
     public partial class InsertingSeeker : Window
     {
-        public InsertingSeeker()
+        IBL bl;
+
+        public InsertingSeeker(IBL bl_)
         {
             InitializeComponent();
+            bl = bl_;
+
+            DadOrigin_ComboBox.ItemsSource = Enum.GetValues(typeof(Origin));
+            DadOrigin_ComboBox.SelectedIndex = 0;
+            MomOrigin_ComboBox.ItemsSource = Enum.GetValues(typeof(Origin));
+            MomOrigin_ComboBox.SelectedIndex = 0;
         }
 
         private void PictureUploadButton_Click(object sender, RoutedEventArgs e)

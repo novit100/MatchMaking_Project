@@ -69,8 +69,9 @@
                 <Calendar DisplayMode="Decade" Visibility="Collapsed" />
 
                 <DatePicker x:Name="datePicker" Height="25" Width="115"
+                    IsDropDownOpen="False"
                     HorizontalAlignment="Left"  
-                    VerticalAlignment="Top" IsDropDownOpen="True"    
+                    VerticalAlignment="Top"  
                     FirstDayOfWeek="Sunday"
                     IsTodayHighlighted="True" 
                    SelectedDate=""/>
@@ -83,14 +84,13 @@
             <!-- Dad's Origin -->
             <StackPanel Grid.Row="3" Grid.Column="0">
                 <TextBlock Text="עדה של אבא:"/>
-                <ComboBox x:Name="DadOrigin_TextBox"/>
+                <ComboBox x:Name="DadOrigin_ComboBox" DataContext="{Binding Path=Origin}"/>
             </StackPanel>
-
 
             <!-- Mom's Origin -->
             <StackPanel Grid.Row="3" Grid.Column="1">
                 <TextBlock Text="עדה של אמא:"/>
-                <ComboBox x:Name="MomOrigin_TextBox" HorizontalAlignment="Stretch"/>
+                <ComboBox x:Name="MomOrigin_ComboBox" DataContext="{Binding Path=Origin}" HorizontalAlignment="Stretch"/>
             </StackPanel>
             <!-- ElementrySchool -->
             <StackPanel Grid.Row="5">

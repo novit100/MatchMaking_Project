@@ -11,7 +11,8 @@
         <ImageBrush ImageSource="Ring.png"/>
     </Window.Background>
     <Grid>
-        
+        <Button x:Name="AddNewButton" Content="Add New Seeker" HorizontalAlignment="Center"  VerticalAlignment="Center"  Height="38" Grid.ColumnSpan="5" FontSize="15"  Click="AddNewButton_Click" Background="#FFFBF8F8" />
+
     </Grid>
    
 </Window>

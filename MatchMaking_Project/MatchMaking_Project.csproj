@@ -68,6 +68,7 @@
     <Compile Include="AddParent.xaml.cs">
       <DependentUpon>AddParent.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Views\EnumBooleanConverter.cs" />
     <Compile Include="InsertingSeeker.xaml.cs">
       <DependentUpon>InsertingSeeker.xaml</DependentUpon>
     </Compile>
@@ -145,7 +146,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="ViewModels\" />
-    <Folder Include="Views\" />
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Ring.png" />
