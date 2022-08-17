@@ -7,6 +7,9 @@
         mc:Ignorable="d"
         Title="Add new seeker" Height="450" Width="550"
         FlowDirection="RightToLeft">
+    <Window.Resources>
+        <BooleanToVisibilityConverter x:Key="b2v" />
+    </Window.Resources>
     <Window.Background>
         <SolidColorBrush Color="AliceBlue"></SolidColorBrush>
     </Window.Background>
@@ -81,7 +84,7 @@
 
             <!--- ~~~~~~~~~~~~~~~~~~~~~~   שורה שניה    ~~~~~~~~~~~~~~~~~~~~~~~~ -->
             <StackPanel Grid.Row="1" Grid.Column="0" Orientation="Horizontal">
-                <RadioButton x:Name="IsBoyCheckBox" Content="בחור"  />
+                <RadioButton x:Name="IsBoyCheckBox" Content="בחור" IsChecked="True"  />
                 <RadioButton x:Name="IsGirlCheckBox" Content="בחורה"/>
             </StackPanel>
             <!--- ~~~~~~~~~~~~~~~~~~~~~~   שורה שלישית    ~~~~~~~~~~~~~~~~~~~~~~~~ -->
