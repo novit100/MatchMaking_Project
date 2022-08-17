@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace DP
 {
-    class SeekerGirl
+    public class SeekerGirl
     {
         public byte?[] Picture { get; set; }//we will have a duff class for this
         public float? Height { get; set; }

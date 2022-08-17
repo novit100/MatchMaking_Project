@@ -30,6 +30,7 @@ namespace DAL
         int AddParent(string firstName, string lastName, string middleName, Gender gender, Origin origin, int seekerId);
         void DeleteParent(int parentId);
 
+
         #endregion
 
         /* #region Person
@@ -48,6 +49,15 @@ namespace DAL
 
         #region Sibiling
         #endregion
+
+        #region User
+        User GetUser(string name, string password);
+        void AddUser(User user);
+        int HowManyUsers();
+        #endregion
+        // get user 
+        // add user
+        
 
     }
 }

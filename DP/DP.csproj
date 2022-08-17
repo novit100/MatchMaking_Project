@@ -45,6 +45,7 @@
     <Compile Include="Acquaintance.cs" />
     <Compile Include="Couple.cs" />
     <Compile Include="Enums.cs" />
+    <Compile Include="Exceptions.cs" />
     <Compile Include="Parent.cs" />
     <Compile Include="Person.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

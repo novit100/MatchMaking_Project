@@ -31,7 +31,58 @@ namespace BL
             Parent parent = dal.GetParent(id);
             return parent;
         }
+         
+        #region User
+       
+        /// <summary>
+        /// returns the user with the given name and password
+        /// </summary>
+        /// <param name="name">name</param>
+        /// <returns>user bo</returns>
+        public User GetUser(string name, string password)
+        {
+            User user;
+            try
+            {
+                user = dal.GetUser(name, password);
+            }
+            catch (UserException ex)
+            {
+                throw new Exception("The user with this password wasn't found\n", ex);
+            }
+            return user;
+        }
 
+        /// <summary>
+        /// add a user
+        /// </summary>
+        /// <param name="user">user</param>
+        public void AddUser(User user)
+        {
+            try
+            {
+                dal.AddUser(user);
+            }
+            catch (UserException ex)
+            {
+                throw new UserException(user.UserName,"couldn't add the user\n", ex);
+            }
+        }
+     
+        /// <summary>
+        /// returns IEnumerable of all the users
+        /// </summary>
+        /// <returns>users</returns>
+        public IEnumerable<User> GetAllUsers()
+        {
+            return from item in GetAllUsers()
+                   select item;
+        }
 
+        public int HowManyUsers()
+        {
+            return dal.HowManyUsers();
+        }
+        #endregion
     }
 }

@@ -62,6 +62,58 @@ namespace DAL
         }
         #endregion
 
+        #region User
+
+        /// <summary>
+        /// returns the user with this name and passsword. if doesnt exist- throw exception
+        /// </summary>
+        /// <param name="myname"></param>
+        /// <param name="mypassword"></param>
+        /// <returns></returns>
+        public User GetUser(string myname, string mypassword)
+        {
+            // Query for the Blog named ADO.NET Blog
+            User user = ShidCtx.Users
+                            .Where(u => u.UserName == myname && u.Password == mypassword)
+                            .FirstOrDefault();
+
+        
+            if (user != null)//if user was found
+            {
+                return user;//***********************there was a cloning here : return user.Clone()
+            }
+            else
+            {
+                throw new UserException(myname, $"the user: {myname} does'nt exist in the curret state");
+            }
+
+
+        }
+
+       
+
+     
+
+        /// <summary>
+        /// add a new user
+        /// </summary>
+        /// <param name="user"></param>
+        public void AddUser(User user)
+        {
+            if (ShidCtx.Users.Where(s => s.UserName == user.UserName).ToList().Count() > 0)
+            {
+                throw new UserException(user.UserName, $"the user: {user.UserName} allready exists. Choose another name");
+            }
+            ShidCtx.Users.Add(user);
+            ShidCtx.SaveChanges();
+        }
+
+        public int HowManyUsers()
+        {
+            return ShidCtx.Users.Count();
+        }
+
+        #endregion
 
 
     }
