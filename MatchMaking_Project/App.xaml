@@ -26,7 +26,7 @@
             <Setter Property="FontWeight" Value="Bold">
             </Setter>
             <Setter Property="Margin" Value="2,5"/>
-            <Setter Property="MinWidth" Value="60"/>
+            <Setter Property="MinWidth" Value="70"/>
         </Style>
 
         <Style TargetType="TextBlock" >
@@ -34,7 +34,7 @@
             </Setter>
             <Setter Property="FontWeight" Value="Bold">
             </Setter>
-            <Setter Property="Margin" Value="2,8"/>
+            <Setter Property="Margin" Value="2,5"/>
         </Style>
         <Style TargetType="StackPanel">
             <Setter Property="VerticalAlignment" Value="Center"></Setter>
