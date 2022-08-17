@@ -14,16 +14,17 @@
         <Style TargetType="ComboBox" BasedOn="{StaticResource commonStyle}">
             <Setter Property="VerticalAlignment" Value="Center">
             </Setter>
-            <Setter Property="FontWeight" Value="Bold">
+            <Setter Property="FontWeight" Value="Light">
             </Setter>
             <Setter Property="Height" Value="15">
             </Setter>
+            <Setter Property="HorizontalAlignment" Value="Stretch"/>
         </Style>
 
         <Style TargetType="TextBox" >
             <Setter Property="VerticalAlignment" Value="Center">
             </Setter>
-            <Setter Property="FontWeight" Value="Bold">
+            <Setter Property="FontWeight" Value="Light">
             </Setter>
             <Setter Property="Margin" Value="2,5"/>
             <Setter Property="MinWidth" Value="70"/>

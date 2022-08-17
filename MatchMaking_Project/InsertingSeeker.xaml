@@ -37,7 +37,7 @@
                 <ColumnDefinition Width="auto"/>
                 <ColumnDefinition Width="auto"/>
             </Grid.ColumnDefinitions>
-            <!--שורה ראשונה-->
+            <!--- ~~~~~~~~~~~~~~~~~~~~~~   שורה ראשונה    ~~~~~~~~~~~~~~~~~~~~~~~~ -->
             <!-- First Name  -->
             <Grid Grid.Row="0" Grid.Column="0">
                 <StackPanel   >
@@ -60,7 +60,7 @@
             </StackPanel>
 
 
-            <!-- בינתים עברה לשורה ראשונה השורה השנייה-->
+            <!-- בינתים עברה לשורה ראשונה השורה הראשונה-->
             <!-- DOB  -->
             <StackPanel Grid.Row="0" Grid.Column="2" Margin="137.4,3,0.4,0" Grid.ColumnSpan="2" Height="29">
                 <TextBlock Text="תאריך לידה:"   />
@@ -79,7 +79,7 @@
             <!-- Age -->
 
 
-            <!--שורה שלישית-->
+            <!--שורה רביעית-->
             <!-- Dad's Origin -->
             <StackPanel Grid.Row="3" Grid.Column="0">
                 <TextBlock Text="עדה של אבא:"/>
@@ -90,18 +90,18 @@
             <!-- Mom's Origin -->
             <StackPanel Grid.Row="3" Grid.Column="1">
                 <TextBlock Text="עדה של אמא:"/>
-                <ComboBox x:Name="MomOrigin_TextBox"/>
+                <ComboBox x:Name="MomOrigin_TextBox" HorizontalAlignment="Stretch"/>
             </StackPanel>
             <!-- ElementrySchool -->
             <StackPanel Grid.Row="5">
                 <TextBlock Text="בית ספר ייסודי" Grid.Row="5" Grid.Column="3" />
                 <TextBox x:Name="ElementrySchoo_TextBox" Text="בית ספר ייסודי" Foreground="DimGray" />
             </StackPanel>
-
+           
             <!-- YeshivaKetana/high school -->
             <StackPanel Grid.Row="5" Grid.Column="1">
                 <TextBlock Text="ישיבה קטנה\תיכון" Grid.Row="5" Grid.Column="3" />
-                <TextBox x:Name="HighSchoo_TextBox" Text="ישיבה קטנה/תיכון" Foreground="DimGray" />
+                <TextBox x:Name="HighSchoo_TextBox" Text="ישיבה קטנה/תיכון" Foreground="DimGray" FontWeight="ExtraLight" />
             </StackPanel>
             <!--YeshivaGedola/seminary  -->
             <StackPanel Grid.Row="5" Grid.Column="2">
@@ -109,6 +109,7 @@
                 <ComboBox x:Name="YeshivaG_Seminary_Combobox"/>
             </StackPanel>
             <!--FOR BOYS:::: Torah_Study_Status  -->
+            
             <!--FOR GIRLS Girl_Working_status -->
 
             <!--Height  -->
