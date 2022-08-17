@@ -23,51 +23,14 @@ namespace MatchMaking_Project
     /// </summary>
     public partial class MainWindow : Window
     {
-        IBL bl = BLFactory.GetBL();
-        User curUser;
+        IBL bl;
 
-        public MainWindow()
+        public MainWindow(IBL bl_)
         {
             InitializeComponent();
-           if (bl.HowManyUsers() >= 2)
-            {
-               // btSighup
-            }
-
+            bl = bl_;
         }
-        
        
-        private void bLogIn_Click(object sender, RoutedEventArgs e)
-        {
-
-            try
-            {
-                if ((pbPass.Password != "") && (tbUser.Text != ""))//if one or two of the fields are empty
-                {
-                    bool flag = false;
-                    curUser = bl.GetUser(tbUser.Text, pbPass.Password);
-                 //   if (curUser.UserStatus == BO.UserStatuses.Admine)
-                     //   flag = true;
-                   // MainWindow myMainWindow = new MainWindow(flag);
-                    //myMainWindow.Show();
-                    this.Close();
-
-                }
-            }
-            catch (UserException ex)//if it didn't find the user
-            {
-
-                MessageBox.Show(ex.Message + ex.InnerException, "Operation Failure", MessageBoxButton.OK, MessageBoxImage.Error);
-            }
-        }
-
-        private void btSighup_Click(object sender, RoutedEventArgs e)
-        {
-            NewUser newUserWin = new NewUser();
-            newUserWin.Show();
-        }
-
-
     }
 }
 

@@ -25,17 +25,22 @@
             <RowDefinition Height="*"/>
             <RowDefinition Height="*"/>
             <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
             <RowDefinition Height="0.7*"/>
             <RowDefinition Height="30"/>
         </Grid.RowDefinitions>
-        <PasswordBox x:Name="pbPass"  HorizontalAlignment="Stretch"  VerticalAlignment="Top" Grid.Column="3" Grid.Row="3" Height="20" Margin="1.606,0.333,231.728,0" Grid.ColumnSpan="2"  />
-        <TextBlock HorizontalAlignment="Left"  TextWrapping="Wrap"  Foreground="MidnightBlue" Text="User name: " VerticalAlignment="Top" Grid.Column="2" Grid.Row="2"  FontSize="15" Margin="3.667,0,0,0" Height="20" Width="126" FontWeight="Bold" />
-        <TextBlock HorizontalAlignment="Left" TextWrapping="Wrap"  Foreground="MidnightBlue" Text="Password: " VerticalAlignment="Top" Grid.Column="2" Grid.Row="3"  FontSize="15" Height="20" Margin="0.667,0.333,0,0" Width="109" FontWeight="Bold"  />
-        <TextBox x:Name="tbNewUser" HorizontalAlignment="Stretch"  TextWrapping="Wrap" VerticalAlignment="Top" Grid.Column="3" Grid.Row="2" Height="20" Grid.ColumnSpan="2" Margin="1.606,0,231.728,0" />
-        <Button x:Name="bNewUser" Content="Sign Up" HorizontalAlignment="Stretch"  VerticalAlignment="Center"  Height="38" Grid.ColumnSpan="5" Grid.Row="5" FontSize="15"  Click="bNewUser_Click" Background="#FFFBF8F8" Margin="233,0,231.728,12.667"/>
-        <TextBlock HorizontalAlignment="Left" TextWrapping="Wrap"  Foreground="MidnightBlue" Text="Confirm Password: " VerticalAlignment="Top" Grid.Column="2" Grid.Row="3"  FontSize="15"  Grid.RowSpan="2" Height="20" Margin="0.667,72.333,0,0" Width="146" FontWeight="Bold" Grid.ColumnSpan="2" />
-        <PasswordBox x:Name="pbPassNewUser"  HorizontalAlignment="Stretch"  VerticalAlignment="Top" Grid.Column="3" Grid.Row="3" Height="20" Margin="1.606,72.333,231.728,0" Grid.RowSpan="2" Grid.ColumnSpan="2" />
         <Label Content="~create an account~" HorizontalAlignment="Left" Margin="24.667,10,-17.272,0" VerticalAlignment="Top" Height="41" Width="553" FontWeight="Bold" FontSize="30" Foreground="MidnightBlue" FontFamily="Narkisim" Grid.ColumnSpan="3" Grid.Column="2" Grid.Row="1"/>
+
+        <TextBlock HorizontalAlignment="Left"  TextWrapping="Wrap"  Foreground="MidnightBlue" Text="User name: " VerticalAlignment="Top" Grid.Column="2" Grid.Row="2"  FontSize="15" Margin="3.667,0,0,0" Height="20" Width="126" FontWeight="Bold" />
+        <TextBox x:Name="tbNewUser" HorizontalAlignment="Stretch"  TextWrapping="Wrap" VerticalAlignment="Top" Grid.Column="3" Grid.Row="2" Height="20" Grid.ColumnSpan="2" Margin="1.606,0,231.728,0" />
+        <TextBlock HorizontalAlignment="Left" TextWrapping="Wrap"  Foreground="MidnightBlue" Text="Email: " VerticalAlignment="Top" Grid.Column="2" Grid.Row="3"  FontSize="15" Height="20" Margin="0.667,0.333,0,0" Width="109" FontWeight="Bold"  />
+        <TextBox x:Name="tbEmail" HorizontalAlignment="Stretch"  TextWrapping="Wrap" VerticalAlignment="Top" Grid.Column="3" Grid.Row="3" Height="20" Grid.ColumnSpan="3" Margin="1.606,0,231.728,0" />
+        <TextBlock HorizontalAlignment="Left" TextWrapping="Wrap"  Foreground="MidnightBlue" Text="Password: " VerticalAlignment="Top" Grid.Column="2" Grid.Row="4"  FontSize="15" Height="20" Margin="0.667,0.333,0,0" Width="109" FontWeight="Bold"  />
+        <PasswordBox x:Name="pbPass"  HorizontalAlignment="Stretch"  VerticalAlignment="Top" Grid.Column="3" Grid.Row="4" Height="20" Margin="1.606,0.333,231.728,0" Grid.ColumnSpan="2"  />
+        <TextBlock HorizontalAlignment="Left" TextWrapping="Wrap"  Foreground="MidnightBlue" Text="Confirm Password: " VerticalAlignment="Top" Grid.Column="2" Grid.Row="4"  FontSize="15"  Grid.RowSpan="2" Height="20" Margin="0.667,72.333,0,0" Width="146" FontWeight="Bold" Grid.ColumnSpan="2" />
+        <PasswordBox x:Name="pbPassNewUser"  HorizontalAlignment="Stretch"  VerticalAlignment="Top" Grid.Column="3" Grid.Row="4" Height="20" Margin="1.606,72.333,231.728,0" Grid.RowSpan="2" Grid.ColumnSpan="2" />
+
+        <Button x:Name="bNewUser" Content="Sign Up" HorizontalAlignment="Stretch"  VerticalAlignment="Center"  Height="38" Grid.ColumnSpan="5" Grid.Row="6" FontSize="15"  Click="bNewUser_Click" Background="#FFFBF8F8" Margin="233,0,231.728,12.667"/>
 
     </Grid>
 </Window>

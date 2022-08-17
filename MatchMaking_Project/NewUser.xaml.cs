@@ -25,16 +25,18 @@ namespace MatchMaking_Project
 
         User myUser = new User();
 
-        public NewUser()
+        public NewUser(IBL bl_)
         {
             InitializeComponent();
+            bl = bl_;
         }
 
         private void bNewUser_Click(object sender, RoutedEventArgs e)
         {
-            if ((tbNewUser.Text != null) && (pbPass.Password == pbPassNewUser.Password))
+            if ((tbNewUser.Text != null) && (tbEmail.Text != null) && (pbPass.Password == pbPassNewUser.Password))
             {
                 myUser.UserName = tbNewUser.Text;
+                myUser.Email = tbEmail.Text;
                 myUser.Password = pbPass.Password;
                 try
                 {
