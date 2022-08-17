@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:MatchMaking_Project"
         mc:Ignorable="d"
-        Title="Add new seeker" Height="450" Width="auto"
+        Title="Add new seeker" Height="450" Width="550"
         FlowDirection="RightToLeft">
     <Window.Background>
         <SolidColorBrush Color="AliceBlue"></SolidColorBrush>
@@ -21,13 +21,13 @@
                 <RowDefinition Height="auto" />
                 <RowDefinition Height="auto" />
                 <RowDefinition Height="auto" />
+                <RowDefinition Height="15*" />
                 <RowDefinition Height="auto" />
                 <RowDefinition Height="auto" />
                 <RowDefinition Height="auto" />
                 <RowDefinition Height="auto" />
-                <RowDefinition Height="auto" />
-                <RowDefinition Height="37*"/>
-                <RowDefinition Height="134*"/>
+                <RowDefinition Height="145*"/>
+                <RowDefinition Height="524*"/>
             </Grid.RowDefinitions>
             <Grid.ColumnDefinitions >
                 <ColumnDefinition Width="auto"/>
@@ -49,7 +49,7 @@
 
             <StackPanel Grid.Row="0" Grid.Column="1" Orientation="Horizontal" >
                 <TextBlock Text="שם אמצעי:"></TextBlock>
-                <TextBox x:Name="MiddleNameTextBox"  Width="auto"/>
+                <TextBox x:Name="MiddleNameTextBox" />
             </StackPanel>
 
             <!-- Last Name  -->
@@ -79,37 +79,53 @@
             </StackPanel>
             <!-- Age -->
 
-
-            <!--שורה רביעית-->
+            <!--- ~~~~~~~~~~~~~~~~~~~~~~   שורה שניה    ~~~~~~~~~~~~~~~~~~~~~~~~ -->
+            <StackPanel Grid.Row="1" Grid.Column="0" Orientation="Horizontal">
+                <RadioButton x:Name="IsBoyCheckBox" Content="בחור"  />
+                <RadioButton x:Name="IsGirlCheckBox" Content="בחורה"/>
+            </StackPanel>
+            <!--- ~~~~~~~~~~~~~~~~~~~~~~   שורה שלישית    ~~~~~~~~~~~~~~~~~~~~~~~~ -->
             <!-- Dad's Origin -->
-            <StackPanel Grid.Row="3" Grid.Column="0">
+            <StackPanel Grid.Row="2" Grid.Column="0">
                 <TextBlock Text="עדה של אבא:"/>
                 <ComboBox x:Name="DadOrigin_ComboBox" DataContext="{Binding Path=Origin}"/>
             </StackPanel>
 
             <!-- Mom's Origin -->
-            <StackPanel Grid.Row="3" Grid.Column="1">
+            <StackPanel Grid.Row="2" Grid.Column="1">
                 <TextBlock Text="עדה של אמא:"/>
                 <ComboBox x:Name="MomOrigin_ComboBox" DataContext="{Binding Path=Origin}" HorizontalAlignment="Stretch"/>
             </StackPanel>
+            <!--- ~~~~~~~~~~~~~~~~~~~~~~   שורה שלישית    ~~~~~~~~~~~~~~~~~~~~~~~~ -->
             <!-- ElementrySchool -->
-            <StackPanel Grid.Row="5">
+            <StackPanel Grid.Row="4">
                 <TextBlock Text="בית ספר ייסודי" Grid.Row="5" Grid.Column="3" />
                 <TextBox x:Name="ElementrySchoo_TextBox" Text="בית ספר ייסודי" Foreground="DimGray" />
             </StackPanel>
-           
+
             <!-- YeshivaKetana/high school -->
-            <StackPanel Grid.Row="5" Grid.Column="1">
+            <StackPanel Grid.Row="4" Grid.Column="1">
                 <TextBlock Text="ישיבה קטנה\תיכון" Grid.Row="5" Grid.Column="3" />
                 <TextBox x:Name="HighSchoo_TextBox" Text="ישיבה קטנה/תיכון" Foreground="DimGray" FontWeight="ExtraLight" />
             </StackPanel>
             <!--YeshivaGedola/seminary  -->
-            <StackPanel Grid.Row="5" Grid.Column="2">
+            <StackPanel Grid.Row="4" Grid.Column="2">
                 <TextBlock Text="ישיבה גדולה\סמינר" Grid.Row="5" Grid.Column="4" />
                 <ComboBox x:Name="YeshivaG_Seminary_Combobox"/>
             </StackPanel>
+            <!--- ~~~~~~~~~~~~~~~~~~~~~~   שורה חמישית    ~~~~~~~~~~~~~~~~~~~~~~~~ -->
+            <!--- ~~~~~~~~~~~~~~~~~~~~~~   שורה שישית    ~~~~~~~~~~~~~~~~~~~~~~~~ -->
+            <!--- ~~~~~~~~~~~~~~~~~~~~~~   שורה שביעית    ~~~~~~~~~~~~~~~~~~~~~~~~ -->
+            <!--- ~~~~~~~~~~~~~~~~~~~~~~   שורה שמינית    ~~~~~~~~~~~~~~~~~~~~~~~~ -->
+            <!--- ~~~~~~~~~~~~~~~~~~~~~~   שורה תשיעית    ~~~~~~~~~~~~~~~~~~~~~~~~ -->
+            <!--- ~~~~~~~~~~~~~~~~~~~~~~   שורה עשירית    ~~~~~~~~~~~~~~~~~~~~~~~~ -->
+            <!--- ~~~~~~~~~~~~~~~~~~~~~~   שורה אחד-עשרה    ~~~~~~~~~~~~~~~~~~~~~~~~ -->
+            <!--- ~~~~~~~~~~~~~~~~~~~~~~   שורה שתים-עשרה    ~~~~~~~~~~~~~~~~~~~~~~~~ -->
+            <!--- ~~~~~~~~~~~~~~~~~~~~~~   שורה שלוש-עשרה    ~~~~~~~~~~~~~~~~~~~~~~~~ -->
+            <!--- ~~~~~~~~~~~~~~~~~~~~~~   שורה ארבע-עשרה    ~~~~~~~~~~~~~~~~~~~~~~~~ -->
+            <!--- ~~~~~~~~~~~~~~~~~~~~~~   שורה חמש-עשרה    ~~~~~~~~~~~~~~~~~~~~~~~~ -->
             <!--FOR BOYS:::: Torah_Study_Status  -->
-            
+
             <!--FOR GIRLS Girl_Working_status -->
 
             <!--Height  -->
@@ -127,7 +143,7 @@
                 <Button x:Name="PictureUploadButton" Content="צירוף קובץ" Foreground="DimGray" Click="PictureUploadButton_Click" />
                 <Image x:Name="SeekerImage" Width="30" Height="30"/>
             </StackPanel>
-            
+
 
             <!-- transferPhoto? -->
 
