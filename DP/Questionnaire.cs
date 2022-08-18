@@ -13,7 +13,8 @@ namespace DP
               //(in this case the id of the class is'nt written excplicitly 
               //so we need to reference the program to the specific key we want it to use
         public int SeekerId { get; set; }
-
+       
+         
         public string Email { get; set; }
         public string PhoneNumberForOfferings { get; set; }
 

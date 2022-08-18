@@ -23,6 +23,7 @@ namespace MatchMaking_Project
     public partial class InsertingSeeker : Window
     {
         IBL bl;
+        SeekerBoy boy = new SeekerBoy();
 
         public InsertingSeeker(IBL bl_)
         {
@@ -33,6 +34,11 @@ namespace MatchMaking_Project
             DadOrigin_ComboBox.SelectedIndex = 0;
             MomOrigin_ComboBox.ItemsSource = Enum.GetValues(typeof(Origin));
             MomOrigin_ComboBox.SelectedIndex = 0;
+            Torah_Study_Status_listbox.ItemsSource = Enum.GetValues(typeof(Torah_Study_Status));
+            Torah_Study_Status_listbox.SelectedIndex = 0; 
+            Torah_Study_Status_listbox.ItemsSource = Enum.GetValues(typeof(Girl_Working_status));
+            Torah_Study_Status_listbox.SelectedIndex = 0;
+            
         }
 
         private void PictureUploadButton_Click(object sender, RoutedEventArgs e)
@@ -41,8 +47,12 @@ namespace MatchMaking_Project
             if (openFileDialog.ShowDialog() == true)
             {
                 Uri fileUri = new Uri(openFileDialog.FileName);
-                SeekerImage.Source = new BitmapImage(fileUri);
+                //SeekerImage.Source = new BitmapImage(fileUri);
             }
         }
+        //הכנסת אינם לתוך ערל יהיה באופן הבא:
+        //שם הקומבובוקס נקודה סלקטד אייטם 
+       // SeekerBoy.Y=(Gender) ComboBoxName.SelectedItem;
+
     }
 }

@@ -23,7 +23,7 @@ namespace MatchMaking_Project
     {
         IBL bl = BLFactory.GetBL();
 
-        User myUser = new User();
+        User myUser = new User();//יוזר ריק
 
         public NewUser(IBL bl_)
         {
@@ -35,7 +35,7 @@ namespace MatchMaking_Project
         {
             if ((tbNewUser.Text != null) && (tbEmail.Text != null) && (pbPass.Password == pbPassNewUser.Password))
             {
-                myUser.UserName = tbNewUser.Text;
+                myUser.UserName = tbNewUser.Text;//ערך הטקטס של טיביוזר נכנס לתוך היוזרניימ
                 myUser.Email = tbEmail.Text;
                 myUser.Password = pbPass.Password;
                 try

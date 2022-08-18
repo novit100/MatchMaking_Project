@@ -7,13 +7,52 @@
         mc:Ignorable="d"
         Title="Add new seeker" Height="450" Width="550"
         FlowDirection="RightToLeft">
-    <Window.Resources>
-        <BooleanToVisibilityConverter x:Key="b2v" />
-    </Window.Resources>
     <Window.Background>
         <SolidColorBrush Color="AliceBlue"></SolidColorBrush>
     </Window.Background>
+    <Window.Resources>
+        <Style x:Key="commonStyle"
+           TargetType="Control">
+            <Setter Property="FontStyle" Value="Normal"/>
+            <Setter Property="FontFamily" Value="Tahoma"/>
+            <Setter Property="Foreground" Value="Navy"/>
+        </Style>
 
+
+        <Style TargetType="ComboBox" BasedOn="{StaticResource commonStyle}">
+            <Setter Property="VerticalAlignment" Value="Center">
+            </Setter>
+            <Setter Property="FontWeight" Value="Light">
+            </Setter>
+            <Setter Property="HorizontalAlignment" Value="Stretch"/>
+        </Style>
+
+        <Style TargetType="TextBox" >
+            <Setter Property="VerticalAlignment" Value="Center">
+            </Setter>
+            <Setter Property="FontWeight" Value="Light">
+            </Setter>
+            <Setter Property="Margin" Value="3,5"/>
+            <Setter Property="MinWidth" Value="70"/>
+        </Style>
+
+        <Style TargetType="TextBlock" >
+            <Setter Property="VerticalAlignment" Value="Center">
+            </Setter>
+            <Setter Property="FontWeight" Value="DemiBold">
+            </Setter>
+            <Setter Property="Margin" Value="5,5"/>
+        </Style>
+        <Style TargetType="StackPanel">
+            <Setter Property="VerticalAlignment" Value="Center"></Setter>
+            <Setter Property="Orientation" Value="Horizontal"/>
+        </Style>
+
+        <Style TargetType="CheckBox" >
+            <Setter Property="Margin" Value="2,5"/>
+        </Style>
+
+    </Window.Resources>
     <ScrollViewer Name="scroll" >
         <Grid Height="1468">
             <Grid.RowDefinitions>
@@ -25,6 +64,9 @@
                 <RowDefinition Height="auto" />
                 <RowDefinition Height="auto" />
                 <RowDefinition Height="15*" />
+                <RowDefinition Height="auto" />
+                <RowDefinition Height="auto" />
+                <RowDefinition Height="auto" />
                 <RowDefinition Height="auto" />
                 <RowDefinition Height="auto" />
                 <RowDefinition Height="auto" />
@@ -63,9 +105,20 @@
             </StackPanel>
 
 
-            <!-- בינתים עברה לשורה ראשונה השורה הראשונה-->
+
+            <!--- ~~~~~~~~~~~~~~~~~~~~~~   שורה שניה    ~~~~~~~~~~~~~~~~~~~~~~~~ -->
+            <!--Girl or Boy  -->
+            <StackPanel Grid.Row="1" Grid.Column="0" Orientation="Vertical">
+                <RadioButton x:Name="IsBoyCheckBox" Content="בחור" Margin="5,5" />
+                <RadioButton x:Name="IsGirlCheckBox" Content="בחורה"  Margin="5,5"/>
+            </StackPanel>
+
+
+
+            <!--- ~~~~~~~~~~~~~~~~~~~~~~   שורה שלישית    ~~~~~~~~~~~~~~~~~~~~~~~~ -->
+
             <!-- DOB  -->
-            <StackPanel Grid.Row="0" Grid.Column="2" Margin="137.4,3,0.4,0" Grid.ColumnSpan="2" Height="29">
+            <StackPanel Grid.Row="2" Grid.Column="0" Height="29" HorizontalAlignment="Left" Grid.ColumnSpan="2">
                 <TextBlock Text="תאריך לידה:"   />
                 <Calendar DisplayMode="Month" Margin="0,0,0.4,0" Visibility="Collapsed" />
                 <Calendar DisplayMode="Year" Visibility="Collapsed"/>
@@ -82,79 +135,120 @@
             </StackPanel>
             <!-- Age -->
 
-            <!--- ~~~~~~~~~~~~~~~~~~~~~~   שורה שניה    ~~~~~~~~~~~~~~~~~~~~~~~~ -->
-            <StackPanel Grid.Row="1" Grid.Column="0" Orientation="Horizontal">
-                <RadioButton x:Name="IsBoyCheckBox" Content="בחור" IsChecked="True"  />
-                <RadioButton x:Name="IsGirlCheckBox" Content="בחורה"/>
-            </StackPanel>
-            <!--- ~~~~~~~~~~~~~~~~~~~~~~   שורה שלישית    ~~~~~~~~~~~~~~~~~~~~~~~~ -->
+
+            <!--- ~~~~~~~~~~~~~~~~~~~~~~   שורה רביעית    ~~~~~~~~~~~~~~~~~~~~~~~~ -->
+
             <!-- Dad's Origin -->
-            <StackPanel Grid.Row="2" Grid.Column="0">
+            <StackPanel Grid.Row="3" Grid.Column="0">
                 <TextBlock Text="עדה של אבא:"/>
                 <ComboBox x:Name="DadOrigin_ComboBox" DataContext="{Binding Path=Origin}"/>
             </StackPanel>
 
             <!-- Mom's Origin -->
-            <StackPanel Grid.Row="2" Grid.Column="1">
+            <StackPanel Grid.Row="3" Grid.Column="1">
                 <TextBlock Text="עדה של אמא:"/>
                 <ComboBox x:Name="MomOrigin_ComboBox" DataContext="{Binding Path=Origin}" HorizontalAlignment="Stretch"/>
             </StackPanel>
-            <!--- ~~~~~~~~~~~~~~~~~~~~~~   שורה שלישית    ~~~~~~~~~~~~~~~~~~~~~~~~ -->
+
+            <!--- ~~~~~~~~~~~~~~~~~~~~~~   שורה חמישית    ~~~~~~~~~~~~~~~~~~~~~~~~ -->
+
             <!-- ElementrySchool -->
             <StackPanel Grid.Row="4">
                 <TextBlock Text="בית ספר ייסודי" Grid.Row="5" Grid.Column="3" />
                 <TextBox x:Name="ElementrySchoo_TextBox" Text="בית ספר ייסודי" Foreground="DimGray" />
             </StackPanel>
 
+            <!--- ~~~~~~~~~~~~~~~~~~~~~~   שורה שישית    ~~~~~~~~~~~~~~~~~~~~~~~~ -->
+
             <!-- YeshivaKetana/high school -->
-            <StackPanel Grid.Row="4" Grid.Column="1">
+            <StackPanel Grid.Row="5" Grid.Column="0">
                 <TextBlock Text="ישיבה קטנה\תיכון" Grid.Row="5" Grid.Column="3" />
                 <TextBox x:Name="HighSchoo_TextBox" Text="ישיבה קטנה/תיכון" Foreground="DimGray" FontWeight="ExtraLight" />
             </StackPanel>
+
+            <!--- ~~~~~~~~~~~~~~~~~~~~~~   שורה שביעית    ~~~~~~~~~~~~~~~~~~~~~~~~ -->
+
             <!--YeshivaGedola/seminary  -->
-            <StackPanel Grid.Row="4" Grid.Column="2">
+            <StackPanel Grid.Row="6" Grid.Column="0">
                 <TextBlock Text="ישיבה גדולה\סמינר" Grid.Row="5" Grid.Column="4" />
                 <ComboBox x:Name="YeshivaG_Seminary_Combobox"/>
             </StackPanel>
-            <!--- ~~~~~~~~~~~~~~~~~~~~~~   שורה חמישית    ~~~~~~~~~~~~~~~~~~~~~~~~ -->
-            <!--- ~~~~~~~~~~~~~~~~~~~~~~   שורה שישית    ~~~~~~~~~~~~~~~~~~~~~~~~ -->
-            <!--- ~~~~~~~~~~~~~~~~~~~~~~   שורה שביעית    ~~~~~~~~~~~~~~~~~~~~~~~~ -->
+            
+            <!-- GradeInStudies -->
+            <StackPanel Grid.Row="6" Grid.Column="1">
+                <TextBlock Text="שנה בלימודים/וועד:"  />
+                <TextBox x:Name="GradeInStudies_TextBox" Text="הכנס  מספר" Foreground="DimGray" />
+            </StackPanel>
+
             <!--- ~~~~~~~~~~~~~~~~~~~~~~   שורה שמינית    ~~~~~~~~~~~~~~~~~~~~~~~~ -->
+            <!--Height  -->
+            <StackPanel Grid.Row="7" Grid.Column="0">
+                <TextBlock Text="גובה" Grid.Row="5" Grid.Column="3" />
+                <TextBox x:Name="Hight_TextBox" Foreground="DimGray" FontWeight="ExtraLight" />
+            </StackPanel>
+
             <!--- ~~~~~~~~~~~~~~~~~~~~~~   שורה תשיעית    ~~~~~~~~~~~~~~~~~~~~~~~~ -->
+            <!-- BodyStructure  -->
+            <StackPanel Grid.Row="8" Grid.Column="0" Orientation="Vertical" Grid.ColumnSpan="2">
+                <TextBlock Text="מבנה גוף:"/>
+                <RadioButton x:Name="IsThinCheckBox" Content="רזה" Margin="5,5" />
+                <RadioButton x:Name="IsAverageCheckBox" Content="ממוצע"  Margin="5,5"/>
+                <RadioButton x:Name="IsThickCheckBox" Content="מלא"  Margin="5,5"/>
+            </StackPanel>
+
             <!--- ~~~~~~~~~~~~~~~~~~~~~~   שורה עשירית    ~~~~~~~~~~~~~~~~~~~~~~~~ -->
+            <!-- Residency -->
+            <StackPanel x:Name="Residency_StackPanel" Grid.Row="9" Grid.Column="0">
+                <TextBlock Text="מקום מגורים" Grid.Row="5" Grid.Column="3" />
+                <TextBox x:Name="Residency_TextBox" Foreground="DimGray" FontWeight="ExtraLight" />
+            </StackPanel>
+            
+            
+            
+            
             <!--- ~~~~~~~~~~~~~~~~~~~~~~   שורה אחד-עשרה    ~~~~~~~~~~~~~~~~~~~~~~~~ -->
+             <!--FOR BOYS:::: Torah_Study_Status  -->
+            <StackPanel Grid.Row="10" Grid.Column="0" Orientation="Horizontal">
+                <TextBlock Text="עיסוק כיום:"/>
+                <ComboBox x:Name="Torah_Study_Status_listbox" DataContext="{Binding Path=Torah_Study_Status}"/> 
+            </StackPanel>
+
+            <!--FOR GIRLS Girl_Working_status -->
+            <StackPanel Grid.Row="10" Grid.Column="1" Orientation="Horizontal">
+                <TextBlock Text="עיסוק כיום:"/>
+                <ComboBox x:Name="Girl_Working_status_listbox" DataContext="{Binding Path=Girl_Working_status}"/>
+            </StackPanel>
+
             <!--- ~~~~~~~~~~~~~~~~~~~~~~   שורה שתים-עשרה    ~~~~~~~~~~~~~~~~~~~~~~~~ -->
             <!--- ~~~~~~~~~~~~~~~~~~~~~~   שורה שלוש-עשרה    ~~~~~~~~~~~~~~~~~~~~~~~~ -->
             <!--- ~~~~~~~~~~~~~~~~~~~~~~   שורה ארבע-עשרה    ~~~~~~~~~~~~~~~~~~~~~~~~ -->
             <!--- ~~~~~~~~~~~~~~~~~~~~~~   שורה חמש-עשרה    ~~~~~~~~~~~~~~~~~~~~~~~~ -->
-            <!--FOR BOYS:::: Torah_Study_Status  -->
 
-            <!--FOR GIRLS Girl_Working_status -->
+            <!-- IQ -->
+            <!-- intellect -->
 
-            <!--Height  -->
             <!--Number For Offers-->
-            <!--Girl or Boy  -->
-            <!-- GradeInStudies -->
-            <!-- Residency -->
+            
+           
+            
             <!-- PersonalStatus  -->
             <!-- BodyStructure  -->
             <!-- Does Smoke -->
 
-            <!-- Picture -->
-            <StackPanel Grid.Row="7" Grid.Column="3">
+            <!-- Picture 
+            <StackPanel Grid.Row="10" Grid.Column="0">
                 <TextBlock Text="העלאת תמונה" Grid.Row="5" Grid.Column="4" />
                 <Button x:Name="PictureUploadButton" Content="צירוף קובץ" Foreground="DimGray" Click="PictureUploadButton_Click" />
                 <Image x:Name="SeekerImage" Width="30" Height="30"/>
             </StackPanel>
-
+-->
 
             <!-- transferPhoto? -->
-
+            <!--Email-->
 
             <!--HealthCondition -->
             <!--Interests  -->
-            <!-- IQ -->
-            <!-- intellect -->
+           
             <!-- Torah_Study_InFuture -->
             <!--Remarks  -->
             <!--  -->
