@@ -4,14 +4,113 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:MatchMaking_Project"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
         mc:Ignorable="d"
-          Title="MainWindow" Height="507" Width="800"  WindowStartupLocation="CenterScreen" Icon= "Ring.png">
+          Title="MainWindow" Height="507" Width="800"  WindowStartupLocation="CenterScreen" Icon= "Ring.png"
+        FlowDirection="RightToLeft">
 
-    <Window.Background>
-        <ImageBrush ImageSource="Ring.png"/>
-    </Window.Background>
     <Grid>
-        <Button x:Name="AddNewButton" Content="Add New Seeker" HorizontalAlignment="Center"  VerticalAlignment="Center"  Height="38" Grid.ColumnSpan="5" FontSize="15"  Click="AddNewButton_Click" Background="#FFFBF8F8" />
+        <Grid.RowDefinitions>
+            <RowDefinition Height="60"/>
+            <RowDefinition />
+        </Grid.RowDefinitions>
+        <Grid Grid.Row="0" Height="60" VerticalAlignment="Top" Background="#FF5C99D6">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="5*"/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="70"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+
+            </Grid.ColumnDefinitions>
+            <Grid.Effect>
+                <DropShadowEffect BlurRadius="1" ShadowDepth="1" Color="#FFACACAC"/>
+            </Grid.Effect>
+            <!--כפתור בית-->
+            <Button x:Name="HomeButton" Grid.Column="1"  Grid.RowSpan="2" VerticalAlignment="Stretch" Height="60" Background="Transparent">
+                <StackPanel HorizontalAlignment="Stretch">
+                    <materialDesign:PackIcon Kind="Home" Height="25" Width="60" MouseDoubleClick="PackIcon_MouseDoubleClick" HorizontalAlignment="Center" />
+                    <TextBlock VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="13" Text="בית" FontWeight="Light" Width="40" TextAlignment="Center"/>
+                </StackPanel>
+            </Button>
+
+            <!--כפתור בחורים-->
+            <Button x:Name="BoysButton" Grid.Column="2"  Grid.RowSpan="2" VerticalAlignment="Stretch" Height="60" Background="Transparent">
+                <StackPanel HorizontalAlignment="Stretch">
+                    <materialDesign:PackIcon Kind="FaceMan" Height="25" Width="60" MouseDoubleClick="PackIcon_MouseDoubleClick" HorizontalAlignment="Center" />
+                    <TextBlock VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="13" Text="בחורים" FontWeight="Light" Width="40"  TextAlignment="Center"/>
+                </StackPanel>
+            </Button>
+
+            <!--כפתור בחורות-->
+            <Button x:Name="GirlsButton" Grid.Column="3"  Grid.RowSpan="2" VerticalAlignment="Stretch" Height="60" Background="Transparent">
+                <StackPanel HorizontalAlignment="Stretch">
+                    <materialDesign:PackIcon Kind="FaceFemale" Height="25" Width="60" MouseDoubleClick="PackIcon_MouseDoubleClick" HorizontalAlignment="Center" />
+                    <TextBlock VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="13" Text="בחורות" FontWeight="Light" Width="40"  TextAlignment="Center"/>
+                </StackPanel>
+            </Button>
+            <!--כפתור הוספה-->
+            <Button x:Name="AddSeeker" Grid.Column="4" Click="AddSeeker_Click"  Grid.RowSpan="2" VerticalAlignment="Stretch" Height="60" Background="Transparent">
+                <StackPanel HorizontalAlignment="Stretch" Margin="0,0,0,0">
+                    <materialDesign:PackIcon Kind="PersonAdd" Height="25" Width="60" MouseDoubleClick="PackIcon_MouseDoubleClick" HorizontalAlignment="Center" />
+                    <TextBlock VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="13" Text="הוספה" FontWeight="Light" Width="65"  TextAlignment="Center"/>
+                </StackPanel>
+            </Button>
+            <!--כפתור אוטומציה-->
+            <Button x:Name="AutomationButton" Grid.Column="5"  Grid.RowSpan="2" VerticalAlignment="Stretch" Height="60" Background="Transparent">
+                <StackPanel HorizontalAlignment="Stretch" Margin="0,0,0,0">
+                    <materialDesign:PackIcon Kind="Atom" Height="25" Width="60" MouseDoubleClick="PackIcon_MouseDoubleClick" HorizontalAlignment="Center" />
+                    <TextBlock VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="13" Text="אוטומציה" FontWeight="Light" Width="65"  TextAlignment="Center"/>
+                </StackPanel>
+            </Button>
+            <!--כפתור הצעות באוויר-->
+            <Button x:Name="OffersInProgressButton" Grid.Column="6"  Grid.RowSpan="2" VerticalAlignment="Stretch" Height="60" Background="Transparent">
+                <StackPanel HorizontalAlignment="Stretch" Margin="0,0,0,0">
+                    <materialDesign:PackIcon Kind="Calendar" Height="25" Width="60" MouseDoubleClick="PackIcon_MouseDoubleClick" HorizontalAlignment="Center" />
+                    <TextBlock VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="13" Text="הצעות" FontWeight="Light" Width="65"  TextAlignment="Center"/>
+                </StackPanel>
+            </Button>
+            <!--כפתור מקומות לפגישה-->
+            <Button x:Name="DatingPlacesButton" Grid.Column="7"  Grid.RowSpan="2" VerticalAlignment="Stretch" Height="60" Background="Transparent">
+                <StackPanel HorizontalAlignment="Stretch" Margin="0,0,0,0">
+                    <materialDesign:PackIcon Kind="Place" Height="25" Width="60" MouseDoubleClick="PackIcon_MouseDoubleClick" HorizontalAlignment="Center" />
+                    <TextBlock VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="13" Text="מקומות" FontWeight="Light" Width="65"  TextAlignment="Center"/>
+                </StackPanel>
+            </Button>
+            <!--כפתור אודות-->
+            <Button x:Name="AboutButton" Grid.Column="8"  Grid.RowSpan="2" VerticalAlignment="Stretch" Height="60" Background="Transparent">
+                <StackPanel HorizontalAlignment="Stretch" Margin="0,0,0,0">
+                    <materialDesign:PackIcon Kind="About" Height="25" Width="60" MouseDoubleClick="PackIcon_MouseDoubleClick" HorizontalAlignment="Center" />
+                    <TextBlock VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="13" Text="אודות" FontWeight="Light" Width="65"  TextAlignment="Center"/>
+                </StackPanel>
+            </Button>
+
+
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" Grid.RowSpan="2" >
+                <TextBlock Text="" VerticalAlignment="Center" FontSize="16"/>
+                <materialDesign:PopupBox PlacementMode="BottomAndAlignRightEdges" StaysOpen="False" Margin="10">
+                    <StackPanel Width="150">
+                        <Button Content="Settings"/>
+                        <Button Content="Account"/>
+                        <Button Content="Help"/>
+                        <Separator/>
+                        <Button Content="Logout"/>
+                    </StackPanel>
+                </materialDesign:PopupBox>
+
+            </StackPanel>
+            <!--
+            <TextBlock HorizontalAlignment="Center" VerticalAlignment="Bottom" FontSize="22" Margin="459,0,459,5.6">אפליקצית השדכן</TextBlock>-->
+        </Grid>
+        <Grid x:Name="UserControllersGrid" Grid.Row="1" />
 
     </Grid>
    

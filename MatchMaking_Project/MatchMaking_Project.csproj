@@ -75,6 +75,9 @@
       <DependentUpon>AddParent.xaml</DependentUpon>
     </Compile>
     <Compile Include="EnumConverter.cs" />
+    <Compile Include="InsertingSeekerUserControl.xaml.cs">
+      <DependentUpon>InsertingSeekerUserControl.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\EnumBooleanConverter.cs" />
     <Compile Include="InsertingSeeker.xaml.cs">
       <DependentUpon>InsertingSeeker.xaml</DependentUpon>
@@ -84,6 +87,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="InsertingSeeker.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="InsertingSeekerUserControl.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

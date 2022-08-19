@@ -25,18 +25,64 @@ namespace MatchMaking_Project
     {
         IBL bl;
 
+        InsertingSeekerUserControl InsertingSeekerUC;
+
+
         public MainWindow(IBL bl_)
         {
             InitializeComponent();
             bl = bl_;
+
+            InsertingSeekerUC = new InsertingSeekerUserControl(bl);
         }
 
+        private void AddSeeker_Click(object sender, RoutedEventArgs e)
+        {
+            UserControllersGrid.Children.Clear();
+            UserControllersGrid.Children.Add(InsertingSeekerUC);
+        }
+
+
+        private void PackIcon_MouseDoubleClick(object sender, MouseButtonEventArgs e)
+        {
+            MessageBox.Show("Unable to save file, try again.");
+        }
+
+
+
+
+        /*
+        private void ListViewMenu_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            UserControl usc = null;
+            UserControllersGrid.Children.Clear();
+
+            switch (((ListViewItem)((ListView)sender).SelectedItem).Name)
+            {
+                case "ItemHome":
+                    usc = new UserControlHome();
+                    UserControllersGrid.Children.Add(usc);
+                    break;
+                case "ItemCreate":
+                    usc = new UserControlCreate();
+                    UserControllersGrid.Children.Add(usc);
+                    break;
+                default:
+                    break;
+            }
+        }
+        */
+
+
+
+        /*
         private void AddNewButton_Click(object sender, RoutedEventArgs e)
         {
             InsertingSeeker myInsertingSeekerWindow = new InsertingSeeker(bl);
             myInsertingSeekerWindow.Show();
             this.Close();
         }
+        */
     }
 }
 
