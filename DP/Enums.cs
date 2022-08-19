@@ -11,8 +11,8 @@ namespace DP
     public enum Occupation { Works, Studies, WorksAndStudies, Other }
     public enum Interest
     {
-        Reading, Writing, Music, Cooking_Baking, Sport, Drawing, AcademicReading, ExtremeActivity, Trips, Nature, Language_studing
-                       , Crosswords_Sudoku_Riddles, BoardGames, Volunteering_Charity_Activity
+       קריאה, כתיבה, מוזיקה, בישול_אפייה, ספורט, ציור, קריאה_אקדמית, פעילויות_אקסטרים, טיולים, טבע, לימוד_שפה
+                        , חידות_סודוקו, משחקי_לוח, פעילות_צדקה_התנדבות
     };
     public enum Origin
     {
@@ -34,7 +34,7 @@ namespace DP
                             בנות_שרה, דעת, דרכי_שרה, הגר, החדש, הילדסיימר, וולף, וינגייט, ישן, ישן_קרית_ספר,
                              כהנא, לדעת_חכמה, לוסטיג, מאיר, מבחר, מעלות, נתיב_החינוך, סניף, פוירשטיין, צוקר,
                              צימרמן, קוק, שבילים, שושנים, שטראוס, שלהבת, שרנסקי, תבונה, אחר };
-    public enum Standard_Of_Living_Today { גבוה_מאוד,גבוה,סטנדרט,מתחת_לסטנדרט }
+    public enum Standard_Of_Living_Today { Under_the_standart,Standart,High,Very_high }
     public enum PersonalStatus { רווק, אלמן, גרוש, מאורס, נשוי }//I WANT TO CHANGE TO ENGLISH AND ADD A GET_STRING FUNCTION
     public enum CoupleStatus { הצעתי, פגישה1, פגישה2, פגישה3, פגישה4, אחרי_פגישה_4, וורט, אירוסין, חתונה }//I WANT TO CHANGE TO ENGLISH AND ADD A GET_STRING FUNCTION
     public enum IQ { סטנדרט, חכמ_ה, מאוד_חכמ_ה, גאון }//I WANT TO CHANGE TO ENGLISH AND ADD A GET_STRING FUNCTION
@@ -43,6 +43,6 @@ namespace DP
     public enum Torah_Study_Status { עובד, לומד, חצי_יום, אחר }//I WANT TO CHANGE TO ENGLISH AND ADD A GET_STRING FUNCTION
     public enum Torah_Study_InFuture { לתמיד,לתמיד_או_תפקיד_תורני,לתקופה_מסויימת,לקבוע_עיתים }//I WANT TO CHANGE TO ENGLISH AND ADD A GET_STRING FUNCTION
     public enum Girl_Working_status { עובדת, לומדת, עובדת_ולומדת }//I WANT TO CHANGE TO ENGLISH AND ADD A GET_STRING FUNCTION
-    public enum DoesSmoke { כן,לפעמים,בכלל_לא }
+    public enum DoesSmoke { NotAtAll,SomeTimes,Yes }
     public enum HealthCondition { תקין,צריך_לבדוק,לא_ידוע,דבר_ידוע,אחר }
 }
