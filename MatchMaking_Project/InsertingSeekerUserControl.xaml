@@ -12,6 +12,8 @@
     </UserControl.Background>
     
     <UserControl.Resources>
+        <local:EnumConverter x:Key="EnumConverter"/>
+        <local:BoolInverterConverter x:Key="BoolInverterConverter"/>
     </UserControl.Resources>
     
     <ScrollViewer Name="scroll" >
@@ -50,9 +52,6 @@
                 <ColumnDefinition Width="auto"/>
                 <ColumnDefinition Width="auto"/>
             </Grid.ColumnDefinitions>
-            <Grid.Resources>
-                <local:EnumConverter x:Key="EnumConverter"/>
-            </Grid.Resources>
             <!--- ~~~~~~~~~~~~~~~~~~~~~~   שורה ראשונה    ~~~~~~~~~~~~~~~~~~~~~~~~ -->
             <!-- First Name  -->
             <Grid Grid.Row="0" Grid.Column="0">
@@ -136,8 +135,7 @@
             <StackPanel Grid.Row="3" Grid.Column="2">
                 <TextBlock Text="האם ההורים נשואים זה לזה:"/>
                 <RadioButton GroupName="Group1"  Content="כן" IsChecked="{Binding PropertyValue}"  />
-                <RadioButton GroupName="Group1"  Content="לא" IsChecked="{Binding PropertyValue}" />
-                <!--, Converter={StaticResource BoolInverterConverter} -->
+                <RadioButton GroupName="Group1"  Content="לא" IsChecked="{Binding PropertyValue, Converter={StaticResource BoolInverterConverter}}" />
 
             </StackPanel>
 
