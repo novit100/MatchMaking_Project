@@ -43,6 +43,9 @@
                 <RowDefinition Height="auto" />
                 <RowDefinition Height="auto" />
                 <RowDefinition Height="auto" />
+                <RowDefinition Height="auto" />
+                <RowDefinition Height="auto" />
+                <RowDefinition Height="auto" />
             </Grid.RowDefinitions>
             <Grid.ColumnDefinitions >
                 <ColumnDefinition Width="auto"/>
@@ -279,6 +282,8 @@
                 <Button x:Name="PictureUploadButton" Content="צירוף קובץ" Foreground="DimGray" Click="PictureUploadButton_Click" Margin="0 7 0 7"/>
                 <Image x:Name="SeekerImage" Width="30" Height="30"/>
             </StackPanel>
+            <!-- transferPhoto? -->            <StackPanel Grid.Row="3" Grid.Column="2">                <TextBlock Text="האם ההורים נשואים זה לזה:"/>                <RadioButton GroupName="GrouptransferPhoto"  Content="כן" IsChecked="{Binding PropertyValue}"  />                <RadioButton GroupName="GrouptransferPhoto"  Content="לא" IsChecked="{Binding PropertyValue, Converter={StaticResource BoolInverterConverter}}" />            </StackPanel>
+
 
 
             <!--- ~~~~~~~~~~~~~~~~~~~~~~   שורה שמונה-עשרה    ~~~~~~~~~~~~~~~~~~~~~~~~ -->
@@ -305,7 +310,8 @@
                 </StackPanel>
             </StackPanel>
 
-            <!--- ~~~~~~~~~~~~~~~~~~~~~~   שורה עשרים    ~~~~~~~~~~~~~~~~~~~~~~~~ -->
+            <!--- ~~~~~~~~~~~~~~~~~~~~~~   שורה עשרים    ~~~~~~~~~~~~~~~~~~~~~~~~ -->            <!--Number For Offers-->            <StackPanel x:Name="NumberForOffering_SP" Grid.Row="19" Grid.Column="0"  >                <TextBlock Text="מספר טלפון להצעות" Grid.Row="19" Grid.Column="0" />                <TextBox x:Name="NumberForOffering_TextBox" />            </StackPanel>            <!--Email-->            <StackPanel x:Name="Email_SP" Grid.Row="19" Grid.Column="1"  >                <TextBlock Text="אימייל" Grid.Row="19" Grid.Column="1" />                <TextBox x:Name="Email_TextBox" />            </StackPanel>            <!--- ~~~~~~~~~~~~~~~~~~~~~~    שורה עשרים ואחת    ~~~~~~~~~~~~~~~~~~~~~~~~ -->
+
 
             <!--Number For Offers-->
 
