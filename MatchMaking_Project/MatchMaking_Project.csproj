@@ -53,6 +53,8 @@
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Data" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
     <Reference Include="System.Xml" />
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Core" />
@@ -74,6 +76,7 @@
     <Compile Include="AddParent.xaml.cs">
       <DependentUpon>AddParent.xaml</DependentUpon>
     </Compile>
+    <Compile Include="BoolInverterConverter.cs" />
     <Compile Include="EnumConverter.cs" />
     <Compile Include="InsertingSeekerUserControl.xaml.cs">
       <DependentUpon>InsertingSeekerUserControl.xaml</DependentUpon>

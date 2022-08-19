@@ -12,6 +12,7 @@ namespace DP
         public Gender Gender { get; set; }
         public Origin FathersOrigin { get; set; }
         public Origin? MotherOrigin { get; set; }
+        public string Job { get; set; }
         public override string ToString()
         {
             return string.Format($"{"Parent Id: " + Id,-30}\n{"First Name: " + FirstName,-30}\n" +

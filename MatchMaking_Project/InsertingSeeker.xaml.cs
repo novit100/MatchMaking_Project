@@ -30,6 +30,9 @@ namespace MatchMaking_Project
             InitializeComponent();
             bl = bl_;
 
+            Resources.Add("theMargin", 10);
+
+
             DadOrigin_ComboBox.ItemsSource = Enum.GetValues(typeof(Origin));
             DadOrigin_ComboBox.SelectedIndex = 0;
             MomOrigin_ComboBox.ItemsSource = Enum.GetValues(typeof(Origin));
@@ -40,7 +43,8 @@ namespace MatchMaking_Project
             Girl_Working_status_listbox.SelectedIndex = 0;
             //PersonalStatus_listbox.ItemsSource = Enum.GetValues(typeof(PersonalStatus));
             //PersonalStatus_listbox.SelectedIndex = 0;
-
+            Interests_listbox.ItemsSource = Enum.GetValues(typeof(Interest));
+            Interests_listbox.SelectedIndex = 0;
         }
 
         private void PictureUploadButton_Click(object sender, RoutedEventArgs e)
