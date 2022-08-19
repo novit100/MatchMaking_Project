@@ -68,6 +68,7 @@
     <Compile Include="AddParent.xaml.cs">
       <DependentUpon>AddParent.xaml</DependentUpon>
     </Compile>
+    <Compile Include="EnumConverter.cs" />
     <Compile Include="Views\EnumBooleanConverter.cs" />
     <Compile Include="InsertingSeeker.xaml.cs">
       <DependentUpon>InsertingSeeker.xaml</DependentUpon>

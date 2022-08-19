@@ -24,7 +24,7 @@ namespace DP
        
        
         public bool? AreParentsMarriedWithEachOther { get; set; }
-        public string HealthCondition { get; set; }
+        public HealthCondition HealthCondition { get; set; }
         public List<Interest> Interests { get; set; }
         
         public IQ IQ { get; set; }//חכמה שכלית

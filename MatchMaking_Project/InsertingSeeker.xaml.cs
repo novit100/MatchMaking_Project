@@ -35,10 +35,12 @@ namespace MatchMaking_Project
             MomOrigin_ComboBox.ItemsSource = Enum.GetValues(typeof(Origin));
             MomOrigin_ComboBox.SelectedIndex = 0;
             Torah_Study_Status_listbox.ItemsSource = Enum.GetValues(typeof(Torah_Study_Status));
-            Torah_Study_Status_listbox.SelectedIndex = 0; 
-            Torah_Study_Status_listbox.ItemsSource = Enum.GetValues(typeof(Girl_Working_status));
             Torah_Study_Status_listbox.SelectedIndex = 0;
-            
+            Girl_Working_status_listbox.ItemsSource = Enum.GetValues(typeof(Girl_Working_status));
+            Girl_Working_status_listbox.SelectedIndex = 0;
+            PersonalStatus_listbox.ItemsSource = Enum.GetValues(typeof(PersonalStatus));
+            PersonalStatus_listbox.SelectedIndex = 0;
+
         }
 
         private void PictureUploadButton_Click(object sender, RoutedEventArgs e)

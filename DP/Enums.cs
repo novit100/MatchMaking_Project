@@ -44,4 +44,5 @@ namespace DP
     public enum Torah_Study_InFuture { לתמיד,לתמיד_או_תפקיד_תורני,לתקופה_מסויימת,לקבוע_עיתים }//I WANT TO CHANGE TO ENGLISH AND ADD A GET_STRING FUNCTION
     public enum Girl_Working_status { עובדת, לומדת, עובדת_ולומדת }//I WANT TO CHANGE TO ENGLISH AND ADD A GET_STRING FUNCTION
     public enum DoesSmoke { כן,לפעמים,בכלל_לא }
+    public enum HealthCondition { תקין,צריך_לבדוק,לא_ידוע,דבר_ידוע,אחר }
 }
