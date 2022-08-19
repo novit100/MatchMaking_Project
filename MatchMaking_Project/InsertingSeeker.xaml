@@ -5,61 +5,17 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:MatchMaking_Project"
         mc:Ignorable="d"
-        Title="Add new seeker" Height="1000" Width="550"
+        Title="Add new seeker" Height="1000" Width="650"
         FlowDirection="RightToLeft">
     <Window.Background>
         <SolidColorBrush Color="AliceBlue"></SolidColorBrush>
     </Window.Background>
     <Window.Resources>
-        <Style x:Key="commonStyle"
-           TargetType="Control">
-            <Setter Property="FontStyle" Value="Normal"/>
-            <Setter Property="FontFamily" Value="Tahoma"/>
-            <Setter Property="Foreground" Value="Navy"/>
-        </Style>
 
-
-        <Style TargetType="ComboBox" BasedOn="{StaticResource commonStyle}">
-            <Setter Property="VerticalAlignment" Value="Center">
-            </Setter>
-            <Setter Property="FontWeight" Value="Light">
-            </Setter>
-            <Setter Property="HorizontalAlignment" Value="Stretch"/>
-        </Style>
-
-        <Style TargetType="TextBox" >
-            <Setter Property="VerticalAlignment" Value="Center">
-            </Setter>
-            <Setter Property="FontWeight" Value="Light">
-            </Setter>
-            <Setter Property="Margin" Value="3,5"/>
-            <Setter Property="MinWidth" Value="70"/>
-        </Style>
-
-        <Style TargetType="TextBlock" >
-            <Setter Property="VerticalAlignment" Value="Center">
-            </Setter>
-            <Setter Property="FontWeight" Value="DemiBold">
-            </Setter>
-            <Setter Property="Margin" Value="5,5"/>
-        </Style>
-        <Style TargetType="StackPanel">
-            <Setter Property="VerticalAlignment" Value="Center"></Setter>
-            <Setter Property="Orientation" Value="Horizontal"/>
-        </Style>
-
-        <Style TargetType="CheckBox" >
-            <Setter Property="Margin" Value="2,5"/>
-        </Style>
-
-        <Style TargetType="RadioButton">
-            <Setter Property="HorizontalAlignment" Value="Left"/>
-            <Setter Property="Margin" Value="5,5"/>
-        </Style>
 
     </Window.Resources>
     <ScrollViewer Name="scroll" >
-        <Grid Height="1468" Grid.IsSharedSizeScope="True">
+        <Grid Height="1468" Grid.IsSharedSizeScope="True" Margin="20">
             <Grid.RowDefinitions>
                 <RowDefinition Height="auto" />
                 <RowDefinition Height="auto" />
@@ -96,19 +52,19 @@
             <Grid Grid.Row="0" Grid.Column="0">
                 <StackPanel HorizontalAlignment="Stretch"   >
                     <TextBlock Text="שם פרטי:" ></TextBlock>
-                    <TextBox x:Name="FirstNameTextBox" HorizontalAlignment="Right"  />
+                    <TextBox x:Name="FirstNameTextBox" HorizontalAlignment="Stretch" />
                 </StackPanel >
             </Grid>
             <!-- Middle Name  -->
 
-            <StackPanel Grid.Row="0" Grid.Column="1" Orientation="Horizontal" >
+            <StackPanel Grid.Row="0" Grid.Column="1"  >
                 <TextBlock Text="שם אמצעי:"></TextBlock>
                 <TextBox x:Name="MiddleNameTextBox" />
             </StackPanel>
 
             <!-- Last Name  -->
 
-            <StackPanel Grid.Row="0" Grid.Column="2" Orientation="Horizontal">
+            <StackPanel Grid.Row="0" Grid.Column="2">
                 <TextBlock Text="שם משפחה:" Grid.Row="0" Grid.Column="4"></TextBlock>
                 <TextBox x:Name="LastNameTextBox" Grid.Row="0" Grid.Column="5"/>
             </StackPanel>
@@ -117,11 +73,11 @@
 
             <!--- ~~~~~~~~~~~~~~~~~~~~~~   שורה שניה    ~~~~~~~~~~~~~~~~~~~~~~~~ -->
             <!--Girl or Boy  -->
-            <StackPanel Grid.Row="1" Grid.Column="0" Orientation="Vertical" HorizontalAlignment="Left">
-                <RadioButton x:Name="IsBoyCheckBox" Content="בחור" Width="48"  />
-                <RadioButton x:Name="IsGirlCheckBox" Content="בחורה"  Margin="5,5" />
+            <StackPanel Grid.Row="1" Grid.Column="0" Orientation="Vertical" >
+                <RadioButton x:Name="IsBoyCheckBox" Content="בחור" />
+                <RadioButton x:Name="IsGirlCheckBox" Content="בחורה"   />
             </StackPanel>
-            <!-- PersonalStatus  --> 
+            <!-- PersonalStatus  -->
             <StackPanel Grid.Row="1" Grid.Column="1" Orientation="Horizontal" Grid.ColumnSpan="2">
                 <TextBlock Text="סטטוס:"/>
                 <RadioButton x:Name="PersonalStatus1_RadioButton" IsChecked="{Binding Path=PersonalStatus, Converter={StaticResource EnumConverter}, ConverterParameter=רווק}">רווק/ה</RadioButton>
@@ -134,15 +90,15 @@
             <!--- ~~~~~~~~~~~~~~~~~~~~~~   שורה שלישית    ~~~~~~~~~~~~~~~~~~~~~~~~ -->
 
             <!-- DOB  -->
-            <StackPanel Grid.Row="2" Grid.Column="0" Height="29" HorizontalAlignment="Left" Grid.ColumnSpan="2">
+            <StackPanel Grid.Row="2" Grid.Column="0" Height="39" HorizontalAlignment="Stretch" Margin="0,7,7,7" Grid.ColumnSpan="2" >
                 <TextBlock Text="תאריך לידה:"   />
                 <Calendar DisplayMode="Month" Margin="0,0,0.4,0" Visibility="Collapsed" />
                 <Calendar DisplayMode="Year" Visibility="Collapsed"/>
                 <Calendar DisplayMode="Decade" Visibility="Collapsed" />
 
-                <DatePicker x:Name="datePicker" Height="25" Width="115"
+                <DatePicker x:Name="datePicker" Height="25" HorizontalAlignment="Stretch"
                     IsDropDownOpen="False"
-                    HorizontalAlignment="Left"  
+                     
                     VerticalAlignment="Top"  
                     FirstDayOfWeek="Sunday"
                     IsTodayHighlighted="True" 
@@ -189,7 +145,7 @@
                 <TextBlock Text="ישיבה גדולה\סמינר" Grid.Row="5" Grid.Column="4" />
                 <ComboBox x:Name="YeshivaG_Seminary_Combobox"/>
             </StackPanel>
-            
+
             <!-- GradeInStudies -->
             <StackPanel Grid.Row="6" Grid.Column="1">
                 <TextBlock Text="שנה בלימודים/וועד:"  />
@@ -211,33 +167,35 @@
                 <RadioButton x:Name="IsAverageCheckBox" Content="ממוצע"  />
                 <RadioButton x:Name="IsThickCheckBox" Content="מלא"  />
             </StackPanel>
-           
+            <!-- Does Smoke -->
+            
+
 
 
             <!--- ~~~~~~~~~~~~~~~~~~~~~~   שורה עשירית    ~~~~~~~~~~~~~~~~~~~~~~~~ -->
             <!-- Residency -->
-            <StackPanel x:Name="Residency_StackPanel" Grid.Row="9" Grid.Column="0">
+            <StackPanel x:Name="Residency_StackPanel" Grid.Row="9" Grid.Column="0"  Margin="0,7,0,7">
                 <TextBlock Text="מקום מגורים" Grid.Row="5" Grid.Column="3" />
                 <TextBox x:Name="Residency_TextBox" Foreground="DimGray" FontWeight="ExtraLight" />
             </StackPanel>
-            
-            
-            
-            
+
+
+
+
             <!--- ~~~~~~~~~~~~~~~~~~~~~~   שורה אחד-עשרה    ~~~~~~~~~~~~~~~~~~~~~~~~ -->
-             <!--FOR BOYS:::: Torah_Study_Status  -->
-            <StackPanel Grid.Row="10" Grid.Column="0" Orientation="Horizontal">
-                <TextBlock Text="עיסוק כיום:"/>
-                <ComboBox x:Name="Torah_Study_Status_listbox" DataContext="{Binding Path=Torah_Study_Status}"/> 
+            <!--FOR BOYS:::: Torah_Study_Status  -->
+            <StackPanel Grid.Row="10" Grid.Column="0" >
+                <TextBlock Text=" לבחור-עיסוק כיום:"/>
+                <ComboBox x:Name="Torah_Study_Status_listbox" DataContext="{Binding Path=Torah_Study_Status}"/>
             </StackPanel>
 
             <!--FOR GIRLS Girl_Working_status -->
-            <StackPanel Grid.Row="10" Grid.Column="1" Orientation="Horizontal">
-                <TextBlock Text="עיסוק כיום:"/>
+            <StackPanel Grid.Row="10" Grid.Column="1">
+                <TextBlock Text=" לבחורה-עיסוק כיום:"/>
                 <ComboBox x:Name="Girl_Working_status_listbox" DataContext="{Binding Path=Girl_Working_status}"/>
             </StackPanel>
 
-            <!--- ~~~~~~~~~~~~~~~~~~~~~~   שורה שתים-עשרה    ~~~~~~~~~~~~~~~~~~~~~~~~ --> 
+            <!--- ~~~~~~~~~~~~~~~~~~~~~~   שורה שתים-עשרה    ~~~~~~~~~~~~~~~~~~~~~~~~ -->
             <!-- Torah_Study_InFuture -->
             <StackPanel Grid.Row="11" Grid.Column="0" Orientation="Vertical" HorizontalAlignment="Left">
                 <TextBlock Text="שאיפות לגביי לימוד תורה:"/>
@@ -249,10 +207,10 @@
 
             <!--- ~~~~~~~~~~~~~~~~~~~~~~   שורה שלוש-עשרה    ~~~~~~~~~~~~~~~~~~~~~~~~ -->
             <!--HealthCondition בינתים לא מכניסה למערכת-->
-           
-           
-           
-<!-- IQ -->
+
+
+
+            <!-- IQ -->
             <StackPanel Grid.Row="12" Grid.Column="0" Orientation="Vertical" HorizontalAlignment="Left">
                 <TextBlock Text="כישורים שכליים:"/>
                 <RadioButton x:Name="IQ1_RadioButton"  IsChecked="{Binding Path=IQ, Converter={StaticResource EnumConverter}, ConverterParameter=מאוד_חכמ_ה}">מאוד חכמ/ה</RadioButton>
@@ -277,7 +235,7 @@
                 <ListBox x:Name="Interests_listbox" DataContext="{Binding Path=Interests}" SelectionMode="Multiple" />
             </StackPanel>
             <!--- ~~~~~~~~~~~~~~~~~~~~~~   שורה חמש-עשרה    ~~~~~~~~~~~~~~~~~~~~~~~~ -->
-            
+
             <!--- ~~~~~~~~~~~~~~~~~~~~~~   שורה שש-עשרה    ~~~~~~~~~~~~~~~~~~~~~~~~ -->
             <!--- ~~~~~~~~~~~~~~~~~~~~~~   שורה שבע-עשרה    ~~~~~~~~~~~~~~~~~~~~~~~~ -->
             <!--- ~~~~~~~~~~~~~~~~~~~~~~   שורה שמונה-עשרה    ~~~~~~~~~~~~~~~~~~~~~~~~ -->
@@ -290,8 +248,8 @@
 
 
 
-            
-            <!-- Does Smoke -->
+
+           
 
             <!-- Picture 
             <StackPanel Grid.Row="10" Grid.Column="0">
@@ -304,10 +262,10 @@
             <!-- transferPhoto? -->
             <!--Email-->
 
-          
-            
-           
-            
+
+
+
+
             <!--Remarks  -->
             <!--  -->
             <!--AreParentsMarriedWithEachOther  -->
@@ -316,7 +274,6 @@
             <!-- Mother -->
             <!-- Sibilings -->
             <!-- Inquiries -->
-            <TextBlock Grid.Column="4" Margin="10,162.8,-55.8,-83" Grid.Row="13" Grid.ColumnSpan="2"><Run Text="העלאת תמונה"/><LineBreak/><Run Text="55"/><LineBreak/><Run/><LineBreak/><Run/><LineBreak/><Run/><LineBreak/><Run Text="55555"/><LineBreak/><Run/><LineBreak/><Run/><LineBreak/><Run/><LineBreak/><Run Text="5555"/></TextBlock>
 
         </Grid>
     </ScrollViewer>
