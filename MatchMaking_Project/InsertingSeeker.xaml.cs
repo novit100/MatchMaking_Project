@@ -38,8 +38,8 @@ namespace MatchMaking_Project
             Torah_Study_Status_listbox.SelectedIndex = 0;
             Girl_Working_status_listbox.ItemsSource = Enum.GetValues(typeof(Girl_Working_status));
             Girl_Working_status_listbox.SelectedIndex = 0;
-            PersonalStatus_listbox.ItemsSource = Enum.GetValues(typeof(PersonalStatus));
-            PersonalStatus_listbox.SelectedIndex = 0;
+            //PersonalStatus_listbox.ItemsSource = Enum.GetValues(typeof(PersonalStatus));
+            //PersonalStatus_listbox.SelectedIndex = 0;
 
         }
 

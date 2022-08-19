@@ -59,7 +59,7 @@
 
     </Window.Resources>
     <ScrollViewer Name="scroll" >
-        <Grid Height="1468">
+        <Grid Height="1468" Grid.IsSharedSizeScope="True">
             <Grid.RowDefinitions>
                 <RowDefinition Height="auto" />
                 <RowDefinition Height="auto" />
@@ -94,9 +94,9 @@
             <!--- ~~~~~~~~~~~~~~~~~~~~~~   שורה ראשונה    ~~~~~~~~~~~~~~~~~~~~~~~~ -->
             <!-- First Name  -->
             <Grid Grid.Row="0" Grid.Column="0">
-                <StackPanel   >
+                <StackPanel HorizontalAlignment="Stretch"   >
                     <TextBlock Text="שם פרטי:" ></TextBlock>
-                    <TextBox x:Name="FirstNameTextBox"  />
+                    <TextBox x:Name="FirstNameTextBox" HorizontalAlignment="Right"  />
                 </StackPanel >
             </Grid>
             <!-- Middle Name  -->
@@ -124,10 +124,10 @@
             <!-- PersonalStatus  --> 
             <StackPanel Grid.Row="1" Grid.Column="1" Orientation="Horizontal" Grid.ColumnSpan="2">
                 <TextBlock Text="סטטוס:"/>
-                <RadioButton x:Name="PersonalStatus1_RadioButton"  IsChecked="{Binding Path=PersonalStatus, Converter={StaticResource EnumConverter}, ConverterParameter=רווק}">רווק</RadioButton>
-                <RadioButton x:Name="PersonalStatus2_RadioButton" IsChecked="{Binding Path=PersonalStatus, Converter={StaticResource EnumConverter}, ConverterParameter=אלמן}">אלמן</RadioButton>
-                <RadioButton x:Name="PersonalStatus3_RadioButton" IsChecked="{Binding Path=PersonalStatus, Converter={StaticResource EnumConverter}, ConverterParameter=גרוש}">גרוש</RadioButton>
-                <RadioButton x:Name="PersonalStatus4_RadioButton" IsChecked="{Binding Path=PersonalStatus, Converter={StaticResource EnumConverter}, ConverterParameter=מאורס}">מאורס</RadioButton>
+                <RadioButton x:Name="PersonalStatus1_RadioButton" IsChecked="{Binding Path=PersonalStatus, Converter={StaticResource EnumConverter}, ConverterParameter=רווק}">רווק/ה</RadioButton>
+                <RadioButton x:Name="PersonalStatus2_RadioButton" IsChecked="{Binding Path=PersonalStatus, Converter={StaticResource EnumConverter}, ConverterParameter=אלמן}" FontSize="10" VerticalAlignment="Center">אלמנ/ה</RadioButton>
+                <RadioButton x:Name="PersonalStatus3_RadioButton" IsChecked="{Binding Path=PersonalStatus, Converter={StaticResource EnumConverter}, ConverterParameter=גרוש}" FontSize="10" VerticalAlignment="Center">גרוש/ה</RadioButton>
+                <RadioButton x:Name="PersonalStatus4_RadioButton" IsChecked="{Binding Path=PersonalStatus, Converter={StaticResource EnumConverter}, ConverterParameter=מאורס}" FontSize="10" VerticalAlignment="Center">מאורס/ת</RadioButton>
             </StackPanel>
 
 
