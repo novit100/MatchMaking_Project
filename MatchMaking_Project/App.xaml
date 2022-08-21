@@ -9,6 +9,7 @@
             <Setter Property="FontStyle" Value="Normal"/>
             <Setter Property="FontFamily" Value="Tahoma"/>
             <Setter Property="Foreground" Value="Navy"/>
+            
         </Style>
 
        
@@ -22,10 +23,7 @@
            
         </Style>
 
-
-   
-
-
+      
         <Style TargetType="TextBox" >
             <Setter Property="VerticalAlignment" Value="Center">
             </Setter>
@@ -33,6 +31,7 @@
             </Setter>
             <Setter Property="Margin" Value="5,5"/>
             <Setter Property="MinWidth" Value="70"/>
+            <Setter Property="Height" Value="25"/>
         </Style>
 
 
@@ -45,7 +44,7 @@
         </Style>
         
         <Style TargetType="StackPanel">
-            <Setter Property="VerticalAlignment" Value="Center"></Setter>
+            <Setter Property="VerticalAlignment" Value="Center"/>
             <Setter Property="Orientation" Value="Vertical"/>
             <Setter Property="Margin" Value="7,7,0,7"/>
         </Style>

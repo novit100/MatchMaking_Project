@@ -26,18 +26,24 @@ namespace MatchMaking_Project
         IBL bl;
 
         InsertingSeekerUserControl InsertingSeekerUC;
-
+        PlacesForDatesUserControl placesForDatesUC;
+        AboutUserControl aboutUserControl;
+        HomeUserControl homeUserControl;
 
         public MainWindow(IBL bl_)
         {
             InitializeComponent();
             bl = bl_;
-
+            homeUserControl = new HomeUserControl(bl);
+            UserControllersGrid.Children.Add(homeUserControl);
             InsertingSeekerUC = new InsertingSeekerUserControl(bl);
+            placesForDatesUC = new PlacesForDatesUserControl();
+            aboutUserControl = new AboutUserControl();
         }
 
         private void AddSeeker_Click(object sender, RoutedEventArgs e)
         {
+            HomeGrid.Visibility = Visibility.Collapsed;
             UserControllersGrid.Children.Clear();
             UserControllersGrid.Children.Add(InsertingSeekerUC);
         }
@@ -46,6 +52,23 @@ namespace MatchMaking_Project
         private void PackIcon_MouseDoubleClick(object sender, MouseButtonEventArgs e)
         {
             MessageBox.Show("Unable to save file, try again.");
+        }
+
+        private void DatingPlacesButton_Click(object sender, RoutedEventArgs e)
+        {
+            UserControllersGrid.Children.Clear();
+            UserControllersGrid.Children.Add(placesForDatesUC);
+        }
+
+        private void AboutButton_Click(object sender, RoutedEventArgs e)
+        {
+            UserControllersGrid.Children.Clear();
+            UserControllersGrid.Children.Add(aboutUserControl);
+        }
+
+        private void BoysButton_Click(object sender, RoutedEventArgs e)
+        {
+
         }
 
 

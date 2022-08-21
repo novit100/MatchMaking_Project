@@ -16,11 +16,11 @@ using System.Windows.Shapes;
 namespace MatchMaking_Project
 {
     /// <summary>
-    /// Interaction logic for DateLocations.xaml
+    /// Interaction logic for AboutUserControl.xaml
     /// </summary>
-    public partial class DateLocations : UserControl
+    public partial class AboutUserControl : UserControl
     {
-        public DateLocations()
+        public AboutUserControl()
         {
             InitializeComponent();
         }
