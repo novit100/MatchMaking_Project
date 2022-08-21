@@ -28,17 +28,21 @@ namespace MatchMaking_Project
         InsertingSeekerUserControl InsertingSeekerUC;
         PlacesForDatesUserControl placesForDatesUC;
         AboutUserControl aboutUserControl;
-        HomeUserControl homeUserControl;
+        BoysDisplayUserControl boysDisplayUserControl;
+        CurrentOffersUserControl currentOffersUserControl;
+        //HomeUserControl homeUserControl;
 
         public MainWindow(IBL bl_)
         {
             InitializeComponent();
             bl = bl_;
-            homeUserControl = new HomeUserControl(bl);
-            UserControllersGrid.Children.Add(homeUserControl);
+           //homeUserControl = new HomeUserControl(bl);
+           //UserControllersGrid.Children.Add(homeUserControl);
             InsertingSeekerUC = new InsertingSeekerUserControl(bl);
             placesForDatesUC = new PlacesForDatesUserControl();
             aboutUserControl = new AboutUserControl();
+            boysDisplayUserControl = new BoysDisplayUserControl(bl);
+            currentOffersUserControl = new CurrentOffersUserControl(bl);
         }
 
         private void AddSeeker_Click(object sender, RoutedEventArgs e)
@@ -56,20 +60,41 @@ namespace MatchMaking_Project
 
         private void DatingPlacesButton_Click(object sender, RoutedEventArgs e)
         {
+           HomeGrid.Visibility = Visibility.Collapsed;
             UserControllersGrid.Children.Clear();
             UserControllersGrid.Children.Add(placesForDatesUC);
         }
 
         private void AboutButton_Click(object sender, RoutedEventArgs e)
         {
+            HomeGrid.Visibility = Visibility.Collapsed;
             UserControllersGrid.Children.Clear();
             UserControllersGrid.Children.Add(aboutUserControl);
         }
 
         private void BoysButton_Click(object sender, RoutedEventArgs e)
         {
+            HomeGrid.Visibility = Visibility.Collapsed;
+            UserControllersGrid.Children.Clear();
+            UserControllersGrid.Children.Add(boysDisplayUserControl);
 
         }
+
+        private void OffersInProgressButton_Click(object sender, RoutedEventArgs e)
+        {
+            HomeGrid.Visibility = Visibility.Collapsed;
+            UserControllersGrid.Children.Clear();
+            UserControllersGrid.Children.Add(boysDisplayUserControl);
+
+        }
+
+        private void HomeButton_Click(object sender, RoutedEventArgs e)
+        {
+            UserControllersGrid.Children.Clear();
+            HomeGrid.Visibility = Visibility.Visible;
+
+        }
+
 
 
 

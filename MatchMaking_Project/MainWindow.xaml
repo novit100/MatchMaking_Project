@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:MatchMaking_Project"
         xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
         mc:Ignorable="d"
-          Height="700" Width="900"  WindowStartupLocation="CenterScreen" Icon= "Pictures\טבעת1.jpg"
+          Height="auto" Width="900"  WindowStartupLocation="CenterScreen" Icon= "Pictures\טבעת1.jpg"
         FlowDirection="RightToLeft">
 
     <Grid>
@@ -14,7 +14,7 @@
             <RowDefinition Height="100"/>
             <RowDefinition Height="60"/>
             <RowDefinition Height="*"/>
-            <RowDefinition />
+            
         </Grid.RowDefinitions>
         <Grid Grid.Row="0" Name="AppTitleGrid">
             <TextBlock x:Name="AppTitle" TextWrapping="Wrap" VerticalAlignment="Center" Height="103" HorizontalAlignment="Stretch" 
@@ -60,7 +60,7 @@
                 <DropShadowEffect BlurRadius="1" ShadowDepth="1" Color="#FFACACAC"/>
             </Grid.Effect>
             <!--כפתור בית-->
-            <Button x:Name="HomeButton" Grid.Column="1"  Grid.RowSpan="2" VerticalAlignment="Stretch" Height="60" Background="Transparent">
+            <Button x:Name="HomeButton" Grid.Column="1"  Grid.RowSpan="2" VerticalAlignment="Stretch" Height="60" Background="Transparent" Click="HomeButton_Click">
                 <StackPanel HorizontalAlignment="Stretch">
                     <materialDesign:PackIcon Kind="Home" Height="25" Width="60" MouseDoubleClick="PackIcon_MouseDoubleClick" HorizontalAlignment="Center" />
                     <TextBlock VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="13" Text="בית" FontWeight="Light" Width="40" TextAlignment="Center"/>
@@ -97,9 +97,9 @@
                 </StackPanel>
             </Button>
             <!--כפתור הצעות באוויר-->
-            <Button x:Name="OffersInProgressButton" Grid.Column="6"  Grid.RowSpan="2" VerticalAlignment="Stretch" Height="60" Background="Transparent">
+            <Button x:Name="OffersInProgressButton" Grid.Column="6"  Grid.RowSpan="2" VerticalAlignment="Stretch" Height="60" Background="Transparent" Click="OffersInProgressButton_Click">
                 <StackPanel HorizontalAlignment="Stretch" Margin="0,0,0,0">
-                    <materialDesign:PackIcon Kind="Calendar" Height="25" Width="60" MouseDoubleClick="PackIcon_MouseDoubleClick" HorizontalAlignment="Center" />
+                    <materialDesign:PackIcon Kind="Calendar" Height="25" Width="60"  HorizontalAlignment="Center" />
                     <TextBlock VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="13" Text="הצעות" FontWeight="Light" Width="65"  TextAlignment="Center"/>
                 </StackPanel>
             </Button>
@@ -135,124 +135,139 @@
             <!--
             <TextBlock HorizontalAlignment="Center" VerticalAlignment="Bottom" FontSize="22" Margin="459,0,459,5.6">אפליקצית השדכן</TextBlock>-->
         </Grid>
+        <!--<ScrollViewer Grid.Row="2" Grid.RowSpan="2">-->
+        
         <Grid x:Name="UserControllersGrid" Grid.Row="2" Margin="0,0,-0.4,0.4" Grid.RowSpan="2" />
-        <ScrollViewer Grid.Row="2" Grid.RowSpan="2">
-            <Grid x:Name="HomeGrid" Grid.Row="2" Margin="0,0,-0.4,0.4" Grid.RowSpan="2" >
+        
+        <!---->
+        <Grid x:Name="HomeGrid" Grid.Row="2" Margin="60,0,-0.4,0.4"  >
+            <ScrollViewer>
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="250"/>
+                        <ColumnDefinition Width="250"/>
 
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="250"/>
-                    <ColumnDefinition Width="177.867"/>
-                    <ColumnDefinition Width="72.533"/>
-                    <ColumnDefinition Width="250"/>
-                </Grid.ColumnDefinitions>
-                <Grid.RowDefinitions>
-                    <RowDefinition Height="50"/>
-                    <RowDefinition Height="200"/>
-                    <RowDefinition Height="200"/>
-                    <RowDefinition Height="200"/>
-                </Grid.RowDefinitions>
-
-
-
-                <Button Grid.Column="0" Grid.Row="1" Margin="30.2,20.4,30.2,19.6" RenderTransformOrigin="0.5,0.5" Click="BoysButton_Click" >
-                    <Button.RenderTransform>
-                        <TransformGroup>
-                            <ScaleTransform ScaleX="-1"/>
-                            <SkewTransform/>
-                            <RotateTransform/>
-                            <TranslateTransform/>
-                        </TransformGroup>
-                    </Button.RenderTransform>
-                    <Button.Background>
-                        <ImageBrush ImageSource="Pictures\חתן4חתוךסופי.jpg" TileMode="FlipY" Opacity="0.7"/>
-                    </Button.Background>
-
-                </Button>
-                <Label Grid.Column="0" Grid.Row="1" Content="בחורים" FontSize="27" FontWeight="SemiBold" HorizontalAlignment="Right" VerticalAlignment="Bottom"  Margin="0,0,10.4,11.6" Height="47" Width="115">
-                </Label>
-
-
-                <Grid x:Name="Girls" Grid.Column="1" Grid.Row="1" Margin="29.6,20.4,29.8,19.6" Grid.ColumnSpan="2"   >
+                        <ColumnDefinition Width="250"/>
+                    </Grid.ColumnDefinitions>
                     <Grid.RowDefinitions>
-                        <RowDefinition Height="auto"/>
-                        <RowDefinition Height="auto"/>
-                        <RowDefinition Height="auto"/>
+                        <RowDefinition Height="50"/>
+                        <RowDefinition Height="200"/>
+                        <RowDefinition Height="200"/>
+                        <RowDefinition Height="200"/>
                     </Grid.RowDefinitions>
-                    <Button></Button>
-                    <Image Source="Pictures/woman1.jpg" Opacity="0.7" />
-                    <TextBlock Height="39" Margin="0,0,-7.4,-2" VerticalAlignment="Bottom" HorizontalAlignment="Right" Text="בחורות" Width="101" FontSize="27" Grid.RowSpan="3"/>
-
-                </Grid>
-
-                <Button Grid.Column="3" Grid.Row="1" Margin="30.2,20.4,30.2,19.6" RenderTransformOrigin="0.5,0.5" Click="AddSeeker_Click" BorderThickness="2" BorderBrush="Black" >
-                    <Button.RenderTransform>
-                        <TransformGroup>
-                            <ScaleTransform ScaleX="-1"/>
-                            <SkewTransform/>
-                            <RotateTransform/>
-                            <TranslateTransform/>
-                        </TransformGroup>
-                    </Button.RenderTransform>
-                    <Button.Background>
-                        <ImageBrush ImageSource="form.jpg" TileMode="FlipY"/>
-                    </Button.Background>
-
-                </Button>
-                <Label Grid.Column="3" Grid.Row="1" Content="הוספת משודך" FontSize="27" FontWeight="SemiBold" HorizontalAlignment="Right" VerticalAlignment="Bottom"  Margin="0,0,6.8,14.6" Height="47" Width="198" RenderTransformOrigin="0.564,1.123">
-                </Label>
 
 
-                <Button Grid.Column="0" Grid.Row="2" Margin="30,20.4,30.4,19.6" RenderTransformOrigin="0.5,0.5"  >
-                    <Button.RenderTransform>
-                        <TransformGroup>
-                            <ScaleTransform ScaleX="-1"/>
-                            <SkewTransform/>
-                            <RotateTransform/>
-                            <TranslateTransform/>
-                        </TransformGroup>
-                    </Button.RenderTransform>
-                    <Button.Background>
-                        <ImageBrush ImageSource="Pictures\חתן2.jpg" TileMode="FlipY" Opacity="0.7"/>
-                    </Button.Background>
 
-                </Button>
-                <Label Grid.Column="0" Grid.Row="2" Content="אוטומציה" FontSize="25" FontWeight="SemiBold" HorizontalAlignment="Right" VerticalAlignment="Bottom"  Margin="0,0,30.4,9.6" Height="47" />
+                    <Button Grid.Column="0" Grid.Row="1" Margin="30.2,20.4,30.2,19.6" RenderTransformOrigin="0.5,0.5" Click="BoysButton_Click" BorderBrush="Transparent" >
+                        <Button.RenderTransform>
+                            <TransformGroup>
+                                <ScaleTransform ScaleX="-1"/>
+                                <SkewTransform/>
+                                <RotateTransform/>
+                                <TranslateTransform/>
+                            </TransformGroup>
+                        </Button.RenderTransform>
+                        <Button.Background>
+                            <ImageBrush ImageSource="Pictures\חתן4חתוךסופי.jpg" TileMode="FlipY" Opacity="0.7"/>
+                        </Button.Background>
+
+                    </Button>
+                    <Label Grid.Column="0" Grid.Row="1" Content="בחורים" FontSize="27" FontWeight="Light" HorizontalAlignment="Right" VerticalAlignment="Bottom"  Margin="0,0,10.4,11.6" Height="47" Width="115">
+                    </Label>
 
 
-                <Button Grid.Column="1" Grid.Row="2" Margin="29.6,20.4,29.8,19.6" RenderTransformOrigin="0.5,0.5" Grid.ColumnSpan="2"  >
-                    <Button.RenderTransform>
-                        <TransformGroup>
-                            <ScaleTransform ScaleX="-1"/>
-                            <SkewTransform/>
-                            <RotateTransform/>
-                            <TranslateTransform/>
-                        </TransformGroup>
-                    </Button.RenderTransform>
-                    <Button.Background>
-                        <ImageBrush ImageSource="Pictures\הצעות_באוויר.jpg" TileMode="FlipY" Opacity="0.7"/>
-                    </Button.Background>
 
-                </Button>
-                <Label Grid.Column="1" Grid.Row="2" Content="הצעות באוויר" FontSize="25" FontWeight="SemiBold" HorizontalAlignment="Right" VerticalAlignment="Bottom"  Margin="0,0,29.4,7.6" Height="47" Grid.ColumnSpan="2" />
 
-                <Button Grid.Column="3" Grid.Row="2" Margin="30.2,20.4,30.2,19.6" RenderTransformOrigin="0.5,0.5" Click="AddSeeker_Click" BorderThickness="2" BorderBrush="Black">
-                    <Button.RenderTransform>
-                        <TransformGroup>
-                            <ScaleTransform ScaleX="-1"/>
-                            <SkewTransform/>
-                            <RotateTransform/>
-                            <TranslateTransform/>
-                        </TransformGroup>
-                    </Button.RenderTransform>
-                    <Button.Background>
-                        <ImageBrush ImageSource="Pictures/form.jpg" TileMode="FlipY" Opacity="0.7"/>
-                    </Button.Background>
+                    <Button Grid.Column="1" Grid.Row="1" Margin="30.2,20.4,30.2,19.6" RenderTransformOrigin="0.5,0.5" Click="BoysButton_Click" BorderBrush="Transparent" >
+                        <Button.RenderTransform>
+                            <TransformGroup>
+                                <ScaleTransform ScaleX="-1"/>
+                                <SkewTransform/>
+                                <RotateTransform/>
+                                <TranslateTransform/>
+                            </TransformGroup>
+                        </Button.RenderTransform>
+                        <Button.Background>
+                            <ImageBrush ImageSource="Pictures\woman1.jpg" TileMode="FlipY" Opacity="0.7"/>
+                        </Button.Background>
 
-                </Button>
-                <Label Grid.Column="3" Grid.Row="2" Content="מקומות לפגישה" FontSize="27" FontWeight="SemiBold" HorizontalAlignment="Right" VerticalAlignment="Bottom"  Margin="0,0,27.8,13.6" Height="47" Width="198" RenderTransformOrigin="0.564,1.123"/>
+                    </Button>
+                    <Label Grid.Column="1" Grid.Row="1" Content="בחורות" FontSize="27" FontWeight="Light" HorizontalAlignment="Right" VerticalAlignment="Bottom"  Margin="0,0,10.4,11.6" Height="47" Width="115">
+                    </Label>
 
-            </Grid>
-        </ScrollViewer>
+                    <Button Grid.Column="3" Grid.Row="1" Margin="30.2,20.4,30.2,19.6" RenderTransformOrigin="0.5,0.5" Click="AddSeeker_Click"  BorderBrush="Transparent" >
+                        <Button.RenderTransform>
+                            <TransformGroup>
+                                <ScaleTransform ScaleX="-1"/>
+                                <SkewTransform/>
+                                <RotateTransform/>
+                                <TranslateTransform/>
+                            </TransformGroup>
+                        </Button.RenderTransform>
+                        <Button.Background>
+                            <ImageBrush ImageSource="form.jpg" TileMode="FlipY"/>
+                        </Button.Background>
+
+                    </Button>
+                    <Label Grid.Column="3" Grid.Row="1" Content="הוספת משודך" FontSize="27" FontWeight="Light" HorizontalAlignment="Right" VerticalAlignment="Bottom"  Margin="0,0,6.8,14.6" Height="47" Width="198" RenderTransformOrigin="0.564,1.123">
+                    </Label>
+
+
+                    <Button Grid.Column="0" Grid.Row="2" Margin="30,20.4,30.4,19.6" RenderTransformOrigin="0.5,0.5" BorderBrush="Transparent" >
+                        <Button.RenderTransform>
+                            <TransformGroup>
+                                <ScaleTransform ScaleX="-1"/>
+                                <SkewTransform/>
+                                <RotateTransform/>
+                                <TranslateTransform/>
+                            </TransformGroup>
+                        </Button.RenderTransform>
+                        <Button.Background>
+                            <ImageBrush ImageSource="Pictures\אוטומציה2.jpg" TileMode="FlipY" Opacity="0.7"/>
+                        </Button.Background>
+
+                    </Button>
+                    <Label Grid.Column="0" Grid.Row="2" Content="אוטומציה" FontSize="25" FontWeight="Light" HorizontalAlignment="Right" VerticalAlignment="Bottom"  Margin="0,0,30.4,9.6" Height="47" />
+
+
+                    <Button Grid.Column="1" Grid.Row="2" Margin="29.6,20.4,29.8,19.6" RenderTransformOrigin="0.5,0.5"  BorderBrush="Transparent"  >
+                        <Button.RenderTransform>
+                            <TransformGroup>
+                                <ScaleTransform ScaleX="-1"/>
+                                <SkewTransform/>
+                                <RotateTransform/>
+                                <TranslateTransform/>
+                            </TransformGroup>
+                        </Button.RenderTransform>
+                        <Button.Background>
+                            <ImageBrush ImageSource="Pictures\הצעות_באוויר.jpg" TileMode="FlipY" Opacity="0.7"/>
+                        </Button.Background>
+
+                    </Button>
+                    <Label Grid.Column="1" Grid.Row="2" Content="הצעות באוויר" FontSize="25" FontWeight="Light" HorizontalAlignment="Right" VerticalAlignment="Bottom"  Margin="0,0,29.4,7.6" Height="47"  />
+
+                    <Button Grid.Column="3" Grid.Row="2" Margin="30.2,20.4,30.2,19.6" RenderTransformOrigin="0.5,0.5" Click="AddSeeker_Click" BorderBrush="Transparent">
+                        <Button.RenderTransform>
+                            <TransformGroup>
+                                <ScaleTransform ScaleX="-1"/>
+                                <SkewTransform/>
+                                <RotateTransform/>
+                                <TranslateTransform/>
+                            </TransformGroup>
+                        </Button.RenderTransform>
+                        <Button.Background>
+                            <ImageBrush ImageSource="Pictures/באולינג1.jpg" TileMode="FlipY" Opacity="0.7"/>
+                        </Button.Background>
+
+                    </Button>
+                    <Label Grid.Column="3" Grid.Row="2" Content="מקומות לפגישה" FontSize="27" FontWeight="Light" HorizontalAlignment="Right" VerticalAlignment="Bottom"  Margin="0,0,25.8,13.6" Height="47" Width="198" RenderTransformOrigin="0.564,1.123"/>
+
+
+               </Grid>
+       
+            </ScrollViewer>
+         </Grid>     
+      <!-- </ScrollViewer>--> 
     </Grid>
 
 </Window>

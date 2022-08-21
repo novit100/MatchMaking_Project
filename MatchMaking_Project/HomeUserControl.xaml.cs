@@ -21,11 +21,11 @@ namespace MatchMaking_Project
     /// </summary>
     public partial class HomeUserControl : UserControl
     {
-        BoysUserControl boysUserControl;
+       // BoysUserControl boysUserControl;
         public HomeUserControl(IBL bl)
         {
             InitializeComponent();
-            BoysUserControl boysUserControl = new BoysUserControl();
+          //  BoysUserControl boysUserControl = new BoysUserControl();
           //  UserControllersGrid.Children.Add(homeUserControl);
         }
 

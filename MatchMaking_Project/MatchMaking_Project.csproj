@@ -80,8 +80,14 @@
       <DependentUpon>AddParent.xaml</DependentUpon>
     </Compile>
     <Compile Include="BoolInverterConverter.cs" />
+    <Compile Include="BoysDisplayUserControl.xaml.cs">
+      <DependentUpon>BoysDisplayUserControl.xaml</DependentUpon>
+    </Compile>
     <Compile Include="BoysUserControl.xaml.cs">
       <DependentUpon>BoysUserControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="CurrentOffersUserControl.xaml.cs">
+      <DependentUpon>CurrentOffersUserControl.xaml</DependentUpon>
     </Compile>
     <Compile Include="HomeUserControl.xaml.cs">
       <DependentUpon>HomeUserControl.xaml</DependentUpon>
@@ -106,7 +112,15 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="BoysDisplayUserControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="BoysUserControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="CurrentOffersUserControl.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -172,6 +186,16 @@
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <None Include="packages.config" />
+    <None Include="Properties\DataSources\DP.Acquaintance.datasource" />
+    <None Include="Properties\DataSources\DP.Couple.datasource" />
+    <None Include="Properties\DataSources\DP.Parent.datasource" />
+    <None Include="Properties\DataSources\DP.Person.datasource" />
+    <None Include="Properties\DataSources\DP.Questionnaire.datasource" />
+    <None Include="Properties\DataSources\DP.SeekerBoy.datasource" />
+    <None Include="Properties\DataSources\DP.SeekerGirl.datasource" />
+    <None Include="Properties\DataSources\DP.Sibiling.datasource" />
+    <None Include="Properties\DataSources\DP.User.datasource" />
+    <None Include="Properties\DataSources\DP.UserException.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -235,6 +259,9 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Pictures\חתן4חתוךסופי.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Pictures\באולינג1.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
