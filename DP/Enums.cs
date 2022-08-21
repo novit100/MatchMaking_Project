@@ -39,10 +39,11 @@ namespace DP
     public enum CoupleStatus { הצעתי, פגישה1, פגישה2, פגישה3, פגישה4, אחרי_פגישה_4, וורט, אירוסין, חתונה }//I WANT TO CHANGE TO ENGLISH AND ADD A GET_STRING FUNCTION
     public enum IQ { סטנדרט, חכמ_ה, מאוד_חכמ_ה, גאון }//I WANT TO CHANGE TO ENGLISH AND ADD A GET_STRING FUNCTION
     public enum intellect { סטנדרט, אינטיליגנט, אינטיליגנט_מאוד }//I WANT TO CHANGE TO ENGLISH AND ADD A GET_STRING FUNCTION
-    public enum FinancialHelp {תלוי_מקרה,כמו_הצד_השני,לא_מעוניין_לציין,סכום_ספציפי }//I WANT TO CHANGE TO ENGLISH AND ADD A GET_STRING FUNCTION
+    public enum FinancialHelp { Depends_on_case, like_other_side, not_interested_in_specifying, specific_amount }
     public enum Torah_Study_Status { עובד, לומד, חצי_יום, אחר }//I WANT TO CHANGE TO ENGLISH AND ADD A GET_STRING FUNCTION
     public enum Torah_Study_InFuture { לתמיד,לתמיד_או_תפקיד_תורני,לתקופה_מסויימת,לקבוע_עיתים }//I WANT TO CHANGE TO ENGLISH AND ADD A GET_STRING FUNCTION
     public enum Girl_Working_status { עובדת, לומדת, עובדת_ולומדת }//I WANT TO CHANGE TO ENGLISH AND ADD A GET_STRING FUNCTION
     public enum DoesSmoke { NotAtAll,SomeTimes,Yes }
     public enum HealthCondition { תקין,צריך_לבדוק,לא_ידוע,דבר_ידוע,אחר }
+    public enum PlaceType { Formal,Neutral,Fun }
 }

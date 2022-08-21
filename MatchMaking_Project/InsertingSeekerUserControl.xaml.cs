@@ -3,6 +3,7 @@ using DP;
 using Microsoft.Win32;
 using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -16,6 +17,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
+
 namespace MatchMaking_Project
 {
     /// <summary>
@@ -24,11 +26,14 @@ namespace MatchMaking_Project
     public partial class InsertingSeekerUserControl : UserControl
     {
         IBL bl;
+        ObservableCollection<Sibiling> SibilingsObservableCollection;
+        ObservableCollection<Acquaintance> AcquaintancseObservableCollection;
 
         public InsertingSeekerUserControl(IBL bl_)
         {
             InitializeComponent();
             bl = bl_;
+            SibilingsObservableCollection = new ObservableCollection<Sibiling>();
 
             DadOrigin_ComboBox.ItemsSource = Enum.GetValues(typeof(Origin));
             DadOrigin_ComboBox.SelectedIndex = 0;
@@ -36,10 +41,14 @@ namespace MatchMaking_Project
             MomOrigin_ComboBox.SelectedIndex = 0;
             Torah_Study_Status_listbox.ItemsSource = Enum.GetValues(typeof(Torah_Study_Status));
             Torah_Study_Status_listbox.SelectedIndex = 0;
-            Girl_Working_status_listbox.ItemsSource = Enum.GetValues(typeof(Girl_Working_status));
+            Girl_Working_status_listbox.ItemsSource= Enum.GetValues(typeof(Girl_Working_status));
             Girl_Working_status_listbox.SelectedIndex = 0;
             //PersonalStatus_listbox.ItemsSource = Enum.GetValues(typeof(PersonalStatus));
             //PersonalStatus_listbox.SelectedIndex = 0;
+            Interests_listbox.ItemsSource = Enum.GetValues(typeof(Interest));
+            Interests_listbox.SelectedIndex = 0;
+
+            SibilingsListBox.ItemsSource = SibilingsObservableCollection;
         }
 
         private void PictureUploadButton_Click(object sender, RoutedEventArgs e)
@@ -51,6 +60,39 @@ namespace MatchMaking_Project
                 //SeekerImage.Source = new BitmapImage(fileUri);
             }
         }
+        ///Add
+     
+        private void AddSibilin_Click(object sender, RoutedEventArgs e)
+        {
+            int age = 0;
+            Int32.TryParse(SiblinAgeTextBox.Text, out age);
+
+            Sibiling sibiling = new Sibiling() { Gender = (BoyOrGirlSiblin.SelectedItem as Gender?), Age = age, FirstName = SiblinFirstNameTextBox.Text };
+            SibilingsObservableCollection.Add(sibiling);
+        }
+
+        private void AddAcquaintance_Click(object sender, RoutedEventArgs e)
+        {
+            int age = 0;
+            Int32.TryParse(SiblinAgeTextBox.Text, out age);
+
+            Acquaintance acquaintance = new Acquaintance();
+            AcquaintancseObservableCollection.Add(acquaintance);
+        }
+        //Delete
+        private void DeleteSibling_Click(object sender, RoutedEventArgs e)
+        {
+            SibilingsObservableCollection.Remove((sender as Button).DataContext as Sibiling);
+
+        }
+
+        private void DeleteAcquaintance_Click(object sender, RoutedEventArgs e)
+        {
+            AcquaintancseObservableCollection.Remove((sender as Button).DataContext as Acquaintance);
+        }
+
+      
+
         //הכנסת אינם לתוך ערל יהיה באופן הבא:
         //שם הקומבובוקס נקודה סלקטד אייטם 
         // SeekerBoy.Y=(Gender) ComboBoxName.SelectedItem;

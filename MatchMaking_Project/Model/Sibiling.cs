@@ -1,13 +1,18 @@
-﻿using System;
+﻿using DP;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace DP
+namespace MatchMaking_Project.ViewModels
 {
-    public class Sibiling : Person
+    class Sibiling
     {
+
+        public string FirstName { get; set; }
+        public string MiddleName { get; set; }
+        public string LastName { get; set; }
         public int SeekerId { get; set; }
         public Gender? Gender { get; set; }
         public int? YearOfBirth { get; set; }//needs to be current
@@ -17,6 +22,8 @@ namespace DP
         public string marriedTo { get; set; }
         public Occupation? Occupation { get; set; }
         public string InstituteOfOccupation { get; set; }
+
+
 
     }
 }

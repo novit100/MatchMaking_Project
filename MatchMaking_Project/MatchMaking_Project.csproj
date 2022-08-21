@@ -77,15 +77,23 @@
       <DependentUpon>AddParent.xaml</DependentUpon>
     </Compile>
     <Compile Include="BoolInverterConverter.cs" />
+    <Compile Include="DateLocations.xaml.cs">
+      <DependentUpon>DateLocations.xaml</DependentUpon>
+    </Compile>
     <Compile Include="EnumConverter.cs" />
     <Compile Include="InsertingSeekerUserControl.xaml.cs">
       <DependentUpon>InsertingSeekerUserControl.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Model\Sibiling.cs" />
     <Compile Include="Views\EnumBooleanConverter.cs" />
     <Compile Include="InsertingSeeker.xaml.cs">
       <DependentUpon>InsertingSeeker.xaml</DependentUpon>
     </Compile>
     <Page Include="AddParent.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="DateLocations.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

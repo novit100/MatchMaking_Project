@@ -48,6 +48,7 @@
     <Compile Include="Exceptions.cs" />
     <Compile Include="Parent.cs" />
     <Compile Include="Person.cs" />
+    <Compile Include="PlaceForDate.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Questionnaire.cs" />
     <Compile Include="SeekerBoy.cs" />

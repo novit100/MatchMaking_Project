@@ -5,19 +5,21 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:MatchMaking_Project"
              mc:Ignorable="d" 
-             d:DesignHeight="450" d:DesignWidth="800"
+             xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+             d:DesignHeight="4450" d:DesignWidth="800"
+             Height="auto"
              FlowDirection="RightToLeft">
     <UserControl.Background>
         <SolidColorBrush Color="AliceBlue"></SolidColorBrush>
     </UserControl.Background>
-    
+
     <UserControl.Resources>
         <local:EnumConverter x:Key="EnumConverter"/>
         <local:BoolInverterConverter x:Key="BoolInverterConverter"/>
     </UserControl.Resources>
-    
+
     <ScrollViewer Name="scroll" >
-        <Grid Height="1468" Grid.IsSharedSizeScope="True" Margin="20" VerticalAlignment="Top">
+        <Grid Height="auto" Grid.IsSharedSizeScope="True" Margin="20" VerticalAlignment="Top">
             <Grid.RowDefinitions>
                 <RowDefinition Height="auto" />
                 <RowDefinition Height="auto" />
@@ -48,10 +50,10 @@
                 <RowDefinition Height="auto" />
             </Grid.RowDefinitions>
             <Grid.ColumnDefinitions >
-                <ColumnDefinition Width="auto"/>
-                <ColumnDefinition Width="auto"/>
-                <ColumnDefinition Width="auto"/>
-                <ColumnDefinition Width="auto"/>
+
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
                 <ColumnDefinition Width="auto"/>
                 <ColumnDefinition Width="auto"/>
             </Grid.ColumnDefinitions>
@@ -88,17 +90,17 @@
             <!-- PersonalStatus  -->
             <StackPanel Grid.Row="1" Grid.Column="1" Orientation="Horizontal" Grid.ColumnSpan="2">
                 <TextBlock Text="סטטוס:"/>
-                <RadioButton x:Name="PersonalStatus1_RadioButton" IsChecked="{Binding Path=PersonalStatus, Converter={StaticResource EnumConverter}, ConverterParameter=רווק}">רווק/ה</RadioButton>
-                <RadioButton x:Name="PersonalStatus2_RadioButton" IsChecked="{Binding Path=PersonalStatus, Converter={StaticResource EnumConverter}, ConverterParameter=אלמן}" FontSize="10" VerticalAlignment="Center">אלמנ/ה</RadioButton>
-                <RadioButton x:Name="PersonalStatus3_RadioButton" IsChecked="{Binding Path=PersonalStatus, Converter={StaticResource EnumConverter}, ConverterParameter=גרוש}" FontSize="10" VerticalAlignment="Center">גרוש/ה</RadioButton>
-                <RadioButton x:Name="PersonalStatus4_RadioButton" IsChecked="{Binding Path=PersonalStatus, Converter={StaticResource EnumConverter}, ConverterParameter=מאורס}" FontSize="10" VerticalAlignment="Center">מאורס/ת</RadioButton>
+                <RadioButton x:Name="PersonalStatus1_RadioButton" IsChecked="{Binding Path=PersonalStatus, Converter={StaticResource EnumConverter}, ConverterParameter=רווק}" FontWeight="Bold">רווק/ה</RadioButton>
+                <RadioButton x:Name="PersonalStatus2_RadioButton" IsChecked="{Binding Path=PersonalStatus, Converter={StaticResource EnumConverter}, ConverterParameter=אלמן}"  FontWeight="Light" VerticalAlignment="Center">אלמנ/ה</RadioButton>
+                <RadioButton x:Name="PersonalStatus3_RadioButton" IsChecked="{Binding Path=PersonalStatus, Converter={StaticResource EnumConverter}, ConverterParameter=גרוש}"  FontWeight="Light" VerticalAlignment="Center">גרוש/ה</RadioButton>
+                <RadioButton x:Name="PersonalStatus4_RadioButton" IsChecked="{Binding Path=PersonalStatus, Converter={StaticResource EnumConverter}, ConverterParameter=מאורס}" FontWeight="Light" VerticalAlignment="Center">מאורס/ת</RadioButton>
             </StackPanel>
 
 
             <!--- ~~~~~~~~~~~~~~~~~~~~~~   שורה שלישית    ~~~~~~~~~~~~~~~~~~~~~~~~ -->
 
             <!-- DOB  -->
-            <StackPanel Grid.Row="2" Grid.Column="0" Height="39" HorizontalAlignment="Stretch" Margin="0,7,7,7" Grid.ColumnSpan="2" >
+            <StackPanel Grid.Row="2" Grid.Column="0" Height="39" HorizontalAlignment="Stretch" Margin="0,7,7,7"  >
                 <TextBlock Text="תאריך לידה:"   />
                 <Calendar DisplayMode="Month" Margin="0,0,0.4,0" Visibility="Collapsed" />
                 <Calendar DisplayMode="Year" Visibility="Collapsed"/>
@@ -118,12 +120,17 @@
 
             <!--- ~~~~~~~~~~~~~~~~~~~~~~   שורה רביעית    ~~~~~~~~~~~~~~~~~~~~~~~~ -->
 
-            <!-- Dad's Origin -->
+            <!-- Dad -->
             <StackPanel Grid.Row="3" Grid.Column="0">
                 <TextBlock Text="שם האבא:"/>
                 <TextBox x:Name="DadNameCombobox" HorizontalAlignment="Stretch" />
                 <TextBlock Text="עדה של אבא:"/>
                 <ComboBox x:Name="DadOrigin_ComboBox" DataContext="{Binding Path=Origin}"/>
+                <!--parent Job-->
+                <StackPanel x:Name="Dad_Job_STP" Grid.Row="17" Grid.Column="0"  Margin="0" >
+                    <TextBlock Text="עיסוק האב"  />
+                    <TextBox x:Name="Dad_Job_TextBox" FontWeight="ExtraLight" />
+                </StackPanel>
             </StackPanel>
 
             <!-- Mom's Origin -->
@@ -131,7 +138,12 @@
                 <TextBlock Text="שם האמא:"/>
                 <TextBox x:Name="MomNameCombobox" HorizontalAlignment="Stretch" />
                 <TextBlock Text="עדה של אמא:"/>
-                <ComboBox x:Name="MomOrigin_ComboBox" DataContext="{Binding Path=Origin}" HorizontalAlignment="Stretch"/>
+                <ComboBox x:Name="MomOrigin_ComboBox" DataContext="{Binding Path=Origin}" HorizontalAlignment="Stretch" Margin="0"/>
+                <StackPanel  Grid.Row="17" Grid.Column="1" >
+                    <TextBlock Text="עיסוק האם"  />
+                    <TextBox x:Name="Mom_Job_TextBox" FontWeight="ExtraLight" />
+
+                </StackPanel>
             </StackPanel>
 
             <!--AreParentsMarriedWithEachOther  -->
@@ -257,7 +269,7 @@
             <!--Interests  -->
             <StackPanel Grid.Row="13" Grid.Column="0" >
                 <TextBlock Text="תחומי עניין:"/>
-                <ListBox x:Name="Interests_listbox" DataContext="{Binding Path=Interests}" SelectionMode="Multiple" Background="Transparent"  />
+                <ListBox x:Name="Interests_listbox" DataContext="{Binding Path=Interests}"  Background="Transparent"  HorizontalContentAlignment="Stretch" SelectionMode="Multiple"  AllowDrop="True" BorderThickness="0" />
             </StackPanel>
 
 
@@ -274,69 +286,252 @@
 
             <!--- ~~~~~~~~~~~~~~~~~~~~~~   שורה שש-עשרה    ~~~~~~~~~~~~~~~~~~~~~~~~ -->
 
-            <TextBlock Text="~~~~~~~~~~~~~~~~~~~~~ פרטים נוספים ~~~~~~~~~~~~~~~~~~~~~~~~" Grid.Column="0" Grid.ColumnSpan="6" HorizontalAlignment="Center" Grid.Row="15"/>
+            <TextBlock Text="~~~~~~~~~~~~~~~~~~~~~ פרטים נוספים ~~~~~~~~~~~~~~~~~~~~~~~~" Grid.Column="0" Grid.ColumnSpan="6" HorizontalAlignment="Center" Grid.Row="15" Margin="0 10 0 10"/>
             <!--- ~~~~~~~~~~~~~~~~~~~~~~   שורה שבע-עשרה    ~~~~~~~~~~~~~~~~~~~~~~~~ -->
             <!-- Picture -->
             <StackPanel Grid.Row="16" Grid.Column="0">
+                <StackPanel Orientation="Horizontal" Margin="0">
                 <TextBlock Text="העלאת תמונה" Grid.Row="16" Grid.Column="0" />
+                <materialDesign:PackIcon Kind="Picture360Outline"></materialDesign:PackIcon>
+                </StackPanel>
                 <Button x:Name="PictureUploadButton" Content="צירוף קובץ" Foreground="DimGray" Click="PictureUploadButton_Click" Margin="0 7 0 7"/>
                 <Image x:Name="SeekerImage" Width="30" Height="30"/>
             </StackPanel>
-            <!-- transferPhoto? -->            <StackPanel Grid.Row="3" Grid.Column="2">                <TextBlock Text="האם ההורים נשואים זה לזה:"/>                <RadioButton GroupName="GrouptransferPhoto"  Content="כן" IsChecked="{Binding PropertyValue}"  />                <RadioButton GroupName="GrouptransferPhoto"  Content="לא" IsChecked="{Binding PropertyValue, Converter={StaticResource BoolInverterConverter}}" />            </StackPanel>
+            <!-- transferPhoto? -->            <StackPanel Grid.Row="16" Grid.Column="1" VerticalAlignment="Top">                <TextBlock Text="מסכימ/ה להעביר תמונה:"/>                <RadioButton GroupName="GrouptransferPhoto"  Content="כן" IsChecked="{Binding PropertyValue}"  />                <RadioButton GroupName="GrouptransferPhoto"  Content="לא" IsChecked="{Binding PropertyValue, Converter={StaticResource BoolInverterConverter}}" />            </StackPanel>
 
 
 
             <!--- ~~~~~~~~~~~~~~~~~~~~~~   שורה שמונה-עשרה    ~~~~~~~~~~~~~~~~~~~~~~~~ -->
-            <!--parent Job-->
-            <StackPanel x:Name="Dad_Job_STP" Grid.Row="17" Grid.Column="0"  >
-                <TextBlock Text="עיסוק האב" Grid.Row="5" Grid.Column="3" />
-                <TextBox x:Name="Dad_Job_TextBox" Foreground="DimGray" FontWeight="ExtraLight" />
-                <TextBlock Text="עיסוק האם" Grid.Row="5" Grid.Column="3" />
-                <TextBox x:Name="Mom_Job_TextBox" Foreground="DimGray" FontWeight="ExtraLight" />
-            </StackPanel>
+            
+
+         
 
             <!--- ~~~~~~~~~~~~~~~~~~~~~~   שורה תשע-עשרה    ~~~~~~~~~~~~~~~~~~~~~~~~ -->
+            
             <!-- Sibilings -->
             <StackPanel Grid.Row="18" Grid.Column="0">
-                <TextBlock Text="מספר אחים"/>
+                    <TextBlock Text="מספר אחים" />
                 <TextBox x:Name="NumberOfSiblings"/>
-                <StackPanel>
-                    <TextBlock Text="אח/ות 1"/>
-                    <TextBox x:Name="siblin1"/>
-                </StackPanel>
-                <StackPanel>
-                    <TextBlock Text="אח/ות 1"/>
-                    <TextBox x:Name="siblin2"/>
+
+            </StackPanel>
+            <!--- ~~~~~~~~~~~~~~~~~~~~~~   שורה עשרים    ~~~~~~~~~~~~~~~~~~~~~~~~ -->            
+
+                <Grid  Height="auto" Margin="10,0,0,0" Grid.Column="0" Grid.Row="19" Width="auto" Grid.ColumnSpan="3" >
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="auto"/>
+                        <ColumnDefinition Width="auto"/>
+                        <ColumnDefinition Width="auto"/>
+                    </Grid.ColumnDefinitions>
+
+                    <TextBlock Text="אחים:" Grid.Column="0" Grid.Row="0"  HorizontalAlignment="Left" Margin="10,0,0,0" VerticalAlignment="Bottom" Width="auto" />
+                   
+                    <Grid Grid.Row="1" Grid.Column="0" HorizontalAlignment="Stretch" Height="auto" Margin="0,0,0,0" VerticalAlignment="Stretch" Width="auto">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="auto"/>
+                            <ColumnDefinition Width="auto"/>
+                            <ColumnDefinition Width="auto"/>
+                            <ColumnDefinition Width="auto"/>
+                            <ColumnDefinition Width="auto"/>
+                            <ColumnDefinition Width="auto"/>
+                            <ColumnDefinition Width="auto"/>
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="auto"/>
+                            <RowDefinition Height="auto"/>
+                            <RowDefinition Height="auto"/>
+                    </Grid.RowDefinitions>
+                       <!--שורה ראשונה בפרטי האחים-->
+                        <StackPanel Grid.Row="0" Grid.Column="0">
+                            <TextBlock Text="שם פרטי"/>
+                            <TextBox x:Name="SiblinFirstNameTextBox"  />
+                        </StackPanel>
+                        <StackPanel Grid.Row="0" Grid.Column="1">
+                            <TextBlock Text="שם משפחה"/>
+                            <TextBox x:Name="SiblinLastNameTextBox"  />
+                        </StackPanel>
+                        <StackPanel Grid.Row="0" Grid.Column="2">
+                        <TextBlock Text="מגדר"/>
+                        <ComboBox x:Name="BoyOrGirlSiblin" ItemsSource="{Binding}" Height="17"  />
+                        </StackPanel>
+                        
+                        <StackPanel Grid.Row="0" Grid.Column="3">
+                        <TextBlock Text="גיל"/>
+                        <TextBox x:Name="SiblinAgeTextBox"  />
+                        </StackPanel>
+                    
+                    <!--שורה שנייה בפרטי האחים-->
+                    <StackPanel Grid.Row="1" Grid.Column="0">
+                        <TextBlock Text="עיסוק"/>
+                        <TextBox x:Name="SiblinOccupationComboBox" />
+                    </StackPanel>
+                    <StackPanel Grid.Row="1" Grid.Column="1">
+                        <TextBlock Text="מקום עיסוק"/>
+                        <TextBox x:Name="SiblinOccupationInstituteComboBox" />
+                    </StackPanel>
+                    <StackPanel Grid.Row="1" Grid.Column="2">
+                            <TextBlock Text="נשוי"/>
+                            <ComboBox x:Name="SiblinIsMarried" ItemsSource="{Binding}" Height="17"/>
+                        </StackPanel>
+
+                        <StackPanel Grid.Row="1" Grid.Column="3" Grid.ColumnSpan="2">
+                            <TextBlock Text="למי נשוי ומהיכן"/>
+                            <TextBox x:Name="SiblinWhoIsMarriedTo"  />
+                        </StackPanel>
+
+
+                    <StackPanel Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="4" HorizontalAlignment="Center">
+                        <TextBlock Text=""/>
+                        <Button x:Name="AddSibilin" Content="הוספה"  MaxHeight="17" Click="AddSibilin_Click" HorizontalAlignment="Center"/>
+                    </StackPanel>
+
+                </Grid>
+                <DataGrid x:Name="SibilingsListBox" Grid.Row="2"   ItemsSource="{Binding}"  Grid.Column="0"  Margin="0,0,0,0"  FontSize="14" HorizontalScrollBarVisibility="Auto">
+                        <DataGrid.Columns>
+                            <DataGridTemplateColumn >
+                                <DataGridTemplateColumn.CellTemplate>
+                                    <DataTemplate>
+                                        <Button x:Name="DeleteSibling" Click="DeleteSibling_Click">
+                                            <materialDesign:PackIcon Kind="Delete" Height="15" Width="15" HorizontalAlignment="Center" />
+                                        </Button>
+                                    </DataTemplate>
+                                </DataGridTemplateColumn.CellTemplate>
+                            </DataGridTemplateColumn>
+                            <DataGridTextColumn Binding="{Binding FirsName}" Header="שם" Width="SizeToHeader"/>
+                            <DataGridTextColumn Binding="{Binding LastName}" Header="שם משפחה" Width="SizeToHeader"/>
+                            <DataGridTextColumn Binding="{Binding age}" Header="גיל" Width="SizeToHeader"/>
+                        <DataGridTextColumn Binding="{Binding InstituteOfOccupation}" Header="האם נשוי" Width="SizeToHeader"/>
+                        <DataGridTextColumn Binding="{Binding marriedTo}" Header=" למי נשוי ומהיכן" Width="SizeToHeader"/>
+                        <DataGridTextColumn Binding="{Binding InstituteOfOccupation}" Header="עיסוק" Width="SizeToHeader"/>
+                        <DataGridTextColumn Binding="{Binding InstituteOfOccupation}" Header="מקום עיסוק" Width="SizeToHeader"/>
+                    </DataGrid.Columns>
+                    </DataGrid>
+                </Grid>
+           
+            <!--- ~~~~~~~~~~~~~~~~~~~~~~    שורה עשרים ואחת    ~~~~~~~~~~~~~~~~~~~~~~~~ -->            <!--Number For Offers-->            <StackPanel x:Name="NumberForOffering_SP" Grid.Row="20" Grid.Column="0"  >                <TextBlock Text="מספר טלפון להצעות" Grid.Row="20" Grid.Column="0" />                <TextBox x:Name="NumberForOffering_TextBox" />            </StackPanel>            <!--Email-->            <StackPanel x:Name="Email_SP" Grid.Row="20" Grid.Column="1"  >                <TextBlock Text="אימייל" Grid.Row="20" Grid.Column="1" />                <TextBox x:Name="Email_TextBox" />            </StackPanel>             <!--- ~~~~~~~~~~~~~~~~~~~~~~    שורה עשרים ושתיים    ~~~~~~~~~~~~~~~~~~~~~~~~ -->
+            <!-- FinancialHelp -->
+            <StackPanel x:Name="FinancialHelp_SP" Grid.Row="21" Grid.Column="0"  >
+                <TextBlock Text="עזרה כלכלית:" Grid.Row="21" Grid.Column="0" />
+                <RadioButton x:Name="FinancialHelp1_RadioButton" IsChecked="{Binding Path=Standard_Of_Living_Today, Converter={StaticResource EnumConverter}, ConverterParameter=Depends_on_case}">תלוי במקרה</RadioButton>
+                <RadioButton x:Name="FinancialHelp2_RadioButton" IsChecked="{Binding Path=Standard_Of_Living_Today, Converter={StaticResource EnumConverter}, ConverterParameter=like_other_side}">כמו הצד השני</RadioButton>
+                <RadioButton x:Name="FinancialHelp3_RadioButton" IsChecked="{Binding Path=Standard_Of_Living_Today, Converter={StaticResource EnumConverter}, ConverterParameter=not_interested_in_specifying}">לא מעוניין לציין</RadioButton>
+                <StackPanel Orientation="Horizontal" Margin="0" >
+                    <RadioButton x:Name="FinancialHelp4_RadioButton" IsChecked="{Binding Standard_Of_Living_Today, ConverterParameter=specific_amount, Converter={StaticResource EnumConverter}}" Content="סכום ספציפי"/>
+                    <TextBox  x:Name="amount_TextBox" HorizontalAlignment="Stretch" Width="129" />
                 </StackPanel>
             </StackPanel>
-
-            <!--- ~~~~~~~~~~~~~~~~~~~~~~   שורה עשרים    ~~~~~~~~~~~~~~~~~~~~~~~~ -->            <!--Number For Offers-->            <StackPanel x:Name="NumberForOffering_SP" Grid.Row="19" Grid.Column="0"  >                <TextBlock Text="מספר טלפון להצעות" Grid.Row="19" Grid.Column="0" />                <TextBox x:Name="NumberForOffering_TextBox" />            </StackPanel>            <!--Email-->            <StackPanel x:Name="Email_SP" Grid.Row="19" Grid.Column="1"  >                <TextBlock Text="אימייל" Grid.Row="19" Grid.Column="1" />                <TextBox x:Name="Email_TextBox" />            </StackPanel>            <!--- ~~~~~~~~~~~~~~~~~~~~~~    שורה עשרים ואחת    ~~~~~~~~~~~~~~~~~~~~~~~~ -->
-
-
-            <!--Number For Offers-->
-
-
-
-
-
-
-
-
-
-            <!-- transferPhoto? -->
-            <!--Email-->
-
-
-
-
-
+            
+           
+            
+            <!--- ~~~~~~~~~~~~~~~~~~~~~~    שורה עשרים ושלוש    ~~~~~~~~~~~~~~~~~~~~~~~~ -->
             <!--Remarks  -->
-            <!--  -->
-            <!-- FinancialHelp -->
-            <!-- Father -->
-            <!-- Mother -->
+            <StackPanel  Grid.Row="22" Grid.Column="0"  >                <TextBlock Text="פרטים נוספים:" Grid.Row="20" Grid.Column="1" />                <TextBox x:Name="Remarks_TextBox" Grid.ColumnSpan="2" Height="60" HorizontalAlignment="Stretch" />            </StackPanel>
 
+            <!--- ~~~~~~~~~~~~~~~~~~~~~~    שורה עשרים וארבע    ~~~~~~~~~~~~~~~~~~~~~~~~ -->
             <!-- Inquiries -->
+            <Grid  Height="auto" Margin="10,0,0,0" Grid.Column="0" Grid.Row="23" Width="auto" Grid.ColumnSpan="3" >
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="auto"/>
+                    <ColumnDefinition Width="auto"/>
+                    <ColumnDefinition Width="auto"/>
+                </Grid.ColumnDefinitions>
+
+                <TextBlock Text="מספרים לבירורים:" Grid.Column="0" Grid.Row="0"  HorizontalAlignment="Left" Margin="10,0,0,0" VerticalAlignment="Bottom" Width="auto" />
+
+                <Grid Grid.Row="1" Grid.Column="0" HorizontalAlignment="Stretch" Height="auto" Margin="0,0,0,0" VerticalAlignment="Stretch" Width="auto">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="auto"/>
+                        <ColumnDefinition Width="auto"/>
+                        <ColumnDefinition Width="auto"/>
+                        <ColumnDefinition Width="auto"/>
+                        <ColumnDefinition Width="auto"/>
+                        <ColumnDefinition Width="auto"/>
+                        <ColumnDefinition Width="auto"/>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="auto"/>
+                        <RowDefinition Height="auto"/>
+                        <RowDefinition Height="auto"/>
+                    </Grid.RowDefinitions>
+                    <!--שורה ראשונה בפרטי מספרים לבירורים-->
+                    <StackPanel Grid.Row="0" Grid.Column="0">
+                        <TextBlock Text="שם פרטי"/>
+                        <TextBox x:Name="AcquaintanceFirstNameTextBox"  />
+                    </StackPanel>
+                    <StackPanel Grid.Row="0" Grid.Column="1">
+                        <TextBlock Text="שם משפחה"/>
+                        <TextBox x:Name="AcquaintanceLastNameTextBox"  />
+                    </StackPanel>
+                    <StackPanel Grid.Row="0" Grid.Column="2">
+                        <TextBlock Text="סוג מכר"/>
+                        <ComboBox x:Name="AcquaintanceTypeComboBox" ItemsSource="{Binding}" Height="17"  />
+                    </StackPanel>
+
+                    <StackPanel Grid.Row="0" Grid.Column="3">
+                        <TextBlock Text="מספר טלפון"/>
+                        <TextBox x:Name="AcquaintancePhoneTextBox"  />
+                    </StackPanel>
+                    
+                    <StackPanel Grid.Row="0" Grid.Column="3">
+                        <TextBlock Text="פרטים נוספים"/>
+                        <TextBox x:Name="OtherAcqInfoTextBox"  />
+                    </StackPanel>
+
+
+                    <StackPanel Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="4" HorizontalAlignment="Center">
+                        <TextBlock Text=""/>
+                        <Button x:Name="AddAcquaintance" Content="הוספה"  MaxHeight="17" Click="AddAcquaintance_Click" HorizontalAlignment="Center"/>
+                    </StackPanel>
+
+                </Grid>
+                <DataGrid x:Name="AcquaintancesListBox" Grid.Row="2"   ItemsSource="{Binding}"  Grid.Column="0"  Margin="0,0,0,0"  FontSize="14" HorizontalScrollBarVisibility="Auto">
+                    <DataGrid.Columns>
+                        <DataGridTemplateColumn >
+                            <DataGridTemplateColumn.CellTemplate>
+                                <DataTemplate>
+                                    <Button x:Name="DeleteAcquaintance"  Click="DeleteAcquaintance_Click">
+                                        <materialDesign:PackIcon Kind="Delete" Height="15" Width="15" HorizontalAlignment="Center" />
+                                    </Button>
+                                </DataTemplate>
+                            </DataGridTemplateColumn.CellTemplate>
+                        </DataGridTemplateColumn>
+                        <DataGridTextColumn Binding="{Binding FirsName}" Header="שם" Width="SizeToHeader"/>
+                        <DataGridTextColumn Binding="{Binding LastName}" Header="שם משפחה" Width="SizeToHeader"/>
+                        <DataGridTextColumn Binding="{Binding age}" Header="גיל" Width="SizeToHeader"/>
+                        <DataGridTextColumn Binding="{Binding InstituteOfOccupation}" Header="האם נשוי" Width="SizeToHeader"/>
+                        <DataGridTextColumn Binding="{Binding marriedTo}" Header=" למי נשוי ומהיכן" Width="SizeToHeader"/>
+                        <DataGridTextColumn Binding="{Binding InstituteOfOccupation}" Header="עיסוק" Width="SizeToHeader"/>
+                        <DataGridTextColumn Binding="{Binding InstituteOfOccupation}" Header="מקום עיסוק" Width="SizeToHeader"/>
+                    </DataGrid.Columns>
+                </DataGrid>
+            </Grid>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+           
 
 
         </Grid>
