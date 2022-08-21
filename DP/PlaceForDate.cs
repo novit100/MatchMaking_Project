@@ -15,6 +15,7 @@ namespace DP
         public string   Placeaddress { get; set; }
         public string PlaceSubscription { get; set; }
         public string Kashroot { get; set; }
+        public string City { get; set; }
 
 
     }
