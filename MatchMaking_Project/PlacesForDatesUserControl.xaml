@@ -9,44 +9,49 @@
     <UserControl.Background>
         <SolidColorBrush Color="Transparent"></SolidColorBrush>
     </UserControl.Background>
-    
+
     <ScrollViewer Name="scroll" >
 
-
-        <Grid Margin="0,0,0,50">
-            <Grid.Background>
-                <ImageBrush ImageSource="Pictures\פארק1.jpg" Stretch="UniformToFill" Opacity="0.7"/>
-            </Grid.Background>
+        <Grid>
             <Grid.RowDefinitions>
-                <RowDefinition Height="140"/>
-                <RowDefinition Height="*"/>
+                <RowDefinition Height="auto"></RowDefinition>
+                <RowDefinition Height="auto"></RowDefinition>
             </Grid.RowDefinitions>
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="auto"/>
-                <ColumnDefinition Width="auto"/>
-                <ColumnDefinition Width="auto"/>
-                <ColumnDefinition Width="auto"/>
-                <ColumnDefinition Width="auto"/>
-            </Grid.ColumnDefinitions>
-            <Label Content=" מקומות לפגישה"  Grid.Row="0" Grid.Column="0" FontSize="45" VerticalAlignment="Center" HorizontalAlignment="Center" Grid.ColumnSpan="5" Margin="153,32,-126.8,32" Height="76" Width="497"/>
-            <StackPanel  Grid.Row="1" Grid.Column="0" VerticalAlignment="Top" Margin="25 0 10 0 ">
+            <Grid Margin="0,0,0,0">
+                <Grid.Background>
+                    <ImageBrush ImageSource="Pictures\מקום_לדייט.jpg" Stretch="UniformToFill" Opacity="0.7"/>
+                </Grid.Background>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="140"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="auto" MinWidth="370.4"/>
 
-                <TextBlock Text=" גבעת שמואל:"   TextDecorations="Underline" FontSize="25" />
-                <TextBlock Text=" •	קפה קפה גב''ש &#x0a;•	 טיילת גב''ש&#x0a;•	קפה אנג''ל, ,ז'בוטינסקי 512 גב''ש +&#x0a;  מדשאות האוניברסיטה (בהצגת ת''ז)&#x0a;"  />
+                    <ColumnDefinition Width="auto" MinWidth="31.2"/>
+                </Grid.ColumnDefinitions>
+                <Label Content=" מקומות לפגישה"  Grid.Row="0"  FontSize="45" VerticalAlignment="Center" HorizontalAlignment="Stretch" Grid.ColumnSpan="2"  Height="76" Margin="202,38,-176.8,26" />
+                <StackPanel  Grid.Row="1" Grid.Column="0" VerticalAlignment="Top" Margin="25,0,8.2,0" Height="586">
 
-                <TextBlock Text=" אור יהודה/ יהוד:"   TextDecorations="Underline" FontSize="25"/>
-                <TextBlock Text=" •	קפה ליאון, אור יהודה + פארק&#x0a;•	דון ויטון, אור יהודה&#x0a;•	בואנו, יהוד (מסעדה יוקרתית  וקטנה)  "  />
+                    <TextBlock Text=" גבעת שמואל:"   TextDecorations="Underline" FontSize="25" />
+                    <TextBlock Text=" •	קפה קפה גב''ש &#x0a;•	 טיילת גב''ש&#x0a;•	קפה אנג''ל, ,ז'בוטינסקי 512 גב''ש +&#x0a;  מדשאות האוניברסיטה (בהצגת ת''ז)&#x0a;"  />
 
-                <TextBlock Text=" &#x0a;הרצליה:"   TextDecorations="Underline" FontSize="25"/>
-                <TextBlock Text=" •	קפה קפה מרינה הרצליה + טיילת&#x0a;•	פרש מרינה הרצליה + טיילת&#x0a;•	פארק הרצליה&#x0a;•	מלון דן אקדיה +טיילת  המרינה "  />
+                    <TextBlock Text=" אור יהודה/ יהוד:"   TextDecorations="Underline" FontSize="25"/>
+                    <TextBlock Text=" •	קפה ליאון, אור יהודה + פארק&#x0a;•	דון ויטון, אור יהודה&#x0a;•	בואנו, יהוד (מסעדה יוקרתית  וקטנה)  "  />
 
-                <TextBlock Text=" &#x0a;הרצליה:"   TextDecorations="Underline" FontSize="25"/>
-                <TextBlock Text=" •	קפה קפה מרינה הרצליה + טיילת&#x0a;•	פרש מרינה הרצליה + טיילת&#x0a;•	פארק הרצליה&#x0a;•	מלון דן אקדיה +טיילת  המרינה "  />
+                    <TextBlock Text=" &#x0a;הרצליה:"   TextDecorations="Underline" FontSize="25"/>
+                    <TextBlock Text=" •	קפה קפה מרינה הרצליה + טיילת&#x0a;•	פרש מרינה הרצליה + טיילת&#x0a;•	פארק הרצליה&#x0a;•	מלון דן אקדיה +טיילת  המרינה "  />
 
-                <TextBlock Text=" &#x0a;הרצליה:"   TextDecorations="Underline" FontSize="25"/>
-                <TextBlock Text=" •	קפה קפה מרינה הרצליה + טיילת&#x0a;•	פרש מרינה הרצליה + טיילת&#x0a;•	פארק הרצליה&#x0a;•	מלון דן אקדיה +טיילת  המרינה "  />
+                    <TextBlock Text=" &#x0a;הרצליה:"   TextDecorations="Underline" FontSize="25"/>
+                    <TextBlock Text=" •	קפה קפה מרינה הרצליה + טיילת&#x0a;•	פרש מרינה הרצליה + טיילת&#x0a;•	פארק הרצליה&#x0a;•	מלון דן אקדיה +טיילת  המרינה "  />
 
-            </StackPanel>
+                    <TextBlock Text=" &#x0a;הרצליה:"   TextDecorations="Underline" FontSize="25"/>
+                    <TextBlock Text=" •	קפה קפה מרינה הרצליה + טיילת&#x0a;•	פרש מרינה הרצליה + טיילת&#x0a;•	פארק הרצליה&#x0a;•	מלון דן אקדיה +טיילת  המרינה "  />
+
+                </StackPanel>
+            </Grid>
+
         </Grid>
+
     </ScrollViewer>
 </UserControl>
