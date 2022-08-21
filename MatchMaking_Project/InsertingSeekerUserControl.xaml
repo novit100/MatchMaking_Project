@@ -1,0 +1,351 @@
+﻿<UserControl x:Class="MatchMaking_Project.InsertingSeekerUserControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:MatchMaking_Project"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800"
+             FlowDirection="RightToLeft">
+    <UserControl.Background>
+        <SolidColorBrush Color="AliceBlue"></SolidColorBrush>
+    </UserControl.Background>
+    
+    <UserControl.Resources>
+        <local:EnumConverter x:Key="EnumConverter"/>
+        <local:BoolInverterConverter x:Key="BoolInverterConverter"/>
+    </UserControl.Resources>
+    
+    <ScrollViewer Name="scroll" >
+        <Grid Height="1468" Grid.IsSharedSizeScope="True" Margin="20" VerticalAlignment="Top">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="auto" />
+                <RowDefinition Height="auto" />
+                <RowDefinition Height="auto" />
+                <RowDefinition Height="auto" />
+                <RowDefinition Height="auto" />
+                <RowDefinition Height="auto" />
+                <RowDefinition Height="auto" />
+                <RowDefinition Height="auto" />
+                <RowDefinition Height="auto" />
+                <RowDefinition Height="auto" />
+                <RowDefinition Height="auto" />
+                <RowDefinition Height="auto" />
+                <RowDefinition Height="auto" />
+                <RowDefinition Height="auto" />
+                <RowDefinition Height="auto" />
+                <RowDefinition Height="auto" />
+                <RowDefinition Height="auto" />
+                <RowDefinition Height="auto" />
+                <RowDefinition Height="auto" />
+                <RowDefinition Height="auto" />
+                <RowDefinition Height="auto" />
+                <RowDefinition Height="auto" />
+                <RowDefinition Height="auto" />
+                <RowDefinition Height="auto" />
+                <RowDefinition Height="auto" />
+                <RowDefinition Height="auto" />
+                <RowDefinition Height="auto" />
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions >
+                <ColumnDefinition Width="auto"/>
+                <ColumnDefinition Width="auto"/>
+                <ColumnDefinition Width="auto"/>
+                <ColumnDefinition Width="auto"/>
+                <ColumnDefinition Width="auto"/>
+                <ColumnDefinition Width="auto"/>
+            </Grid.ColumnDefinitions>
+            <!--- ~~~~~~~~~~~~~~~~~~~~~~   שורה ראשונה    ~~~~~~~~~~~~~~~~~~~~~~~~ -->
+            <!-- First Name  -->
+            <Grid Grid.Row="0" Grid.Column="0">
+                <StackPanel HorizontalAlignment="Stretch"   >
+                    <TextBlock Text="שם פרטי:" ></TextBlock>
+                    <TextBox x:Name="FirstNameTextBox" HorizontalAlignment="Stretch" />
+                </StackPanel >
+            </Grid>
+            <!-- Middle Name  -->
+
+            <StackPanel Grid.Row="0" Grid.Column="1"  >
+                <TextBlock Text="שם אמצעי:"></TextBlock>
+                <TextBox x:Name="MiddleNameTextBox" />
+            </StackPanel>
+
+            <!-- Last Name  -->
+
+            <StackPanel Grid.Row="0" Grid.Column="2">
+                <TextBlock Text="שם משפחה:" Grid.Row="0" Grid.Column="4"></TextBlock>
+                <TextBox x:Name="LastNameTextBox" Grid.Row="0" Grid.Column="5"/>
+            </StackPanel>
+
+
+
+            <!--- ~~~~~~~~~~~~~~~~~~~~~~   שורה שניה    ~~~~~~~~~~~~~~~~~~~~~~~~ -->
+            <!--Girl or Boy  -->
+            <StackPanel Grid.Row="1" Grid.Column="0" Orientation="Vertical" >
+                <RadioButton x:Name="IsBoyRadioButton"  IsChecked="{Binding Path=Gender, Converter={StaticResource EnumConverter}, ConverterParameter=Male}">בחור</RadioButton>
+                <RadioButton x:Name="IsGirlRadioButton" IsChecked="{Binding Path=Gender, Converter={StaticResource EnumConverter}, ConverterParameter=Female}">בחורה</RadioButton>
+            </StackPanel>
+            <!-- PersonalStatus  -->
+            <StackPanel Grid.Row="1" Grid.Column="1" Orientation="Horizontal" Grid.ColumnSpan="2">
+                <TextBlock Text="סטטוס:"/>
+                <RadioButton x:Name="PersonalStatus1_RadioButton" IsChecked="{Binding Path=PersonalStatus, Converter={StaticResource EnumConverter}, ConverterParameter=רווק}">רווק/ה</RadioButton>
+                <RadioButton x:Name="PersonalStatus2_RadioButton" IsChecked="{Binding Path=PersonalStatus, Converter={StaticResource EnumConverter}, ConverterParameter=אלמן}" FontSize="10" VerticalAlignment="Center">אלמנ/ה</RadioButton>
+                <RadioButton x:Name="PersonalStatus3_RadioButton" IsChecked="{Binding Path=PersonalStatus, Converter={StaticResource EnumConverter}, ConverterParameter=גרוש}" FontSize="10" VerticalAlignment="Center">גרוש/ה</RadioButton>
+                <RadioButton x:Name="PersonalStatus4_RadioButton" IsChecked="{Binding Path=PersonalStatus, Converter={StaticResource EnumConverter}, ConverterParameter=מאורס}" FontSize="10" VerticalAlignment="Center">מאורס/ת</RadioButton>
+            </StackPanel>
+
+
+            <!--- ~~~~~~~~~~~~~~~~~~~~~~   שורה שלישית    ~~~~~~~~~~~~~~~~~~~~~~~~ -->
+
+            <!-- DOB  -->
+            <StackPanel Grid.Row="2" Grid.Column="0" Height="39" HorizontalAlignment="Stretch" Margin="0,7,7,7" Grid.ColumnSpan="2" >
+                <TextBlock Text="תאריך לידה:"   />
+                <Calendar DisplayMode="Month" Margin="0,0,0.4,0" Visibility="Collapsed" />
+                <Calendar DisplayMode="Year" Visibility="Collapsed"/>
+                <Calendar DisplayMode="Decade" Visibility="Collapsed" />
+
+                <DatePicker x:Name="datePicker" Height="25" HorizontalAlignment="Stretch"
+                    IsDropDownOpen="False"
+                     
+                    VerticalAlignment="Top"  
+                    FirstDayOfWeek="Sunday"
+                    IsTodayHighlighted="True"
+                   SelectedDate=""/>
+
+            </StackPanel>
+            <!-- Age -->
+
+
+            <!--- ~~~~~~~~~~~~~~~~~~~~~~   שורה רביעית    ~~~~~~~~~~~~~~~~~~~~~~~~ -->
+
+            <!-- Dad's Origin -->
+            <StackPanel Grid.Row="3" Grid.Column="0">
+                <TextBlock Text="שם האבא:"/>
+                <TextBox x:Name="DadNameCombobox" HorizontalAlignment="Stretch" />
+                <TextBlock Text="עדה של אבא:"/>
+                <ComboBox x:Name="DadOrigin_ComboBox" DataContext="{Binding Path=Origin}"/>
+            </StackPanel>
+
+            <!-- Mom's Origin -->
+            <StackPanel Grid.Row="3" Grid.Column="1">
+                <TextBlock Text="שם האמא:"/>
+                <TextBox x:Name="MomNameCombobox" HorizontalAlignment="Stretch" />
+                <TextBlock Text="עדה של אמא:"/>
+                <ComboBox x:Name="MomOrigin_ComboBox" DataContext="{Binding Path=Origin}" HorizontalAlignment="Stretch"/>
+            </StackPanel>
+
+            <!--AreParentsMarriedWithEachOther  -->
+            <StackPanel Grid.Row="3" Grid.Column="2">
+                <TextBlock Text="האם ההורים נשואים זה לזה:"/>
+                <RadioButton GroupName="Group1"  Content="כן" IsChecked="{Binding PropertyValue}"  />
+                <RadioButton GroupName="Group1"  Content="לא" IsChecked="{Binding PropertyValue, Converter={StaticResource BoolInverterConverter}}" />
+
+            </StackPanel>
+
+            <!--- ~~~~~~~~~~~~~~~~~~~~~~   שורה חמישית    ~~~~~~~~~~~~~~~~~~~~~~~~ -->
+
+            <!-- ElementrySchool -->
+            <StackPanel Grid.Row="4">
+                <TextBlock Text="בית ספר ייסודי" Grid.Row="5" Grid.Column="3" />
+                <TextBox x:Name="ElementrySchoo_TextBox" Text="בית ספר ייסודי" Foreground="DimGray" />
+            </StackPanel>
+
+            <!--- ~~~~~~~~~~~~~~~~~~~~~~   שורה שישית    ~~~~~~~~~~~~~~~~~~~~~~~~ -->
+
+            <!-- YeshivaKetana/high school -->
+            <StackPanel Grid.Row="5" Grid.Column="0">
+                <TextBlock Text="ישיבה קטנה\תיכון" Grid.Row="5" Grid.Column="3" />
+                <TextBox x:Name="HighSchoo_TextBox" Text="ישיבה קטנה/תיכון" Foreground="DimGray" FontWeight="ExtraLight" />
+            </StackPanel>
+
+            <!--- ~~~~~~~~~~~~~~~~~~~~~~   שורה שביעית    ~~~~~~~~~~~~~~~~~~~~~~~~ -->
+
+            <!--YeshivaGedola/seminary  -->
+            <StackPanel Grid.Row="6" Grid.Column="0">
+                <TextBlock Text="ישיבה גדולה\סמינר" Grid.Row="5" Grid.Column="4" />
+                <ComboBox x:Name="YeshivaG_Seminary_Combobox"/>
+            </StackPanel>
+
+            <!-- GradeInStudies -->
+            <StackPanel Grid.Row="6" Grid.Column="1">
+                <TextBlock Text="שנה בלימודים/וועד:"  />
+                <TextBox x:Name="GradeInStudies_TextBox" Text="הכנס  מספר" Foreground="DimGray" />
+            </StackPanel>
+
+            <!--- ~~~~~~~~~~~~~~~~~~~~~~   שורה שמינית    ~~~~~~~~~~~~~~~~~~~~~~~~ -->
+            <!--Height  -->
+            <StackPanel Grid.Row="7" Grid.Column="0" >
+                <TextBlock Text="גובה" Grid.Row="5" Grid.Column="3" />
+                <TextBox x:Name="Hight_TextBox" Foreground="DimGray" FontWeight="ExtraLight" />
+            </StackPanel>
+
+            <!--- ~~~~~~~~~~~~~~~~~~~~~~   שורה תשיעית    ~~~~~~~~~~~~~~~~~~~~~~~~ -->
+            <!-- BodyStructure  -->
+            <StackPanel Grid.Row="8" Grid.Column="0" Orientation="Vertical" HorizontalAlignment="Left">
+                <TextBlock Text="מבנה גוף:"/>
+                <RadioButton x:Name="IsThinCheckBox" Content="רזה" HorizontalAlignment="Left" />
+                <RadioButton x:Name="IsAverageCheckBox" Content="ממוצע"  />
+                <RadioButton x:Name="IsThickCheckBox" Content="מלא"  />
+            </StackPanel>
+            <!-- Does Smoke -->
+            <StackPanel Grid.Row="8" Grid.Column="1" Orientation="Vertical" >
+                <TextBlock Text="האם מעשן:"/>
+                <RadioButton x:Name="DoesSmoke1RadioButton"  IsChecked="{Binding Path=DoesSmoke, Converter={StaticResource EnumConverter}, ConverterParameter=NotAtAll}">בכלל לא</RadioButton>
+                <RadioButton x:Name="DoesSmoke2RadioButton" IsChecked="{Binding Path=DoesSmoke, Converter={StaticResource EnumConverter}, ConverterParameter=SomeTimes}">לפעמים</RadioButton>
+                <RadioButton x:Name="DoesSmoke3RadioButton" IsChecked="{Binding Path=DoesSmoke, Converter={StaticResource EnumConverter}, ConverterParameter=Yes}">כן</RadioButton>
+            </StackPanel>
+
+
+
+            <!--- ~~~~~~~~~~~~~~~~~~~~~~   שורה עשירית    ~~~~~~~~~~~~~~~~~~~~~~~~ -->
+            <!-- Residency -->
+            <StackPanel x:Name="Residency_StackPanel" Grid.Row="9" Grid.Column="0"  Margin="0,7,0,7">
+                <TextBlock Text="מקום מגורים" Grid.Row="5" Grid.Column="3" />
+                <TextBox x:Name="Residency_TextBox" Foreground="DimGray" FontWeight="ExtraLight" />
+            </StackPanel>
+
+
+
+
+            <!--- ~~~~~~~~~~~~~~~~~~~~~~   שורה אחד-עשרה    ~~~~~~~~~~~~~~~~~~~~~~~~ -->
+            <!--FOR BOYS:::: Torah_Study_Status  -->
+            <StackPanel Grid.Row="10" Grid.Column="0" >
+                <TextBlock Text=" לבחור-עיסוק כיום:"/>
+                <ComboBox x:Name="Torah_Study_Status_listbox" DataContext="{Binding Path=Torah_Study_Status}"/>
+            </StackPanel>
+
+            <!--FOR GIRLS Girl_Working_status -->
+            <StackPanel Grid.Row="10" Grid.Column="1">
+                <TextBlock Text=" לבחורה-עיסוק כיום:"/>
+                <ComboBox x:Name="Girl_Working_status_listbox" DataContext="{Binding Path=Girl_Working_status}"/>
+            </StackPanel>
+
+            <!--- ~~~~~~~~~~~~~~~~~~~~~~   שורה שתים-עשרה    ~~~~~~~~~~~~~~~~~~~~~~~~ -->
+            <!-- Torah_Study_InFuture -->
+            <StackPanel Grid.Row="11" Grid.Column="0" Orientation="Vertical" HorizontalAlignment="Left">
+                <TextBlock Text="שאיפות לגביי לימוד תורה:"/>
+                <RadioButton x:Name="Torah_Study_InFuture1_RadioButton"  IsChecked="{Binding Path=Torah_Study_InFuture, Converter={StaticResource EnumConverter}, ConverterParameter=לתמיד}">לתמיד</RadioButton>
+                <RadioButton x:Name="Torah_Study_InFuture2_RadioButton" IsChecked="{Binding Path=Torah_Study_InFuture, Converter={StaticResource EnumConverter}, ConverterParameter=לתמיד_או_תפקיד_תורני}">לתמיד או תפקיד תורני</RadioButton>
+                <RadioButton x:Name="Torah_Study_InFuture3_RadioButton" IsChecked="{Binding Path=Torah_Study_InFuture, Converter={StaticResource EnumConverter}, ConverterParameter=לתקופה_מסויימת}">לתקופה מסויימת</RadioButton>
+                <RadioButton x:Name="Torah_Study_InFuture4_RadioButton" IsChecked="{Binding Path=Torah_Study_InFuture, Converter={StaticResource EnumConverter}, ConverterParameter=לקבוע_עיתים}">לקבוע עיתים</RadioButton>
+            </StackPanel>
+
+            <!--- ~~~~~~~~~~~~~~~~~~~~~~   שורה שלוש-עשרה    ~~~~~~~~~~~~~~~~~~~~~~~~ -->
+            <!--HealthCondition בינתים לא מכניסה למערכת-->
+
+
+
+            <!-- IQ -->
+            <StackPanel Grid.Row="12" Grid.Column="0" Orientation="Vertical" HorizontalAlignment="Left">
+                <TextBlock Text="כישורים שכליים:"/>
+                <RadioButton x:Name="IQ1_RadioButton"  IsChecked="{Binding Path=IQ, Converter={StaticResource EnumConverter}, ConverterParameter=מאוד_חכמ_ה}">מאוד חכמ/ה</RadioButton>
+                <RadioButton x:Name="IQ2_RadioButton" IsChecked="{Binding Path=IQ, Converter={StaticResource EnumConverter}, ConverterParameter=חכמ_ה}">חכמ/ה</RadioButton>
+                <RadioButton x:Name="IQ3_RadioButton" IsChecked="{Binding Path=IQ, Converter={StaticResource EnumConverter}, ConverterParameter=סטנדרט}">סטנדרט</RadioButton>
+            </StackPanel>
+
+            <!-- intellect -->
+            <StackPanel Grid.Row="12" Grid.Column="1" Orientation="Vertical" HorizontalAlignment="Left">
+                <TextBlock Text="אינטיליגנציה:"/>
+                <RadioButton x:Name="intellect1_RadioButton"  IsChecked="{Binding Path=IQ, Converter={StaticResource EnumConverter}, ConverterParameter=אינטיליגנט_מאוד}">אינטיליגנט/ית מאוד</RadioButton>
+                <RadioButton x:Name="intellect2_RadioButton" IsChecked="{Binding Path=IQ, Converter={StaticResource EnumConverter}, ConverterParameter=אינטיליגנט}">אינטיליגנט/ית</RadioButton>
+                <RadioButton x:Name="intellect3_RadioButton" IsChecked="{Binding Path=IQ, Converter={StaticResource EnumConverter}, ConverterParameter=סטנדרט}">סטנדרט</RadioButton>
+            </StackPanel>
+
+
+
+            <!--- ~~~~~~~~~~~~~~~~~~~~~~   שורה ארבע-עשרה    ~~~~~~~~~~~~~~~~~~~~~~~~ -->
+            <!--Interests  -->
+            <StackPanel Grid.Row="13" Grid.Column="0" >
+                <TextBlock Text="תחומי עניין:"/>
+                <ListBox x:Name="Interests_listbox" DataContext="{Binding Path=Interests}" SelectionMode="Multiple" Background="Transparent"  />
+            </StackPanel>
+
+
+
+            <!--- ~~~~~~~~~~~~~~~~~~~~~~   שורה חמש-עשרה    ~~~~~~~~~~~~~~~~~~~~~~~~ -->
+            <!--Standard_Of_Living_Today-->
+            <StackPanel Grid.Row="14" Grid.Column="0" Orientation="Vertical" HorizontalAlignment="Left">
+                <TextBlock Text="רמת חיים כיום:"/>
+                <RadioButton x:Name="Standard_Of_Living_Today1_RadioButton"  IsChecked="{Binding Path=Standard_Of_Living_Today, Converter={StaticResource EnumConverter}, ConverterParameter=Very_high}">גבוה מאוד</RadioButton>
+                <RadioButton x:Name="Standard_Of_Living_Today2_RadioButton" IsChecked="{Binding Path=Standard_Of_Living_Today, Converter={StaticResource EnumConverter}, ConverterParameter=High}">גבוה</RadioButton>
+                <RadioButton x:Name="Standard_Of_Living_Today3_RadioButton" IsChecked="{Binding Path=Standard_Of_Living_Today, Converter={StaticResource EnumConverter}, ConverterParameter=Standart}">סטנדרט</RadioButton>
+                <RadioButton x:Name="Standard_Of_Living_Today4_RadioButton" IsChecked="{Binding Path=Standard_Of_Living_Today, Converter={StaticResource EnumConverter}, ConverterParameter=Under_the_standart}">מתחת לסטנדרט</RadioButton>
+            </StackPanel>
+
+            <!--- ~~~~~~~~~~~~~~~~~~~~~~   שורה שש-עשרה    ~~~~~~~~~~~~~~~~~~~~~~~~ -->
+
+            <TextBlock Text="~~~~~~~~~~~~~~~~~~~~~ פרטים נוספים ~~~~~~~~~~~~~~~~~~~~~~~~" Grid.Column="0" Grid.ColumnSpan="6" HorizontalAlignment="Center" Grid.Row="15"/>
+            <!--- ~~~~~~~~~~~~~~~~~~~~~~   שורה שבע-עשרה    ~~~~~~~~~~~~~~~~~~~~~~~~ -->
+            <!-- Picture -->
+            <StackPanel Grid.Row="16" Grid.Column="0">
+                <TextBlock Text="העלאת תמונה" Grid.Row="16" Grid.Column="0" />
+                <Button x:Name="PictureUploadButton" Content="צירוף קובץ" Foreground="DimGray" Click="PictureUploadButton_Click" Margin="0 7 0 7"/>
+                <Image x:Name="SeekerImage" Width="30" Height="30"/>
+            </StackPanel>
+            <!-- transferPhoto? -->            <StackPanel Grid.Row="3" Grid.Column="2">                <TextBlock Text="האם ההורים נשואים זה לזה:"/>                <RadioButton GroupName="GrouptransferPhoto"  Content="כן" IsChecked="{Binding PropertyValue}"  />                <RadioButton GroupName="GrouptransferPhoto"  Content="לא" IsChecked="{Binding PropertyValue, Converter={StaticResource BoolInverterConverter}}" />            </StackPanel>
+
+
+
+            <!--- ~~~~~~~~~~~~~~~~~~~~~~   שורה שמונה-עשרה    ~~~~~~~~~~~~~~~~~~~~~~~~ -->
+            <!--parent Job-->
+            <StackPanel x:Name="Dad_Job_STP" Grid.Row="17" Grid.Column="0"  >
+                <TextBlock Text="עיסוק האב" Grid.Row="5" Grid.Column="3" />
+                <TextBox x:Name="Dad_Job_TextBox" Foreground="DimGray" FontWeight="ExtraLight" />
+                <TextBlock Text="עיסוק האם" Grid.Row="5" Grid.Column="3" />
+                <TextBox x:Name="Mom_Job_TextBox" Foreground="DimGray" FontWeight="ExtraLight" />
+            </StackPanel>
+
+            <!--- ~~~~~~~~~~~~~~~~~~~~~~   שורה תשע-עשרה    ~~~~~~~~~~~~~~~~~~~~~~~~ -->
+            <!-- Sibilings -->
+            <StackPanel Grid.Row="18" Grid.Column="0">
+                <TextBlock Text="מספר אחים"/>
+                <TextBox x:Name="NumberOfSiblings"/>
+                <StackPanel>
+                    <TextBlock Text="אח/ות 1"/>
+                    <TextBox x:Name="siblin1"/>
+                </StackPanel>
+                <StackPanel>
+                    <TextBlock Text="אח/ות 1"/>
+                    <TextBox x:Name="siblin2"/>
+                </StackPanel>
+            </StackPanel>
+
+            <!--- ~~~~~~~~~~~~~~~~~~~~~~   שורה עשרים    ~~~~~~~~~~~~~~~~~~~~~~~~ -->            <!--Number For Offers-->            <StackPanel x:Name="NumberForOffering_SP" Grid.Row="19" Grid.Column="0"  >                <TextBlock Text="מספר טלפון להצעות" Grid.Row="19" Grid.Column="0" />                <TextBox x:Name="NumberForOffering_TextBox" />            </StackPanel>            <!--Email-->            <StackPanel x:Name="Email_SP" Grid.Row="19" Grid.Column="1"  >                <TextBlock Text="אימייל" Grid.Row="19" Grid.Column="1" />                <TextBox x:Name="Email_TextBox" />            </StackPanel>            <!--- ~~~~~~~~~~~~~~~~~~~~~~    שורה עשרים ואחת    ~~~~~~~~~~~~~~~~~~~~~~~~ -->
+
+
+            <!--Number For Offers-->
+
+
+
+
+
+
+
+
+
+            <!-- transferPhoto? -->
+            <!--Email-->
+
+
+
+
+
+            <!--Remarks  -->
+            <!--  -->
+            <!-- FinancialHelp -->
+            <!-- Father -->
+            <!-- Mother -->
+
+            <!-- Inquiries -->
+
+
+        </Grid>
+
+    </ScrollViewer>
+</UserControl>
+
+
+    
+    
+    
+    

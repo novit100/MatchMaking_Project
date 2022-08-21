@@ -10,6 +10,11 @@
     <Window.Background>
         <SolidColorBrush Color="AliceBlue"></SolidColorBrush>
     </Window.Background>
+    <Window.Resources>
+        <local:EnumConverter x:Key="EnumConverter"/>
+        <local:BoolInverterConverter x:Key="BoolInverterConverter"/>
+    </Window.Resources>
+    
     <ScrollViewer Name="scroll" >
         <Grid Height="1468" Grid.IsSharedSizeScope="True" Margin="20" VerticalAlignment="Top">
             <Grid.RowDefinitions>
@@ -46,9 +51,6 @@
                 <ColumnDefinition Width="auto"/>
                 <ColumnDefinition Width="auto"/>
             </Grid.ColumnDefinitions>
-            <Grid.Resources>
-                <local:EnumConverter x:Key="EnumConverter"/>
-            </Grid.Resources>
             <!--- ~~~~~~~~~~~~~~~~~~~~~~   שורה ראשונה    ~~~~~~~~~~~~~~~~~~~~~~~~ -->
             <!-- First Name  -->
             <Grid Grid.Row="0" Grid.Column="0">
@@ -132,7 +134,7 @@
             <StackPanel Grid.Row="3" Grid.Column="2">
                 <TextBlock Text="האם ההורים נשואים זה לזה:"/>
                 <RadioButton GroupName="Group1"  Content="כן" IsChecked="{Binding PropertyValue}"  />
-                <RadioButton GroupName="Group1"  Content="לא" IsChecked="{Binding PropertyValue}" /> <!--, Converter={StaticResource BoolInverterConverter} -->
+                <RadioButton GroupName="Group1"  Content="לא" IsChecked="{Binding PropertyValue, Converter={StaticResource BoolInverterConverter}}" /> 
                
             </StackPanel>
 
@@ -276,14 +278,7 @@
                 <Button x:Name="PictureUploadButton" Content="צירוף קובץ" Foreground="DimGray" Click="PictureUploadButton_Click" Margin="0 7 0 7"/>
                 <Image x:Name="SeekerImage" Width="30" Height="30"/>
             </StackPanel>
-            <!-- transferPhoto? -->
-            <StackPanel Grid.Row="3" Grid.Column="2">
-                <TextBlock Text="האם ההורים נשואים זה לזה:"/>
-                <RadioButton GroupName="GrouptransferPhoto"  Content="כן" IsChecked="{Binding PropertyValue}"  />
-                <RadioButton GroupName="GrouptransferPhoto"  Content="לא" IsChecked="{Binding PropertyValue, Converter={StaticResource BoolInverterConverter}}" />
-               
 
-            </StackPanel>
 
             <!--- ~~~~~~~~~~~~~~~~~~~~~~   שורה שמונה-עשרה    ~~~~~~~~~~~~~~~~~~~~~~~~ -->
             <!--parent Job-->
@@ -308,36 +303,21 @@
                     <TextBox x:Name="siblin2"/>
                 </StackPanel>
             </StackPanel>
-
+   
             <!--- ~~~~~~~~~~~~~~~~~~~~~~   שורה עשרים    ~~~~~~~~~~~~~~~~~~~~~~~~ -->
 
             <!--Number For Offers-->
-            <StackPanel x:Name="NumberForOffering_SP" Grid.Row="17" Grid.Column="0"  >
-                <TextBlock Text="מספר טלפון להצעות" Grid.Row="19" Grid.Column="0" />
-                <TextBox x:Name="NumberForOffering_TextBox" />
-            </StackPanel>
+
+
+
+
+           
+
+           
+
+
+            <!-- transferPhoto? -->
             <!--Email-->
-            <StackPanel x:Name="Email_SP" Grid.Row="17" Grid.Column="1"  >
-                <TextBlock Text="אימייל" Grid.Row="19" Grid.Column="0" />
-                <TextBox x:Name="Email_TextBox" />
-            </StackPanel>
-            <!--- ~~~~~~~~~~~~~~~~~~~~~~    שורה עשרים ואחת    ~~~~~~~~~~~~~~~~~~~~~~~~ -->
-
-           <!-- FinancialHelp -->
-            <StackPanel x:Name="FinancialHelp_SP" Grid.Row="20" Grid.Column="0"  >
-                <TextBlock Text="עזרה כלכלית:" Grid.Row="20" Grid.Column="0" />
-                <TextBox x:Name="FinancialHelp_TextBox" />
-                <RadioButton x:Name="FinancialHelp1_RadioButton" IsChecked="{Binding Path=Standard_Of_Living_Today, Converter={StaticResource EnumConverter}, ConverterParameter=Very_high}">גבוה מאוד</RadioButton>
-                <RadioButton x:Name="FinancialHelp2_RadioButton" IsChecked="{Binding Path=Standard_Of_Living_Today, Converter={StaticResource EnumConverter}, ConverterParameter=High}">גבוה</RadioButton>
-                <RadioButton x:Name="FinancialHelp3_RadioButton" IsChecked="{Binding Path=Standard_Of_Living_Today, Converter={StaticResource EnumConverter}, ConverterParameter=Standart}">סטנדרט</RadioButton>
-              
-
-            </StackPanel>
-
-
-
-
-
 
 
 
@@ -345,7 +325,9 @@
 
             <!--Remarks  -->
             <!--  -->
-            
+            <!-- FinancialHelp -->
+            <!-- Father -->
+            <!-- Mother -->
             
             <!-- Inquiries -->
             
