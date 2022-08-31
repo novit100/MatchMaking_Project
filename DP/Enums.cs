@@ -45,5 +45,6 @@ namespace DP
     public enum Girl_Working_status { עובדת, לומדת, עובדת_ולומדת }//I WANT TO CHANGE TO ENGLISH AND ADD A GET_STRING FUNCTION
     public enum DoesSmoke { NotAtAll,SomeTimes,Yes }
     public enum HealthCondition { תקין,צריך_לבדוק,לא_ידוע,דבר_ידוע,אחר }
-    public enum PlaceType { Formal,Neutral,Fun }
+    public enum PlaceType { Formal, Neutral, Fun }
+    
 }
