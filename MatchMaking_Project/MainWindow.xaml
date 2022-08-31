@@ -6,9 +6,9 @@
         xmlns:local="clr-namespace:MatchMaking_Project"
         xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
         mc:Ignorable="d"
-          Height="auto" Width="900"  WindowStartupLocation="CenterScreen" Icon= "Pictures\טבעת1.jpg"
-        FlowDirection="RightToLeft">
-
+          Height="670" Width="900"  WindowStartupLocation="CenterScreen" Icon= "Pictures\טבעת1.jpg"
+        FlowDirection="RightToLeft" Background="#FFF0F0F0">
+   
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="100"/>
@@ -168,7 +168,7 @@
                             </TransformGroup>
                         </Button.RenderTransform>
                         <Button.Background>
-                            <ImageBrush ImageSource="Pictures\חתן4חתוךסופי.jpg" TileMode="FlipY" Opacity="0.7"/>
+                            <ImageBrush ImageSource="Pictures\חתן4חתוךסופי.jpg" TileMode="FlipY" Opacity="0.75"/>
                         </Button.Background>
 
                     </Button>
@@ -188,7 +188,7 @@
                             </TransformGroup>
                         </Button.RenderTransform>
                         <Button.Background>
-                            <ImageBrush ImageSource="Pictures\woman1.jpg" TileMode="FlipY" Opacity="0.7"/>
+                            <ImageBrush ImageSource="Pictures\woman1.jpg" TileMode="FlipY" Opacity="0.8"/>
                         </Button.Background>
 
                     </Button>
@@ -223,7 +223,7 @@
                             </TransformGroup>
                         </Button.RenderTransform>
                         <Button.Background>
-                            <ImageBrush ImageSource="Pictures\אוטומציה2.jpg" TileMode="FlipY" Opacity="0.7"/>
+                            <ImageBrush ImageSource="Pictures\אוטומציה2.jpg" TileMode="FlipY" Opacity="0.75"/>
                         </Button.Background>
 
                     </Button>
@@ -240,7 +240,7 @@
                             </TransformGroup>
                         </Button.RenderTransform>
                         <Button.Background>
-                            <ImageBrush ImageSource="Pictures\הצעות_באוויר.jpg" TileMode="FlipY" Opacity="0.7"/>
+                            <ImageBrush ImageSource="Pictures\הצעות_באוויר.jpg" TileMode="FlipY" Opacity="0.75"/>
                         </Button.Background>
 
                     </Button>
@@ -256,7 +256,7 @@
                             </TransformGroup>
                         </Button.RenderTransform>
                         <Button.Background>
-                            <ImageBrush ImageSource="Pictures/באולינג1.jpg" TileMode="FlipY" Opacity="0.7"/>
+                            <ImageBrush ImageSource="Pictures/באולינג1.jpg" TileMode="FlipY" Opacity="0.75"/>
                         </Button.Background>
 
                     </Button>
