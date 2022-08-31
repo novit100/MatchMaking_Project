@@ -238,11 +238,6 @@
     <Resource Include="Pictures\טבעת2.jpg" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="..\..\..\..\..\Downloads\חתן4חתוך.jpg">
-      <Link>Pictures\חתן4חתוך.jpg</Link>
-    </Resource>
-  </ItemGroup>
-  <ItemGroup>
     <Resource Include="חתן4חתוך.jpg" />
   </ItemGroup>
   <ItemGroup>
