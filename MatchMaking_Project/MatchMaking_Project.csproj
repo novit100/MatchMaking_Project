@@ -73,30 +73,32 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Compile Include="AboutUserControl.xaml.cs">
+    <Compile Include="Commands\BoyOrGirlCMD.cs" />
+    <Compile Include="UserControls\AboutUserControl.xaml.cs">
       <DependentUpon>AboutUserControl.xaml</DependentUpon>
     </Compile>
     <Compile Include="AddParent.xaml.cs">
       <DependentUpon>AddParent.xaml</DependentUpon>
     </Compile>
     <Compile Include="BoolInverterConverter.cs" />
-    <Compile Include="BoysDisplayUserControl.xaml.cs">
+    <Compile Include="UserControls\BoysDisplayUserControl.xaml.cs">
       <DependentUpon>BoysDisplayUserControl.xaml</DependentUpon>
     </Compile>
-    <Compile Include="BoysUserControl.xaml.cs">
+    <Compile Include="UserControls\BoysUserControl.xaml.cs">
       <DependentUpon>BoysUserControl.xaml</DependentUpon>
     </Compile>
-    <Compile Include="CurrentOffersUserControl.xaml.cs">
+    <Compile Include="UserControls\CurrentOffersUserControl.xaml.cs">
       <DependentUpon>CurrentOffersUserControl.xaml</DependentUpon>
     </Compile>
-    <Compile Include="HomeUserControl.xaml.cs">
+    <Compile Include="UserControls\HomeUserControl.xaml.cs">
       <DependentUpon>HomeUserControl.xaml</DependentUpon>
     </Compile>
-    <Compile Include="PlacesForDatesUserControl.xaml.cs">
+    <Compile Include="ViewModel\insertSeekerVM.cs" />
+    <Compile Include="UserControls\PlacesForDatesUserControl.xaml.cs">
       <DependentUpon>PlacesForDatesUserControl.xaml</DependentUpon>
     </Compile>
     <Compile Include="EnumConverter.cs" />
-    <Compile Include="InsertingSeekerUserControl.xaml.cs">
+    <Compile Include="UserControls\InsertingSeekerUserControl.xaml.cs">
       <DependentUpon>InsertingSeekerUserControl.xaml</DependentUpon>
     </Compile>
     <Compile Include="Model\Sibiling.cs" />
@@ -104,7 +106,7 @@
     <Compile Include="InsertingSeeker.xaml.cs">
       <DependentUpon>InsertingSeeker.xaml</DependentUpon>
     </Compile>
-    <Page Include="AboutUserControl.xaml">
+    <Page Include="UserControls\AboutUserControl.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -112,23 +114,23 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="BoysDisplayUserControl.xaml">
+    <Page Include="UserControls\BoysDisplayUserControl.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="BoysUserControl.xaml">
+    <Page Include="UserControls\BoysUserControl.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="CurrentOffersUserControl.xaml">
+    <Page Include="UserControls\CurrentOffersUserControl.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="HomeUserControl.xaml">
+    <Page Include="UserControls\HomeUserControl.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="PlacesForDatesUserControl.xaml">
+    <Page Include="UserControls\PlacesForDatesUserControl.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -136,7 +138,7 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="InsertingSeekerUserControl.xaml">
+    <Page Include="UserControls\InsertingSeekerUserControl.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -215,7 +217,7 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="ViewModels\" />
+    <Resource Include="Pictures\form.jpg" />
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Ring.png" />
@@ -224,42 +226,90 @@
     <Resource Include="2b6136ad592194d6e860e4989d635377.jpg" />
   </ItemGroup>
   <ItemGroup>
+    <Resource Include="UserControls\Pictures\woman1.jpg" />
+    <Resource Include="UserControls\Pictures\woman2.jpg" />
+    <Resource Include="UserControls\Pictures\אוטומציה1.jpg" />
+    <Resource Include="UserControls\Pictures\אוטומציה2.jpg" />
+    <Resource Include="UserControls\Pictures\חתן1.jpg" />
+    <Resource Include="UserControls\Pictures\חתן2.jpg" />
+    <Resource Include="UserControls\Pictures\חתן3.jpg" />
+    <Resource Include="UserControls\Pictures\חתן4.jpg" />
+    <Resource Include="UserControls\Pictures\טבעת1.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="UserControls\Pictures\טבעת2.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="חתן4חתוך.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="UserControls\Pictures\פארק1.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="UserControls\Pictures\form.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="form.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="UserControls\Pictures\הצעות_באוויר.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="UserControls\Pictures\חתן4חתוךסופי.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="UserControls\Pictures\באולינג1.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="UserControls\Pictures\מקום_לדייט.jpg" />
+  </ItemGroup>
+  <ItemGroup>
     <Resource Include="Pictures\woman1.jpg" />
+  </ItemGroup>
+  <ItemGroup>
     <Resource Include="Pictures\woman2.jpg" />
+  </ItemGroup>
+  <ItemGroup>
     <Resource Include="Pictures\אוטומציה1.jpg" />
+  </ItemGroup>
+  <ItemGroup>
     <Resource Include="Pictures\אוטומציה2.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Pictures\באולינג1.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Pictures\הצעות_באוויר.jpg" />
+  </ItemGroup>
+  <ItemGroup>
     <Resource Include="Pictures\חתן1.jpg" />
+  </ItemGroup>
+  <ItemGroup>
     <Resource Include="Pictures\חתן2.jpg" />
+  </ItemGroup>
+  <ItemGroup>
     <Resource Include="Pictures\חתן3.jpg" />
+  </ItemGroup>
+  <ItemGroup>
     <Resource Include="Pictures\חתן4.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Pictures\חתן4חתוךסופי.jpg" />
+  </ItemGroup>
+  <ItemGroup>
     <Resource Include="Pictures\טבעת1.jpg" />
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Pictures\טבעת2.jpg" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="חתן4חתוך.jpg" />
+    <Resource Include="Pictures\מקום_לדייט.jpg" />
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Pictures\פארק1.jpg" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Pictures\form.jpg" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="form.jpg" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Pictures\הצעות_באוויר.jpg" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Pictures\חתן4חתוךסופי.jpg" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Pictures\באולינג1.jpg" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Pictures\מקום_לדייט.jpg" />
+    <Resource Include="UserControls\2b6136ad592194d6e860e4989d635377.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

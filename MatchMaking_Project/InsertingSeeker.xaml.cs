@@ -1,5 +1,6 @@
 ﻿using BL;
 using DP;
+using MatchMaking_Project.VM;
 using Microsoft.Win32;
 using System;
 using System.Collections.Generic;
@@ -23,7 +24,7 @@ namespace MatchMaking_Project
     public partial class InsertingSeeker : Window
     {
         IBL bl;
-        SeekerBoy boy = new SeekerBoy();
+     //   SeekerBoy boy = new SeekerBoy();
 
         public InsertingSeeker(IBL bl_)
         {
@@ -33,18 +34,19 @@ namespace MatchMaking_Project
             Resources.Add("theMargin", 10);
 
 
-            DadOrigin_ComboBox.ItemsSource = Enum.GetValues(typeof(Origin));
-            DadOrigin_ComboBox.SelectedIndex = 0;
-            MomOrigin_ComboBox.ItemsSource = Enum.GetValues(typeof(Origin));
-            MomOrigin_ComboBox.SelectedIndex = 0;
-            Torah_Study_Status_listbox.ItemsSource = Enum.GetValues(typeof(Torah_Study_Status));
-            Torah_Study_Status_listbox.SelectedIndex = 0;
-            Girl_Working_status_listbox.ItemsSource = Enum.GetValues(typeof(Girl_Working_status));
-            Girl_Working_status_listbox.SelectedIndex = 0;
-            //PersonalStatus_listbox.ItemsSource = Enum.GetValues(typeof(PersonalStatus));
-            //PersonalStatus_listbox.SelectedIndex = 0;
-            Interests_listbox.ItemsSource = Enum.GetValues(typeof(Interest));
-            Interests_listbox.SelectedIndex = 0;
+            //DadOrigin_ComboBox.ItemsSource = Enum.GetValues(typeof(Origin));
+            //DadOrigin_ComboBox.SelectedIndex = 0;
+            //MomOrigin_ComboBox.ItemsSource = Enum.GetValues(typeof(Origin));
+            //MomOrigin_ComboBox.SelectedIndex = 0;
+            //Torah_Study_Status_listbox.ItemsSource = Enum.GetValues(typeof(Torah_Study_Status));
+            //Torah_Study_Status_listbox.SelectedIndex = 0;
+            //Girl_Working_status_listbox.ItemsSource = Enum.GetValues(typeof(Girl_Working_status));
+            //Girl_Working_status_listbox.SelectedIndex = 0;
+            ////PersonalStatus_listbox.ItemsSource = Enum.GetValues(typeof(PersonalStatus));
+            ////PersonalStatus_listbox.SelectedIndex = 0;
+            //Interests_listbox.ItemsSource = Enum.GetValues(typeof(Interest));
+            //Interests_listbox.SelectedIndex = 0;
+            this.DataContext = new insertSeekerVM();
         }
 
         private void PictureUploadButton_Click(object sender, RoutedEventArgs e)

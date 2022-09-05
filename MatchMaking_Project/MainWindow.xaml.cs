@@ -38,7 +38,7 @@ namespace MatchMaking_Project
             bl = bl_;
            //homeUserControl = new HomeUserControl(bl);
            //UserControllersGrid.Children.Add(homeUserControl);
-            InsertingSeekerUC = new InsertingSeekerUserControl(bl);
+            InsertingSeekerUC = new InsertingSeekerUserControl();
             placesForDatesUC = new PlacesForDatesUserControl();
             aboutUserControl = new AboutUserControl();
             boysDisplayUserControl = new BoysDisplayUserControl(bl);
