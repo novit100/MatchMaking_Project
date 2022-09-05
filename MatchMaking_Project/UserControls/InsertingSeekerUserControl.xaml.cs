@@ -55,15 +55,8 @@ namespace MatchMaking_Project
            
         }
 
-        private void PictureUploadButton_Click(object sender, RoutedEventArgs e)
-        {
-            OpenFileDialog openFileDialog = new OpenFileDialog();
-            if (openFileDialog.ShowDialog() == true)
-            {
-                Uri fileUri = new Uri(openFileDialog.FileName);
-                //SeekerImage.Source = new BitmapImage(fileUri);
-            }
-        }
+   
+        
         ///Add
      
         //private void AddSibilin_Click(object sender, RoutedEventArgs e)
