@@ -103,6 +103,7 @@
       <DependentUpon>InsertingSeekerUserControl.xaml</DependentUpon>
     </Compile>
     <Compile Include="Model\Sibiling.cs" />
+    <Compile Include="BoyOrGirlToYeshivaOrSeminaryConverter.cs" />
     <Compile Include="Views\EnumBooleanConverter.cs" />
     <Compile Include="InsertingSeeker.xaml.cs">
       <DependentUpon>InsertingSeeker.xaml</DependentUpon>

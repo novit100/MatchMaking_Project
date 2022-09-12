@@ -35,20 +35,21 @@ namespace MatchMaking_Project
             InitializeComponent();
             bl = BLFactory.GetBL();
             DataContext = new insertSeekerVM();
-           // SibilingsObservableCollection = new ObservableCollection<Sibiling>();
+            SibilingsObservableCollection = new ObservableCollection<Sibiling>();
 
-           // DadOrigin_ComboBox.ItemsSource = Enum.GetValues(typeof(Origin));
-           // DadOrigin_ComboBox.SelectedIndex = 0;
-           // MomOrigin_ComboBox.ItemsSource = Enum.GetValues(typeof(Origin));
-           // MomOrigin_ComboBox.SelectedIndex = 0;
-           // Torah_Study_Status_listbox.ItemsSource = Enum.GetValues(typeof(Torah_Study_Status));
-           // Torah_Study_Status_listbox.SelectedIndex = 0;
-           // Girl_Working_status_listbox.ItemsSource= Enum.GetValues(typeof(Girl_Working_status));
-           // Girl_Working_status_listbox.SelectedIndex = 0;
-           // //PersonalStatus_listbox.ItemsSource = Enum.GetValues(typeof(PersonalStatus));
-           // //PersonalStatus_listbox.SelectedIndex = 0;
-           // Interests_listbox.ItemsSource = Enum.GetValues(typeof(Interest));
-           // Interests_listbox.SelectedIndex = 0;
+            DadOrigin_ComboBox.ItemsSource = Enum.GetValues(typeof(Origin));
+            DadOrigin_ComboBox.SelectedIndex = 0;
+            MomOrigin_ComboBox.ItemsSource = Enum.GetValues(typeof(Origin));
+            MomOrigin_ComboBox.SelectedIndex = 0;
+            Torah_Study_Status_listbox.ItemsSource = Enum.GetValues(typeof(Torah_Study_Status));
+            Torah_Study_Status_listbox.SelectedIndex = 0;
+            Girl_Working_status_listbox.ItemsSource= Enum.GetValues(typeof(Girl_Working_status));
+            Girl_Working_status_listbox.SelectedIndex = 0;
+            //PersonalStatus_listbox.ItemsSource = Enum.GetValues(typeof(PersonalStatus));
+            //PersonalStatus_listbox.SelectedIndex = 0;
+            Interests_listbox.ItemsSource = Enum.GetValues(typeof(Interest));
+            // Interests_listbox.SelectedIndex = 0;
+            YeshivaG_Seminary_Combobox.ItemsSource = Enum.GetValues(typeof(YeshivaGedola));
 
            //// SibilingsListBox.ItemsSource = SibilingsObservableCollection;
 
@@ -59,23 +60,23 @@ namespace MatchMaking_Project
         
         ///Add
      
-        //private void AddSibilin_Click(object sender, RoutedEventArgs e)
-        //{
-        //    int age = 0;
-        //    Int32.TryParse(SiblinAgeTextBox.Text, out age);
+        private void AddSibilin_Click(object sender, RoutedEventArgs e)
+        {
+            int age = 0;
+            Int32.TryParse(SiblinAgeTextBox.Text, out age);
 
-        //    Sibiling sibiling = new Sibiling() { Gender = (BoyOrGirlSiblin.SelectedItem as Gender?), Age = age, FirstName = SiblinFirstNameTextBox.Text };
-        //    SibilingsObservableCollection.Add(sibiling);
-        //}
+            Sibiling sibiling = new Sibiling() { Gender = (BoyOrGirlSiblin.SelectedItem as Gender?), Age = age, FirstName = SiblinFirstNameTextBox.Text };
+            SibilingsObservableCollection.Add(sibiling);
+        }
 
-        //private void AddAcquaintance_Click(object sender, RoutedEventArgs e)
-        //{
-        //    int age = 0;
-        //    Int32.TryParse(SiblinAgeTextBox.Text, out age);
+        private void AddAcquaintance_Click(object sender, RoutedEventArgs e)
+        {
+            int age = 0;
+            Int32.TryParse(SiblinAgeTextBox.Text, out age);
 
-        //    Acquaintance acquaintance = new Acquaintance();
-        //    AcquaintancseObservableCollection.Add(acquaintance);
-        //}
+            Acquaintance acquaintance = new Acquaintance();
+            AcquaintancseObservableCollection.Add(acquaintance);
+        }
         //Delete
         private void DeleteSibling_Click(object sender, RoutedEventArgs e)
         {

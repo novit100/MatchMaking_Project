@@ -16,7 +16,7 @@
     <UserControl.Resources>
         <local:EnumConverter x:Key="EnumConverter"/>
         <local:BoolInverterConverter x:Key="BoolInverterConverter"/>
-        
+        <local:BoyOrGirlToYeshivaOrSeminaryConverter x:Key="BoyOrGirlToYeshivaOrSeminaryConverter"/>
     </UserControl.Resources>
 
     <ScrollViewer Name="scroll" >
@@ -68,10 +68,10 @@
             <!-- PersonalStatus  -->
             <StackPanel Grid.Row="0" Grid.Column="1" Orientation="Horizontal" Grid.ColumnSpan="2">
                 <TextBlock Text="סטטוס:"/>
-                <!--<RadioButton x:Name="PersonalStatus1_RadioButton" IsChecked="{Binding person.PersonalStatus, Converter={StaticResource EnumConverter}, ConverterParameter=רווק}" FontWeight="Bold">רווק/ה</RadioButton>
+                <RadioButton x:Name="PersonalStatus1_RadioButton" IsChecked="{Binding person.PersonalStatus, Converter={StaticResource EnumConverter}, ConverterParameter=רווק}" FontWeight="Bold">רווק/ה</RadioButton>
                 <RadioButton x:Name="PersonalStatus2_RadioButton" IsChecked="{Binding person.PersonalStatus, Converter={StaticResource EnumConverter}, ConverterParameter=אלמן}"  FontWeight="Light" VerticalAlignment="Center">אלמנ/ה</RadioButton>
                 <RadioButton x:Name="PersonalStatus3_RadioButton" IsChecked="{Binding person.PersonalStatus, Converter={StaticResource EnumConverter}, ConverterParameter=גרוש}"  FontWeight="Light" VerticalAlignment="Center">גרוש/ה</RadioButton>
-                <RadioButton x:Name="PersonalStatus4_RadioButton" IsChecked="{Binding person.PersonalStatus, Converter={StaticResource EnumConverter}, ConverterParameter=מאורס}" FontWeight="Light" VerticalAlignment="Center">מאורס/ת</RadioButton>-->
+                <RadioButton x:Name="PersonalStatus4_RadioButton" IsChecked="{Binding person.PersonalStatus, Converter={StaticResource EnumConverter}, ConverterParameter=מאורס}" FontWeight="Light" VerticalAlignment="Center">מאורס/ת</RadioButton>
             </StackPanel>
 
 
@@ -177,7 +177,7 @@
             <!--YeshivaGedola/seminary  -->
             <StackPanel Grid.Row="6" Grid.Column="0">
                 <TextBlock Text="ישיבה גדולה\סמינר" Grid.Row="5" Grid.Column="4" />
-                <ComboBox x:Name="YeshivaG_Seminary_Combobox"/>
+                <ComboBox x:Name="YeshivaG_Seminary_Combobox" ItemsSource="{Binding Boy, Converter={StaticResource BoyOrGirlToYeshivaOrSeminaryConverter}}"/>
             </StackPanel>
 
             <!-- GradeInStudies -->
@@ -238,10 +238,10 @@
             <!-- Torah_Study_InFuture -->
             <StackPanel Grid.Row="11" Grid.Column="0" Orientation="Vertical" HorizontalAlignment="Left">
                 <TextBlock Text="שאיפות לגביי לימוד תורה:"/>
-                <!--<RadioButton x:Name="Torah_Study_InFuture1_RadioButton"  IsChecked="{Binding person.Torah_Study_InFuture, Converter={StaticResource EnumConverter}, ConverterParameter=לתמיד}">לתמיד</RadioButton>
+                <RadioButton x:Name="Torah_Study_InFuture1_RadioButton"  IsChecked="{Binding person.Torah_Study_InFuture, Converter={StaticResource EnumConverter}, ConverterParameter=לתמיד}">לתמיד</RadioButton>
                 <RadioButton x:Name="Torah_Study_InFuture2_RadioButton" IsChecked="{Binding person.Torah_Study_InFuture, Converter={StaticResource EnumConverter}, ConverterParameter=לתמיד_או_תפקיד_תורני}">לתמיד או תפקיד תורני</RadioButton>
                 <RadioButton x:Name="Torah_Study_InFuture3_RadioButton" IsChecked="{Binding person.Torah_Study_InFuture, Converter={StaticResource EnumConverter}, ConverterParameter=לתקופה_מסויימת}">לתקופה מסויימת</RadioButton>
-                <RadioButton x:Name="Torah_Study_InFuture4_RadioButton" IsChecked="{Binding person.Torah_Study_InFuture, Converter={StaticResource EnumConverter}, ConverterParameter=לקבוע_עיתים}">לקבוע עיתים</RadioButton>-->
+                <RadioButton x:Name="Torah_Study_InFuture4_RadioButton" IsChecked="{Binding person.Torah_Study_InFuture, Converter={StaticResource EnumConverter}, ConverterParameter=לקבוע_עיתים}">לקבוע עיתים</RadioButton>
             </StackPanel>
 
             <!--- ~~~~~~~~~~~~~~~~~~~~~~   שורה שלוש-עשרה    ~~~~~~~~~~~~~~~~~~~~~~~~ -->
@@ -249,7 +249,7 @@
 
 
 
-            <!-- IQ --><!--
+            <!-- IQ -->
             <StackPanel Grid.Row="12" Grid.Column="0" Orientation="Vertical" HorizontalAlignment="Left">
                 <TextBlock Text="כישורים שכליים:"/>
                 <RadioButton x:Name="IQ1_RadioButton"  IsChecked="{Binding person.IQ, Converter={StaticResource EnumConverter}, ConverterParameter=מאוד_חכמ_ה}">מאוד חכמ/ה</RadioButton>
@@ -257,7 +257,7 @@
                 <RadioButton x:Name="IQ3_RadioButton" IsChecked="{Binding person.IQ, Converter={StaticResource EnumConverter}, ConverterParameter=סטנדרט}">סטנדרט</RadioButton>
             </StackPanel>
 
-            --><!-- intellect --><!--
+            <!-- intellect -->
             <StackPanel Grid.Row="12" Grid.Column="1" Orientation="Vertical" HorizontalAlignment="Left">
                 <TextBlock Text="אינטיליגנציה:"/>
                 <RadioButton x:Name="intellect1_RadioButton"  IsChecked="{Binding person.IQ, Converter={StaticResource EnumConverter}, ConverterParameter=אינטיליגנט_מאוד}">אינטיליגנט/ית מאוד</RadioButton>
@@ -267,39 +267,39 @@
 
 
 
-            --><!--- ~~~~~~~~~~~~~~~~~~~~~~   שורה ארבע-עשרה    ~~~~~~~~~~~~~~~~~~~~~~~~ -->
-            <!--Interests  --><!--
+            <!--- ~~~~~~~~~~~~~~~~~~~~~~   שורה ארבע-עשרה    ~~~~~~~~~~~~~~~~~~~~~~~~ -->
+            <!--Interests  -->
             <StackPanel Grid.Row="13" Grid.Column="0" >
                 <TextBlock Text="תחומי עניין:"/>
                 <ListBox x:Name="Interests_listbox" DataContext="{Binding person.Interests}"  Background="Transparent"  HorizontalContentAlignment="Stretch" SelectionMode="Multiple"  AllowDrop="True" BorderThickness="0" />
-            </StackPanel>-->
+            </StackPanel>
 
 
 
             <!--- ~~~~~~~~~~~~~~~~~~~~~~   שורה חמש-עשרה    ~~~~~~~~~~~~~~~~~~~~~~~~ -->
             <!--Standard_Of_Living_Today-->
-            <!--<StackPanel Grid.Row="14" Grid.Column="0" Orientation="Vertical" HorizontalAlignment="Left">
+            <StackPanel Grid.Row="14" Grid.Column="0" Orientation="Vertical" HorizontalAlignment="Left">
                 <TextBlock Text="רמת חיים כיום:"/>
                 <RadioButton x:Name="Standard_Of_Living_Today1_RadioButton"  IsChecked="{Binding Path=Standard_Of_Living_Today, Converter={StaticResource EnumConverter}, ConverterParameter=Very_high}">גבוה מאוד</RadioButton>
                 <RadioButton x:Name="Standard_Of_Living_Today2_RadioButton" IsChecked="{Binding Path=Standard_Of_Living_Today, Converter={StaticResource EnumConverter}, ConverterParameter=High}">גבוה</RadioButton>
                 <RadioButton x:Name="Standard_Of_Living_Today3_RadioButton" IsChecked="{Binding Path=Standard_Of_Living_Today, Converter={StaticResource EnumConverter}, ConverterParameter=Standart}">סטנדרט</RadioButton>
                 <RadioButton x:Name="Standard_Of_Living_Today4_RadioButton" IsChecked="{Binding Path=Standard_Of_Living_Today, Converter={StaticResource EnumConverter}, ConverterParameter=Under_the_standart}">מתחת לסטנדרט</RadioButton>
-            </StackPanel>-->
+            </StackPanel>
 
             <!--- ~~~~~~~~~~~~~~~~~~~~~~   שורה שש-עשרה    ~~~~~~~~~~~~~~~~~~~~~~~~ -->
 
             <TextBlock Text="~~~~~~~~~~~~~~~~~~~~~ פרטים נוספים ~~~~~~~~~~~~~~~~~~~~~~~~" Grid.Column="0" Grid.ColumnSpan="6" HorizontalAlignment="Center" Grid.Row="15" Margin="0 10 0 10"/>
             <!--- ~~~~~~~~~~~~~~~~~~~~~~   שורה שבע-עשרה    ~~~~~~~~~~~~~~~~~~~~~~~~ -->
             <!-- Picture -->
-            <!--<StackPanel Grid.Row="16" Grid.Column="0">
+            <StackPanel Grid.Row="16" Grid.Column="0">
                 <StackPanel Orientation="Horizontal" Margin="0">
                 <TextBlock Text="העלאת תמונה" Grid.Row="16" Grid.Column="0" />
                 <materialDesign:PackIcon Kind="Picture360Outline"></materialDesign:PackIcon>
                 </StackPanel>
-                <Button x:Name="PictureUploadButton" Content="צירוף קובץ" Foreground="DimGray" Click="PictureUploadButton_Click" Margin="0,7,30.8,7"/>
+                <Button x:Name="PictureUploadButton" Content="צירוף קובץ" Foreground="DimGray" Command="{Binding upPicture}" Margin="0,7,30.8,7"/>
                 <Image x:Name="SeekerImage" Width="30" Height="30"/>
             </StackPanel>
-            --><!-- transferPhoto? --><!--            <StackPanel Grid.Row="16" Grid.Column="1" VerticalAlignment="Top">                <TextBlock Text="מסכימ/ה להעביר תמונה:"/>                <RadioButton GroupName="GrouptransferPhoto"  Content="כן" IsChecked="{Binding PropertyValue}"  />                <RadioButton GroupName="GrouptransferPhoto"  Content="לא" IsChecked="{Binding PropertyValue, Converter={StaticResource BoolInverterConverter}}" />            </StackPanel>-->
+            <!-- transferPhoto? -->            <StackPanel Grid.Row="16" Grid.Column="1" VerticalAlignment="Top">                <TextBlock Text="מסכימ/ה להעביר תמונה:"/>                <RadioButton GroupName="GrouptransferPhoto"  Content="כן" IsChecked="{Binding PropertyValue}"  />                <RadioButton GroupName="GrouptransferPhoto"  Content="לא" IsChecked="{Binding PropertyValue, Converter={StaticResource BoolInverterConverter}}" />            </StackPanel>
 
 
 
@@ -310,13 +310,13 @@
 
             <!--- ~~~~~~~~~~~~~~~~~~~~~~   שורה תשע-עשרה    ~~~~~~~~~~~~~~~~~~~~~~~~ -->
             
-            <!-- Sibilings --><!--
+            <!-- Sibilings -->
             <StackPanel Grid.Row="18" Grid.Column="0">
                     <TextBlock Text="מספר אחים" />
                 <TextBox x:Name="NumberOfSiblings"/>
 
             </StackPanel>
-            --><!--- ~~~~~~~~~~~~~~~~~~~~~~   שורה עשרים    ~~~~~~~~~~~~~~~~~~~~~~~~ --><!--            
+            <!--- ~~~~~~~~~~~~~~~~~~~~~~   שורה עשרים    ~~~~~~~~~~~~~~~~~~~~~~~~ -->            
 
                 <Grid  Height="auto" Margin="10,0,0,0" Grid.Column="0" Grid.Row="19" Width="auto" Grid.ColumnSpan="3" >
                     <Grid.RowDefinitions>
@@ -347,7 +347,7 @@
                             <RowDefinition Height="auto"/>
                             <RowDefinition Height="auto"/>
                     </Grid.RowDefinitions>
-                       --><!--שורה ראשונה בפרטי האחים--><!--
+                       <!--שורה ראשונה בפרטי האחים-->
                         <StackPanel Grid.Row="0" Grid.Column="0">
                             <TextBlock Text="שם פרטי"/>
                             <TextBox x:Name="SiblinFirstNameTextBox"  />
@@ -366,7 +366,7 @@
                         <TextBox x:Name="SiblinAgeTextBox"  />
                         </StackPanel>
                     
-                    --><!--שורה שנייה בפרטי האחים--><!--
+                    <!--שורה שנייה בפרטי האחים-->
                     <StackPanel Grid.Row="1" Grid.Column="0">
                         <TextBlock Text="עיסוק"/>
                         <TextBox x:Name="SiblinOccupationComboBox" />
@@ -414,8 +414,8 @@
                     </DataGrid>
                 </Grid>
            
-            --><!--- ~~~~~~~~~~~~~~~~~~~~~~    שורה עשרים ואחת    ~~~~~~~~~~~~~~~~~~~~~~~~ -->            <!--Number For Offers--><!--            <StackPanel x:Name="NumberForOffering_SP" Grid.Row="20" Grid.Column="0"  >                <TextBlock Text="מספר טלפון להצעות" Grid.Row="20" Grid.Column="0" />                <TextBox x:Name="NumberForOffering_TextBox" />            </StackPanel>            --><!--Email--><!--            <StackPanel x:Name="Email_SP" Grid.Row="20" Grid.Column="1"  >                <TextBlock Text="אימייל" Grid.Row="20" Grid.Column="1" />                <TextBox x:Name="Email_TextBox" />            </StackPanel>             --><!--- ~~~~~~~~~~~~~~~~~~~~~~    שורה עשרים ושתיים    ~~~~~~~~~~~~~~~~~~~~~~~~ -->
-            <!-- FinancialHelp --><!--
+            <!--- ~~~~~~~~~~~~~~~~~~~~~~    שורה עשרים ואחת    ~~~~~~~~~~~~~~~~~~~~~~~~ -->            <!--Number For Offers-->            <StackPanel x:Name="NumberForOffering_SP" Grid.Row="20" Grid.Column="0"  >                <TextBlock Text="מספר טלפון להצעות" Grid.Row="20" Grid.Column="0" />                <TextBox x:Name="NumberForOffering_TextBox" />            </StackPanel>            <!--Email-->            <StackPanel x:Name="Email_SP" Grid.Row="20" Grid.Column="1"  >                <TextBlock Text="אימייל" Grid.Row="20" Grid.Column="1" />                <TextBox x:Name="Email_TextBox" />            </StackPanel>             <!--- ~~~~~~~~~~~~~~~~~~~~~~    שורה עשרים ושתיים    ~~~~~~~~~~~~~~~~~~~~~~~~ -->
+            <!-- FinancialHelp -->
             <StackPanel x:Name="FinancialHelp_SP" Grid.Row="21" Grid.Column="0"  >
                 <TextBlock Text="עזרה כלכלית:" Grid.Row="21" Grid.Column="0" />
                 <RadioButton x:Name="FinancialHelp1_RadioButton" IsChecked="{Binding Path=Standard_Of_Living_Today, Converter={StaticResource EnumConverter}, ConverterParameter=Depends_on_case}">תלוי במקרה</RadioButton>
@@ -429,17 +429,20 @@
             
            
             
-            --><!--- ~~~~~~~~~~~~~~~~~~~~~~    שורה עשרים ושלוש    ~~~~~~~~~~~~~~~~~~~~~~~~ -->
-            <!--Remarks  --><!--
+            <!--- ~~~~~~~~~~~~~~~~~~~~~~    שורה עשרים ושלוש    ~~~~~~~~~~~~~~~~~~~~~~~~ -->
+            <!--Remarks  -->
             <StackPanel  Grid.Row="22" Grid.Column="0"  >                <TextBlock Text="פרטים נוספים:" Grid.Row="20" Grid.Column="1" />                <TextBox x:Name="Remarks_TextBox" Grid.ColumnSpan="2" Height="60" HorizontalAlignment="Stretch" />            </StackPanel>
 
-            --><!--- ~~~~~~~~~~~~~~~~~~~~~~    שורה עשרים וארבע    ~~~~~~~~~~~~~~~~~~~~~~~~ -->
-            <!-- Inquiries --><!--
+            <!--- ~~~~~~~~~~~~~~~~~~~~~~    שורה עשרים וארבע    ~~~~~~~~~~~~~~~~~~~~~~~~ -->
+            <!-- Inquiries -->
             <Grid  Height="auto" Margin="10,0,0,0" Grid.Column="0" Grid.Row="23" Width="auto" Grid.ColumnSpan="3" >
                 <Grid.RowDefinitions>
                     <RowDefinition Height="*"/>
                     <RowDefinition Height="*"/>
                     <RowDefinition Height="*"/>
+                    <RowDefinition Height="50"/>
+                    <RowDefinition Height="*"/>
+
                 </Grid.RowDefinitions>
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="auto"/>
@@ -464,7 +467,7 @@
                         <RowDefinition Height="auto"/>
                         <RowDefinition Height="auto"/>
                     </Grid.RowDefinitions>
-                    --><!--שורה ראשונה בפרטי מספרים לבירורים--><!--
+                    <!--שורה ראשונה בפרטי מספרים לבירורים-->
                     <StackPanel Grid.Row="0" Grid.Column="0">
                         <TextBlock Text="שם פרטי"/>
                         <TextBox x:Name="AcquaintanceFirstNameTextBox"  />
@@ -482,8 +485,8 @@
                         <TextBlock Text="מספר טלפון"/>
                         <TextBox x:Name="AcquaintancePhoneTextBox"  />
                     </StackPanel>
-                    
-                    <StackPanel Grid.Row="0" Grid.Column="3">
+
+                    <StackPanel Grid.Row="0" Grid.Column="4">
                         <TextBlock Text="פרטים נוספים"/>
                         <TextBox x:Name="OtherAcqInfoTextBox"  />
                     </StackPanel>
@@ -514,8 +517,14 @@
                         <DataGridTextColumn Binding="{Binding InstituteOfOccupation}" Header="עיסוק" Width="SizeToHeader"/>
                         <DataGridTextColumn Binding="{Binding InstituteOfOccupation}" Header="מקום עיסוק" Width="SizeToHeader"/>
                     </DataGrid.Columns>
-                </DataGrid>-->
-            <!--</Grid>-->
+                </DataGrid>
+                <StackPanel Grid.Row="4" Grid.Column="0" Grid.ColumnSpan="4" HorizontalAlignment="Center">
+                    <TextBlock Text=""/>
+                    <Button x:Name="Add" Content="הוסף"  MaxHeight="70" Click="AddAcquaintance_Click" HorizontalAlignment="Center"/>
+                </StackPanel>
+            </Grid>
+
+            
 
 
 
@@ -533,7 +542,8 @@
 
 
 
-           
+
+
 
 
         </Grid>
